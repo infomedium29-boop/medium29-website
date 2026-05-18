@@ -96,8 +96,15 @@
     .mission-grid { grid-template-columns:1fr; gap:3rem; }
     .values-grid { grid-template-columns:1fr; }
     .team-grid { grid-template-columns:1fr; }
-    .numbers-grid { grid-template-columns:1fr 1fr; }
+    .numbers-grid { grid-template-columns:1fr 1fr; overflow:hidden; }
+    .number-item { padding:2rem 1rem; }
+    .number-big { font-size:2.4rem; }
     .big-quote { padding:4rem 1.5rem; }
+  }
+  @media (max-width:480px) {
+    .numbers-grid { grid-template-columns:1fr 1fr; }
+    .number-big { font-size:2rem; }
+    .number-item { padding:1.5rem 0.8rem; }
   }
 
   @media (max-width: 900px) {
