@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O nama — Medium29</title>
+<meta name="description" content="Upoznajte tim iza Medium29. Digitalna agencija iz Osijeka specijalizirana za web dizajn, marketing i digital signage.">
+<link rel="stylesheet" href="style.css">
+<style>
+  /* MISSION */
+  .mission { background: var(--bg); padding-top: 3rem; }
+  .mission-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+  .mission-left {}
+  .mission-right {}
+  .mission-right p { color: var(--muted); font-size: 1rem; line-height: 1.8; margin-bottom: 1.5rem; }
+  .mission-right p:last-child { margin-bottom: 0; }
+  .mission-right strong { color: var(--text); font-weight: 500; }
+
+  /* BIG QUOTE */
+  .big-quote {
+    background: var(--bg2);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 6rem 4rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .big-quote::before {
+    content: '"';
+    position: absolute;
+    font-family: 'Syne', sans-serif;
+    font-size: 30rem;
+    font-weight: 800;
+    color: rgba(200,255,0,0.03);
+    top: -8rem; left: 50%;
+    transform: translateX(-50%);
+    line-height: 1;
+    pointer-events: none;
+  }
+  .big-quote blockquote {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(1.5rem, 3.5vw, 2.8rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    color: var(--text);
+  }
+  .big-quote blockquote span { color: var(--accent); font-style: italic; }
+  .big-quote cite { font-size: 0.85rem; color: var(--muted); font-style: normal; letter-spacing: 0.08em; }
+
+  /* VALUES */
+  .values { background: var(--bg); }
+  .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px; background: var(--border); border: 1px solid var(--border); margin-top: 3.5rem; }
+  .value-card { background: var(--bg); padding: 2.5rem; transition: background 0.3s; cursor: none; }
+  .value-card:hover { background: var(--bg2); }
+  .value-icon { font-size: 1.8rem; margin-bottom: 1.2rem; display: block; }
+  .value-card h3 { font-family:'Syne',sans-serif; font-size:1.1rem; font-weight:700; margin-bottom:0.6rem; letter-spacing:-0.01em; }
+  .value-card p { font-size:0.88rem; color:var(--muted); line-height:1.65; }
+
+  /* TEAM */
+  .team { background: var(--bg2); }
+  .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); margin-top: 3.5rem; }
+  .team-card { background: var(--bg2); padding: 2.5rem; position: relative; overflow: hidden; transition: background 0.3s; cursor: none; }
+  .team-card:hover { background: var(--bg3); }
+  .team-avatar {
+    width: 72px; height: 72px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(200,255,0,0.15), rgba(123,94,167,0.15));
+    border: 1px solid rgba(200,255,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Syne', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+  }
+  .team-card h3 { font-family:'Syne',sans-serif; font-size:1.1rem; font-weight:700; margin-bottom:0.25rem; }
+  .team-card .role { font-size:0.8rem; color:var(--accent); letter-spacing:0.06em; text-transform:uppercase; margin-bottom:1rem; }
+  .team-card p { font-size:0.88rem; color:var(--muted); line-height:1.65; }
+
+  /* NUMBERS */
+  .numbers { background: var(--bg); border-top: 1px solid var(--border); }
+  .numbers-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); }
+  .number-item { padding: 3rem 2.5rem; background: var(--bg); text-align: center; transition: background 0.3s; }
+  .number-item:hover { background: var(--bg2); }
+  .number-big { font-family:'Syne',sans-serif; font-size:3.5rem; font-weight:800; color:var(--text); letter-spacing:-0.04em; line-height:1; }
+  .number-big span { color: var(--accent); }
+  .number-label { font-size:0.82rem; color:var(--muted); margin-top:0.6rem; letter-spacing:0.04em; }
+
+  @media (max-width:900px) {
+    .mission-grid { grid-template-columns:1fr; gap:3rem; }
+    .values-grid { grid-template-columns:1fr; }
+    .team-grid { grid-template-columns:1fr; }
+    .numbers-grid { grid-template-columns:1fr 1fr; }
+    .big-quote { padding:4rem 1.5rem; }
+  }
+
+  @media (max-width: 900px) {
+    * { max-width: 100%; }
+    .hero { padding: 0 1.5rem; min-height: 100svh; }
+    .hero h1 { font-size: clamp(2.4rem, 11vw, 4rem); }
+    .hero-actions { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
+    .btn-primary, .btn-ghost { width: 100%; justify-content: center; box-sizing: border-box; }
+    .page-hero { padding: 6rem 1.5rem 3rem; }
+    .page-hero h1 { font-size: clamp(2rem, 10vw, 3.2rem); }
+    .page-hero-tag { font-size: 0.68rem; }
+    .section-title { font-size: clamp(1.7rem, 8vw, 2.5rem); }
+  }
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-follower" id="cursorFollower"></div>
+
+<nav id="navbar">
+  <a href="index.html" class="logo">Medium<span>29</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Početna</a></li>
+    <li><a href="o-nama.html">O nama</a></li>
+    <li><a href="usluge.html">Usluge</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="kontakt.html" class="nav-cta">Kontakt</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Otvori meni">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <ul class="mobile-menu-links">
+    <li><a href="index.html">Početna</a></li>
+    <li><a href="o-nama.html">O nama</a></li>
+    <li><a href="usluge.html">Usluge</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+  </ul>
+  <div class="mobile-menu-cta">
+    <a href="kontakt.html">Zatraži ponudu</a>
+  </div>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-glow"></div>
+  <div class="page-hero-tag">O nama</div>
+  <h1>
+    Agencija koja<br>
+    <span class="accent">isporučuje</span><br>
+    <span class="outline">rezultate</span>
+  </h1>
+  <p class="page-hero-sub">Nismo samo još jedna digitalna agencija. Smo tim koji se brine za vaš uspjeh kao da je naš vlastiti.</p>
+</div>
+
+<!-- MISSION -->
+<section class="mission">
+  <div class="mission-grid">
+    <div class="mission-left">
+      <div class="section-tag reveal">Naša misija</div>
+      <h2 class="section-title reveal reveal-delay-1">Zašto postojimo</h2>
+      <a href="kontakt.html" class="btn-primary reveal reveal-delay-2" style="margin-top:1rem;">
+        Surađuj s nama →
+      </a>
+    </div>
+    <div class="mission-right reveal reveal-delay-2">
+      <p>Medium29 je osnovan s jasnom vizijom: <strong>pomoći malim i srednjim poduzećima da se natječu s velikima u digitalnom prostoru.</strong> Vjerujemo da svaki brend zaslužuje profesionalnu digitalnu prisutnost, bez obzira na veličinu.</p>
+      <p>Naš tim spaja kreativnost s analitičkim pristupom. Ne pravimo lijepe web stranice samo zbog estetike — pravimo ih jer <strong>svaki element treba raditi za vas</strong>, privlačiti kupce i generirati upite.</p>
+      <p>S bazom u Osijeku, radimo s klijentima diljem regije. Naša prednost? <strong>Brzina, transparentnost i podrška koja ne prestaje.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- NUMBERS -->
+<section class="numbers">
+  <div class="numbers-grid">
+    <div class="number-item reveal">
+      <div class="number-big">50<span>+</span></div>
+      <div class="number-label">Projekata isporučeno</div>
+    </div>
+    <div class="number-item reveal reveal-delay-1">
+      <div class="number-big">3<span>+</span></div>
+      <div class="number-label">Godine iskustva</div>
+    </div>
+    <div class="number-item reveal reveal-delay-2">
+      <div class="number-big">100<span>%</span></div>
+      <div class="number-label">Zadovoljnih klijenata</div>
+    </div>
+    <div class="number-item reveal reveal-delay-3">
+      <div class="number-big">24<span>h</span></div>
+      <div class="number-label">Prosječno vrijeme odgovora</div>
+    </div>
+  </div>
+</section>
+
+<!-- BIG QUOTE -->
+<div class="big-quote">
+  <blockquote class="reveal">
+    "Digitalna prisutnost nije <span>opcija</span> — to je temelj svakog modernog poslovanja."
+  </blockquote>
+  <cite class="reveal reveal-delay-1">— Tim Medium29</cite>
+</div>
+
+<!-- VALUES -->
+<section class="values">
+  <div class="section-tag reveal">Naše vrijednosti</div>
+  <h2 class="section-title reveal reveal-delay-1">Što nas pokreće</h2>
+  <div class="values-grid">
+    <div class="value-card reveal">
+      <span class="value-icon">⚡</span>
+      <h3>Brzina & Preciznost</h3>
+      <p>Poštujemo rokove i ne toleriramo površnost. Svaki detalj je promišljen i izveden s preciznošću.</p>
+    </div>
+    <div class="value-card reveal reveal-delay-1">
+      <span class="value-icon">🤝</span>
+      <h3>Partnerstvo</h3>
+      <p>Tretiramo klijente kao partnere, ne kao naručitelje. Vaš uspjeh je naš uspjeh — to nije fraza.</p>
+    </div>
+    <div class="value-card reveal reveal-delay-2">
+      <span class="value-icon">🎯</span>
+      <h3>Fokus na rezultate</h3>
+      <p>Mjerimo uspjeh brojevima — posjetima, konverzijama i rastom vašeg poslovanja.</p>
+    </div>
+    <div class="value-card reveal reveal-delay-3">
+      <span class="value-icon">🔍</span>
+      <h3>Transparentnost</h3>
+      <p>Nema skrivenih troškova, nema nejasnih procesa. Uvijek znate što se radi i zašto.</p>
+    </div>
+    <div class="value-card reveal reveal-delay-4">
+      <span class="value-icon">🚀</span>
+      <h3>Inovacija</h3>
+      <p>Pratimo trendove i usvajamo nove tehnologije da bi vaš projekt uvijek bio korak ispred.</p>
+    </div>
+    <div class="value-card reveal reveal-delay-5">
+      <span class="value-icon">💡</span>
+      <h3>Kreativnost</h3>
+      <p>Svaki projekt je nova priča. Kreiramo rješenja koja se ističu u moru prosječnosti.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="team">
+  <div class="section-tag reveal">Tim</div>
+  <h2 class="section-title reveal reveal-delay-1">Ljudi koji stoje<br>iza Medium29</h2>
+  <div class="team-grid">
+    <div class="team-card reveal">
+      <div class="team-avatar">M</div>
+      <h3>Osnivač & direktor</h3>
+      <div class="role">Strategija & Vođenje</div>
+      <p>Vizionar iza Medium29. Dugogodišnje iskustvo u digitalnom marketingu i razvoju web rješenja.</p>
+    </div>
+    <div class="team-card reveal reveal-delay-2">
+      <div class="team-avatar">D</div>
+      <h3>Lead Developer</h3>
+      <div class="role">Web razvoj & Tehnika</div>
+      <p>Specijalist za moderan web razvoj. Gradi brza, skalabilna i sigurna web rješenja.</p>
+    </div>
+    <div class="team-card reveal reveal-delay-3">
+      <div class="team-avatar">A</div>
+      <h3>Marketing Specialist</h3>
+      <div class="role">Digitalni marketing</div>
+      <p>Stručnjak za Meta i Google oglase. Optimizira kampanje za maksimalni ROI.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">Medium<span>29</span></a>
+      <p>Kompletna digitalna podrška za brendove koji žele ozbiljne rezultate.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Stranice</h4>
+      <ul>
+        <li><a href="index.html">Početna</a></li>
+        <li><a href="o-nama.html">O nama</a></li>
+        <li><a href="usluge.html">Usluge</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Usluge</h4>
+      <ul>
+        <li><a href="usluge.html">Web dizajn</a></li>
+        <li><a href="usluge.html">SEO optimizacija</a></li>
+        <li><a href="usluge.html">Digital marketing</a></li>
+        <li><a href="usluge.html">Digital signage</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kontakt</h4>
+      <ul>
+        <li><a href="mailto:info@medium29.com">info@medium29.com</a></li>
+        <li><a href="https://medium29.com">medium29.com</a></li>
+        <li><a href="#">Osijek, Hrvatska</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Medium29. Sva prava pridržana.</p>
+    <div class="footer-socials">
+      <a href="#">FB</a><a href="#">IG</a><a href="#">LI</a>
+    </div>
+  </div>
+</footer>
+<script src="main.js"></script>
+</body>
+</html>

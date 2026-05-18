@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Usluge — Medium29</title>
+<meta name="description" content="Web dizajn i razvoj, digitalni marketing, SEO optimizacija i digital signage rješenja. Sve na jednom mjestu.">
+<link rel="stylesheet" href="style.css">
+<style>
+  /* SERVICE BLOCKS */
+  .service-block {
+    padding: 6rem 4rem;
+    border-bottom: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: start;
+  }
+  .service-block:nth-child(even) { background: var(--bg2); }
+  .service-block:nth-child(odd) { background: var(--bg); }
+  .service-block.reverse { direction: rtl; }
+  .service-block.reverse > * { direction: ltr; }
+
+  .service-block-meta {}
+  .service-block-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 5rem;
+    font-weight: 800;
+    color: rgba(200,255,0,0.08);
+    letter-spacing: -0.05em;
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+  .service-block h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(1.8rem, 3.5vw, 3rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 1.2rem;
+  }
+  .service-block h2 span { color: var(--accent); }
+  .service-block-desc { color: var(--muted); font-size: 1rem; line-height: 1.75; margin-bottom: 2rem; }
+
+  .service-features-list { list-style: none; display: flex; flex-direction: column; gap: 0; margin-bottom: 2.5rem; }
+  .service-features-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.92rem;
+  }
+  .service-features-list li:last-child { border-bottom: none; }
+  .feature-check {
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    background: rgba(200,255,0,0.1);
+    border: 1px solid rgba(200,255,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 0.65rem;
+    color: var(--accent);
+    margin-top: 1px;
+  }
+  .feature-text { color: var(--muted); line-height: 1.5; }
+  .feature-text strong { color: var(--text); display: block; font-weight: 500; margin-bottom: 0.1rem; }
+
+  .service-block-right {}
+  .service-visual {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .service-visual::before {
+    content: '';
+    position: absolute;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(200,255,0,0.06) 0%, transparent 70%);
+    top: -100px; right: -100px;
+    pointer-events: none;
+  }
+  .service-visual-icon {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    display: block;
+  }
+  .service-visual h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+  .service-visual p { font-size: 0.88rem; color: var(--muted); margin-bottom: 2rem; line-height: 1.65; }
+  .service-stat-row { display: flex; gap: 2rem; }
+  .service-stat { flex: 1; }
+  .service-stat-val { font-family:'Syne',sans-serif; font-size:2rem; font-weight:800; color:var(--accent); letter-spacing:-0.03em; line-height:1; }
+  .service-stat-lbl { font-size:0.78rem; color:var(--muted); margin-top:0.3rem; }
+
+  /* PRICING SECTION */
+  .pricing-section { background: var(--bg2); padding: 7rem 4rem; border-top: 1px solid var(--border); }
+  .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); margin-top: 3rem; }
+  .pricing-card { background: var(--bg2); padding: 2.5rem; position: relative; transition: background 0.3s; cursor: none; }
+  .pricing-card:hover { background: var(--bg3); }
+  .pricing-card.featured { background: var(--bg3); border: 1px solid rgba(200,255,0,0.2); margin: -1px; z-index:1; }
+  .pricing-badge { display:inline-block; background:var(--accent); color:#000; font-size:0.68rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:0.22rem 0.7rem; border-radius:100px; margin-bottom:1.2rem; }
+  .pricing-tier { font-size:0.78rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); margin-bottom:0.8rem; }
+  .pricing-price { font-family:'Syne',sans-serif; font-size:2.5rem; font-weight:800; color:var(--text); letter-spacing:-0.03em; margin-bottom:0.3rem; line-height:1; }
+  .pricing-note { font-size:0.78rem; color:var(--muted); margin-bottom:1.8rem; }
+  .pricing-divider { height:1px; background:var(--border); margin-bottom:1.8rem; }
+  .pricing-features { list-style:none; display:flex; flex-direction:column; gap:0.7rem; margin-bottom:2rem; }
+  .pricing-features li { font-size:0.88rem; color:var(--muted); display:flex; align-items:flex-start; gap:0.55rem; line-height:1.4; }
+  .pricing-features li::before { content:'✓'; color:var(--accent); font-weight:700; flex-shrink:0; }
+  .pricing-cta { display:block; text-align:center; padding:0.8rem; border-radius:8px; font-size:0.88rem; font-weight:500; text-decoration:none; cursor:none; transition:all 0.25s; }
+  .pricing-cta.primary { background:var(--accent); color:#000; }
+  .pricing-cta.primary:hover { box-shadow:0 8px 30px rgba(200,255,0,0.25); transform:translateY(-1px); }
+  .pricing-cta.outline { border:1px solid var(--border); color:var(--muted); }
+  .pricing-cta.outline:hover { border-color:rgba(200,255,0,0.3); color:var(--text); }
+
+  @media (max-width:900px) {
+    .service-block { grid-template-columns:1fr; gap:3rem; padding:5rem 1.5rem; }
+    .service-block.reverse { direction:ltr; }
+    .pricing-grid { grid-template-columns:1fr; }
+    .pricing-card.featured { margin:0; }
+    .pricing-section { padding:5rem 1.5rem; }
+    .service-stat-row { flex-wrap:wrap; }
+  }
+
+  @media (max-width: 900px) {
+    * { max-width: 100%; }
+    .hero { padding: 0 1.5rem; min-height: 100svh; }
+    .hero h1 { font-size: clamp(2.4rem, 11vw, 4rem); }
+    .hero-actions { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
+    .btn-primary, .btn-ghost { width: 100%; justify-content: center; box-sizing: border-box; }
+    .page-hero { padding: 6rem 1.5rem 3rem; }
+    .page-hero h1 { font-size: clamp(2rem, 10vw, 3.2rem); }
+    .page-hero-tag { font-size: 0.68rem; }
+    .section-title { font-size: clamp(1.7rem, 8vw, 2.5rem); }
+  }
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-follower" id="cursorFollower"></div>
+
+<nav id="navbar">
+  <a href="index.html" class="logo">Medium<span>29</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Početna</a></li>
+    <li><a href="o-nama.html">O nama</a></li>
+    <li><a href="usluge.html">Usluge</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="kontakt.html" class="nav-cta">Kontakt</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Otvori meni">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <ul class="mobile-menu-links">
+    <li><a href="index.html">Početna</a></li>
+    <li><a href="o-nama.html">O nama</a></li>
+    <li><a href="usluge.html">Usluge</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+  </ul>
+  <div class="mobile-menu-cta">
+    <a href="kontakt.html">Zatraži ponudu</a>
+  </div>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-glow"></div>
+  <div class="page-hero-tag">Naše usluge</div>
+  <h1>Što možemo<br>napraviti za <span class="accent">vas</span></h1>
+  <p class="page-hero-sub">Tri ključna područja. Jedno mjesto. Kompletna digitalna transformacija vašeg poslovanja.</p>
+</div>
+
+<!-- SERVICE 1 - WEB -->
+<div class="service-block">
+  <div class="service-block-meta">
+    <div class="service-block-num reveal">01</div>
+    <div class="section-tag reveal">Web dizajn & razvoj</div>
+    <h2 class="reveal reveal-delay-1">Web stranice koje<br><span>prodaju</span></h2>
+    <p class="service-block-desc reveal reveal-delay-2">Pravimo moderne, brze i prilagođene web stranice. Svaka stranica je optimizirana za konverzije — od prvog klika do upita.</p>
+    <ul class="service-features-list reveal reveal-delay-3">
+      <li>
+        <div class="feature-check">✓</div>
+        <div class="feature-text"><strong>Responzivan dizajn</strong>Savršeno prilagođeno za sve uređaje — mobitel, tablet, desktop.</div>
+      </li>
+      <li>
+        <div class="feature-check">✓</div>
+        <div class="feature-text"><strong>SEO optimizacija</strong>Gradimo od temelja s fokusom na Google rangiranje.</div>
+      </li>
+      <li>
+        <div class="feature-check">✓</div>
+        <div class="feature-text"><strong>Brzina učitavanja</strong>Optimizirane performanse za bolje korisničko iskustvo.</div>
+      </li>
+      <li>
+        <div class="feature-check">✓</div>
+        <div class="feature-text"><strong>CMS integracija</strong>Lako upravljanje sadržajem bez tehničkog znanja.</div>
+      </li>
+    </ul>
+    <a href="kontakt.html" class="btn-primary reveal reveal-delay-4">Zatraži ponudu →</a>
+  </div>
+  <div class="service-block-right reveal reveal-delay-2">
+    <div class="service-visual">
+      <span class="service-visual-icon">🌐</span>
+      <h3>Što dobivaš</h3>
+      <p>Potpuno funkcionalan web projekt koji radi za vaše poslovanje 24/7.</p>
+      <div class="service-stat-row">
+        <div class="service-stat"><div class="service-stat-val">3×</div><div class="service-stat-lbl">Brža isporuka od prosjeka</div></div>
+        <div class="service-stat"><div class="service-stat-val">100%</div><div class="service-stat-lbl">Mobilna prilagodba</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICE 2 - MARKETING -->
+<div class="service-block reverse">
+  <div class="service-block-meta">
+    <div class="service-block-num reveal">02</div>
+    <div class="section-tag reveal">Digitalni marketing</div>
+    <h2 class="reveal reveal-delay-1">Marketing koji<br><span>donosi rezultate</span></h2>
+    <p class="service-block-desc reveal reveal-delay-2">Strategija, sadržaj i plaćeno oglašavanje koje povećava vidljivost, privlači kupce i raste s vašim poslovanjem.</p>
+    <ul class="service-features-list reveal reveal-delay-3">
+      <li>
+        <div class="feature-check">✓</div>
+        <div class="feature-text"><strong>Upravljanje društvenim mrežama</strong>Facebook, Instagram, TikTok — kreiranje i objavljivanje sadržaja.</div>
+      </li>
+      <li>
+        <div class="feature-check">✓</div>
+        <div class="feature-text"><strong>Meta & Google oglasi</strong>Precizno ciljanje publike s optimizacijom budžeta.</div>
+      </li>
+      <li>
+        <div class="feature-check">✓</div>
+        <div class="feature-text"><strong>Analitika & izvještaji</strong>Mjesečni izvještaji s preporukama za rast.</div>
+      </li>
+      <li>
+        <div class="feature-check">✓</div>
+        <div class="feature-text"><strong>Kreiranje vizuala</strong>Dizajn objava i oglasnih materijala po mjeri.</div>
+      </li>
+    </ul>
+    <a href="kontakt.html" class="btn-primary reveal reveal-delay-4">Zatraži ponudu →</a>
+  </div>
+  <div class="service-block-right reveal reveal-delay-2">
+    <div class="service-visual">
+      <span class="service-visual-icon">📣</span>
+      <h3>Što dobivaš</h3>
+      <p>Kontinuiran rast vidljivosti i upita kroz pametno, mjerljivo oglašavanje.</p>
+      <div class="service-stat-row">
+        <div class="service-stat"><div class="service-stat-val">↑40%</div><div class="service-stat-lbl">Prosječan rast dosega</div></div>
+        <div class="service-stat"><div class="service-stat-val">ROI</div><div class="service-stat-lbl">Mjerljivi povrat ulaganja</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICE 3 - SIGNAGE -->
+<div class="service-block">
+  <div class="service-block-meta">
+    <div class="service-block-num reveal">03</div>
+    <div class="section-tag reveal">Digital Signage</div>
+    <h2 class="reveal reveal-delay-1">Pametni ekrani<br>za vaš <span>prostor</span></h2>
+    <p class="service-block-desc reveal reveal-delay-2">Kompletna digital signage rješenja — od odabira hardvera i instalacije do dizajna sadržaja i daljinskog upravljanja.</p>
+    <ul class="service-features-list reveal reveal-delay-3">
+      <li>
+        <div class="feature-check">✓</div>
+        <div class="feature-text"><strong>Profesionalni digitalni ekrani</strong>Zidne i podne montaže za retail, ugostiteljstvo i urede.</div>
+      </li>
+      <li>
+        <div class="feature-check">✓</div>
+        <div class="feature-text"><strong>Instalacija i konfiguracija</strong>Kompletno postavljanje i puštanje u rad.</div>
+      </li>
+      <li>
+        <div class="feature-check">✓</div>
+        <div class="feature-text"><strong>CMS platforma</strong>Lako daljinsko upravljanje sadržajem ekrana.</div>
+      </li>
+      <li>
+        <div class="feature-check">✓</div>
+        <div class="feature-text"><strong>Tehnička podrška</strong>Kontinuirani servis i ažuriranje sadržaja.</div>
+      </li>
+    </ul>
+    <a href="kontakt.html" class="btn-primary reveal reveal-delay-4">Zatraži ponudu →</a>
+  </div>
+  <div class="service-block-right reveal reveal-delay-2">
+    <div class="service-visual">
+      <span class="service-visual-icon">📺</span>
+      <h3>Što dobivaš</h3>
+      <p>Moderan, dinamičan prikaz sadržaja koji privlači pažnju kupaca u vašem prostoru.</p>
+      <div class="service-stat-row">
+        <div class="service-stat"><div class="service-stat-val">↑65%</div><div class="service-stat-lbl">Veća pažnja korisnika</div></div>
+        <div class="service-stat"><div class="service-stat-val">24/7</div><div class="service-stat-lbl">Daljinsko upravljanje</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PRICING -->
+<section class="pricing-section">
+  <div class="section-tag reveal">Cijene web stranica</div>
+  <h2 class="section-title reveal reveal-delay-1">Transparentne<br>cijene za web</h2>
+  <div class="pricing-grid">
+    <div class="pricing-card reveal">
+      <div class="pricing-tier">Početni</div>
+      <div class="pricing-price">Na upit</div>
+      <div class="pricing-note">Landing page · Idealno za početak</div>
+      <div class="pricing-divider"></div>
+      <ul class="pricing-features">
+        <li>1 stranica (Landing Page)</li>
+        <li>Mobilna prilagodba</li>
+        <li>Osnovni SEO</li>
+        <li>Kontakt forma</li>
+        <li>Rok isporuke: 7 dana</li>
+      </ul>
+      <a href="kontakt.html" class="pricing-cta outline">Pošalji upit</a>
+    </div>
+    <div class="pricing-card featured reveal reveal-delay-2">
+      <div class="pricing-badge">Najpopularnije</div>
+      <div class="pricing-tier">Standard</div>
+      <div class="pricing-price">Na upit</div>
+      <div class="pricing-note">5 stranica · Za etablirane firme</div>
+      <div class="pricing-divider"></div>
+      <ul class="pricing-features">
+        <li>5 stranica</li>
+        <li>SEO optimizacija</li>
+        <li>Kontakt forma</li>
+        <li>Portfolio sekcija</li>
+        <li>Google Analytics</li>
+        <li>Rok isporuke: 14 dana</li>
+      </ul>
+      <a href="kontakt.html" class="pricing-cta primary">Pošalji upit</a>
+    </div>
+    <div class="pricing-card reveal reveal-delay-3">
+      <div class="pricing-tier">Premium</div>
+      <div class="pricing-price">Na upit</div>
+      <div class="pricing-note">5+ stranica · Kompletno rješenje</div>
+      <div class="pricing-divider"></div>
+      <ul class="pricing-features">
+        <li>5+ stranica</li>
+        <li>Napredni SEO</li>
+        <li>Blog integracija</li>
+        <li>Podrška 6 mjeseci</li>
+        <li>Prilagođene animacije</li>
+        <li>Rok isporuke: 21 dan</li>
+      </ul>
+      <a href="kontakt.html" class="pricing-cta outline">Pošalji upit</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">Medium<span>29</span></a>
+      <p>Kompletna digitalna podrška za brendove koji žele ozbiljne rezultate.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Stranice</h4>
+      <ul>
+        <li><a href="index.html">Početna</a></li>
+        <li><a href="o-nama.html">O nama</a></li>
+        <li><a href="usluge.html">Usluge</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Usluge</h4>
+      <ul>
+        <li><a href="usluge.html">Web dizajn</a></li>
+        <li><a href="usluge.html">SEO optimizacija</a></li>
+        <li><a href="usluge.html">Digital marketing</a></li>
+        <li><a href="usluge.html">Digital signage</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kontakt</h4>
+      <ul>
+        <li><a href="mailto:info@medium29.com">info@medium29.com</a></li>
+        <li><a href="https://medium29.com">medium29.com</a></li>
+        <li><a href="#">Osijek, Hrvatska</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Medium29. Sva prava pridržana.</p>
+    <div class="footer-socials">
+      <a href="#">FB</a><a href="#">IG</a><a href="#">LI</a>
+    </div>
+  </div>
+</footer>
+<script src="main.js"></script>
+</body>
+</html>
