@@ -120,6 +120,21 @@
     .page-hero-tag { font-size: 0.68rem; }
     .section-title { font-size: clamp(1.7rem, 8vw, 2.5rem); }
   }
+
+  /* THREE.JS BACKGROUND */
+  #three-bg {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+  }
+  body > *:not(#three-bg):not(.cursor):not(.cursor-follower):not(.mobile-menu) {
+    position: relative;
+    z-index: 1;
+  }
+  .mobile-menu { z-index: 999; }
+
 </style>
 
   <!-- SEO & Open Graph -->
@@ -164,6 +179,8 @@
   </script>
 </head>
 <body>
+
+<canvas id="three-bg"></canvas>
 <div class="cursor" id="cursor"></div>
 <div class="cursor-follower" id="cursorFollower"></div>
 
@@ -540,5 +557,8 @@ window.addEventListener('scroll', () => {
   lastScroll = current;
 });
 </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="three-bg.js"></script>
 </body>
 </html>

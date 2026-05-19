@@ -210,6 +210,21 @@
     .cta-band { padding: 4rem 1.5rem; flex-direction: column; }
     .btn-primary, .btn-ghost { width: 100%; justify-content: center; }
   }
+
+  /* THREE.JS BACKGROUND */
+  #three-bg {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+  }
+  body > *:not(#three-bg):not(.cursor):not(.cursor-follower):not(.mobile-menu) {
+    position: relative;
+    z-index: 1;
+  }
+  .mobile-menu { z-index: 999; }
+
 </style>
 
   <!-- SEO & Open Graph -->
@@ -230,6 +245,8 @@
   <meta name="twitter:description" content="Kompletna digitalna podrška za vaše poslovanje.">
 </head>
 <body>
+
+<canvas id="three-bg"></canvas>
 <div class="cursor" id="cursor"></div>
 <div class="cursor-follower" id="cursorFollower"></div>
 
@@ -442,5 +459,8 @@
     if (glow) glow.style.transform = "translate(calc(-50% + " + xPct + "px), calc(-50% + " + yPct + "px))";
   });
 </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="three-bg.js"></script>
 </body>
 </html>
