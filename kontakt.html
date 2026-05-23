@@ -350,29 +350,32 @@
         <p>Ispunite obrazac i javit ćemo se uskoro.</p>
 
         <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
+          <input type="hidden" name="access_key" value="7cf8476c-90f5-4c1b-891c-9fc60f09647f">
+          <input type="hidden" name="subject" value="Novi upit — Medium29">
+          <input type="hidden" name="from_name" value="Medium29 Kontakt Forma">
           <div class="form-row">
             <div class="form-group">
               <label>Ime i prezime *</label>
-              <input type="text" placeholder="Vaše ime" required>
+              <input type="text" name="name" placeholder="Vaše ime" required>
             </div>
             <div class="form-group">
               <label>Email *</label>
-              <input type="email" placeholder="vas@email.com" required>
+              <input type="email" name="email" placeholder="vas@email.com" required>
             </div>
           </div>
           <div class="form-row">
             <div class="form-group">
               <label>Telefon</label>
-              <input type="tel" placeholder="+385 9X XXX XXXX">
+              <input type="tel" name="telefon" placeholder="+385 9X XXX XXXX">
             </div>
             <div class="form-group">
               <label>Firma / Brand</label>
-              <input type="text" placeholder="Naziv firme">
+              <input type="text" name="firma" placeholder="Naziv firme">
             </div>
           </div>
           <div class="form-group">
             <label>Usluga koja vas zanima *</label>
-            <select required>
+            <select name="usluga" required>
               <option value="">Odaberite uslugu</option>
               <option>Web dizajn & razvoj — Početni</option>
               <option>Web dizajn & razvoj — Standard</option>
@@ -386,7 +389,7 @@
           </div>
           <div class="form-group">
             <label>Budžet (okvirno)</label>
-            <select>
+            <select name="budzet">
               <option value="">Odaberite raspon</option>
               <option>Do 500 €</option>
               <option>500 € – 1.500 €</option>
@@ -397,7 +400,7 @@
           </div>
           <div class="form-group">
             <label>Poruka *</label>
-            <textarea placeholder="Opišite vaš projekt, cilj i rok..." style="min-height:140px;" required></textarea>
+            <textarea name="message" placeholder="Opišite vaš projekt, cilj i rok..." style="min-height:140px;" required></textarea>
           </div>
           <button type="submit" class="form-submit" id="submitBtn">
             Pošalji upit
@@ -685,10 +688,28 @@ function handleSubmit(e) {
   const btn = document.getElementById('submitBtn');
   btn.textContent = 'Šaljem...';
   btn.style.opacity = '0.7';
-  setTimeout(() => {
-    document.getElementById('contactForm').style.display = 'none';
-    document.getElementById('formSuccess').classList.add('show');
-  }, 1000);
+
+  const form = document.getElementById('contactForm');
+  const data = new FormData(form);
+
+  fetch('https://api.web3forms.com/submit', {
+    method: 'POST',
+    body: data
+  })
+  .then(res => res.json())
+  .then(result => {
+    if (result.success) {
+      form.style.display = 'none';
+      document.getElementById('formSuccess').classList.add('show');
+    } else {
+      btn.textContent = 'Greška — pokušajte ponovo';
+      btn.style.opacity = '1';
+    }
+  })
+  .catch(() => {
+    btn.textContent = 'Greška — pokušajte ponovo';
+    btn.style.opacity = '1';
+  });
 }
 
 function toggleFaq(btn) {
