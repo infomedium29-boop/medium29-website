@@ -231,7 +231,7 @@
   <meta name="robots" content="index, follow">
   <meta name="author" content="Medium29">
   <meta name="geo.region" content="HR-14">
-  <meta name="geo.placename" content="Vukovar">
+  <meta name="geo.placename" content="Osijek">
   <link rel="canonical" href="https://medium29m.netlify.app/">
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
   <meta property="og:type" content="website">
@@ -283,9 +283,9 @@
   <div class="hero-glow-2"></div>
 
   <h1>
-    Sve digitalne<br>
-    <span class="accent-word">usluge</span> na<br>
-    <span class="outline-word">jednom</span> mjestu
+    <span class="scramble" data-text="Sve digitalne">Sve digitalne</span><br>
+    <span class="accent-word scramble" data-text="usluge">usluge</span><span class="scramble" data-text=" na"> na</span><br>
+    <span class="outline-word scramble" data-text="jednom">jednom</span><span class="scramble" data-text=" mjestu"> mjestu</span>
   </h1>
 
   <p class="hero-sub">Web dizajn, marketing i digital signage rješenja koja pretvaraju posjetitelje u klijente. Brza isporuka, podrška nakon projekta.</p>
@@ -431,7 +431,7 @@
       <ul>
         <li><a href="mailto:info.medium29@gmail.com">info.medium29@gmail.com</a></li>
         <li><a href="https://medium29.com">medium29.com</a></li>
-        <li><a href="#">Vukovar, Hrvatska</a></li>
+        <li><a href="#">Osijek, Hrvatska</a></li>
       </ul>
     </div>
   </div>
@@ -448,6 +448,69 @@
     var glow = document.querySelector(".hero-glow");
     if (glow) glow.style.transform = "translate(calc(-50% + " + xPct + "px), calc(-50% + " + yPct + "px))";
   });
+</script>
+
+<script>
+// TEXT SCRAMBLE ANIMATION
+(function() {
+  var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%&';
+
+  function scramble(el) {
+    var finalText = el.getAttribute('data-text');
+    var duration = 800;
+    var start = null;
+    var frameRate = 40;
+    var lastFrame = 0;
+
+    function randomChar() {
+      return chars[Math.floor(Math.random() * chars.length)];
+    }
+
+    function update(timestamp) {
+      if (!start) start = timestamp;
+      var elapsed = timestamp - start;
+      var progress = Math.min(elapsed / duration, 1);
+
+      // How many characters are "settled"
+      var settled = Math.floor(progress * finalText.length);
+
+      if (timestamp - lastFrame > frameRate) {
+        var result = '';
+        for (var i = 0; i < finalText.length; i++) {
+          if (finalText[i] === ' ') {
+            result += ' ';
+          } else if (i < settled) {
+            result += finalText[i];
+          } else {
+            result += randomChar();
+          }
+        }
+        el.textContent = result;
+
+        // Restore any child classes (accent-word, outline-word)
+        lastFrame = timestamp;
+      }
+
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      } else {
+        el.textContent = finalText;
+      }
+    }
+
+    requestAnimationFrame(update);
+  }
+
+  // Start on page load with staggered delay per element
+  window.addEventListener('load', function() {
+    var elements = document.querySelectorAll('.scramble');
+    elements.forEach(function(el, i) {
+      setTimeout(function() {
+        scramble(el);
+      }, i * 120);
+    });
+  });
+})();
 </script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
