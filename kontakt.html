@@ -120,7 +120,12 @@
     width:100%;
   }
   .form-submit:hover { transform:translateY(-2px); box-shadow:0 15px 40px rgba(200,255,0,0.3); }
-  .form-note { font-size:0.78rem; color:var(--muted); text-align:center; margin-top:0.5rem; }
+  .form-note { font-size:0.78rem; color:var(--muted); text-align:center; margin-top:0.5rem; line-height:1.6; }
+.form-note a { color:var(--accent); text-decoration:none; }
+.form-note a:hover { text-decoration:underline; }
+.captcha-wrap { margin-top:0.1rem; display:flex; justify-content:center; min-height:78px; }
+.form-status { min-height:1.2rem; margin:0; color:var(--muted); font-size:0.82rem; text-align:center; }
+.form-status.error { color:#ff8a8a; }
 
   /* SUCCESS STATE */
   .form-success {
@@ -354,24 +359,26 @@
           <input type="hidden" name="access_key" value="7cf8476c-90f5-4c1b-891c-9fc60f09647f">
           <input type="hidden" name="subject" value="Novi upit — Medium29">
           <input type="hidden" name="from_name" value="Medium29 Kontakt Forma">
+          <!-- Nevidljiva honeypot zaštita za automatizirane botove. -->
+          <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none;">
           <div class="form-row">
             <div class="form-group">
               <label>Ime i prezime *</label>
-              <input type="text" name="name" placeholder="Vaše ime" required>
+              <input type="text" name="name" placeholder="Vaše ime" autocomplete="name" maxlength="100" required>
             </div>
             <div class="form-group">
               <label>Email *</label>
-              <input type="email" name="email" placeholder="vas@email.com" required>
+              <input type="email" name="email" placeholder="vas@email.com" autocomplete="email" maxlength="254" required>
             </div>
           </div>
           <div class="form-row">
             <div class="form-group">
               <label>Telefon</label>
-              <input type="tel" name="telefon" placeholder="+385 9X XXX XXXX">
+              <input type="tel" name="telefon" placeholder="+385 9X XXX XXXX" autocomplete="tel" maxlength="40">
             </div>
             <div class="form-group">
               <label>Firma / Brand</label>
-              <input type="text" name="firma" placeholder="Naziv firme">
+              <input type="text" name="firma" placeholder="Naziv firme" autocomplete="organization" maxlength="150">
             </div>
           </div>
           <div class="form-group">
@@ -401,13 +408,17 @@
           </div>
           <div class="form-group">
             <label>Poruka *</label>
-            <textarea name="message" placeholder="Opišite vaš projekt, cilj i rok..." style="min-height:140px;" required></textarea>
+            <textarea name="message" placeholder="Opišite vaš projekt, cilj i rok..." style="min-height:140px;" maxlength="3000" required></textarea>
           </div>
+          <div class="captcha-wrap">
+            <div class="h-captcha" data-captcha="true" data-lang="hr" data-theme="dark"></div>
+          </div>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
           <button type="submit" class="form-submit" id="submitBtn">
             Pošalji upit
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h12M10 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
-          <p class="form-note">* Obavezna polja · Vaši podaci su sigurni i ne dijele se s trećim stranama.</p>
+          <p class="form-note">* Obavezna polja · Podaci se koriste isključivo za obradu Vašeg upita i komunikaciju s Vama. Slanjem obrasca potvrđujete da ste upoznati s <a href="/politika-privatnosti">Politikom privatnosti</a>. Ne unosite osjetljive osobne podatke koji nisu potrebni za Vaš upit.</p>
         </form>
 
         <div class="form-success" id="formSuccess">
@@ -507,7 +518,13 @@
   </div>
   <div class="footer-bottom">
     <p>© 2026 Medium29. Sva prava pridržana.</p>
-    <p><a href="/politika-privatnosti">Politika privatnosti</a> · <a href="/politika-kolacica">Politika kolačića</a> · <a href="#" class="cookie-settings-link">Postavke kolačića</a></p>
+    <div class="footer-legal">
+      <a href="/politika-privatnosti">Politika privatnosti</a>
+      <span aria-hidden="true">·</span>
+      <a href="/politika-kolacica">Politika kolačića</a>
+      <span aria-hidden="true">·</span>
+      <a href="#" class="cookie-settings-link">Postavke kolačića</a>
+    </div>
   </div>
 </footer>
 
@@ -687,11 +704,26 @@ window.addEventListener('scroll', () => {
 <script>
 function handleSubmit(e) {
   e.preventDefault();
+
+  const form = document.getElementById('contactForm');
   const btn = document.getElementById('submitBtn');
+  const status = document.getElementById('formStatus');
+  const captchaResponse = form.querySelector('textarea[name="h-captcha-response"]');
+
+  status.classList.remove('error');
+  status.textContent = '';
+
+  // Obavezna provjera hCaptcha polja prije slanja.
+  if (!captchaResponse || !captchaResponse.value) {
+    status.textContent = 'Molimo potvrdite da niste robot.';
+    status.classList.add('error');
+    return;
+  }
+
+  btn.disabled = true;
   btn.textContent = 'Šaljem...';
   btn.style.opacity = '0.7';
 
-  const form = document.getElementById('contactForm');
   const data = new FormData(form);
 
   fetch('https://api.web3forms.com/submit', {
@@ -704,13 +736,16 @@ function handleSubmit(e) {
       form.style.display = 'none';
       document.getElementById('formSuccess').classList.add('show');
     } else {
-      btn.textContent = 'Greška — pokušajte ponovo';
-      btn.style.opacity = '1';
+      throw new Error(result.message || 'Slanje nije uspjelo.');
     }
   })
   .catch(() => {
-    btn.textContent = 'Greška — pokušajte ponovo';
+    status.textContent = 'Došlo je do greške. Pokušajte ponovno ili pošaljite e-mail na info.medium29@gmail.com.';
+    status.classList.add('error');
+    btn.disabled = false;
+    btn.textContent = 'Pošalji upit';
     btn.style.opacity = '1';
+    if (window.hcaptcha) window.hcaptcha.reset();
   });
 }
 
@@ -722,6 +757,7 @@ function toggleFaq(btn) {
 }
 </script>
 
+<script src="https://web3forms.com/client/script.js" async defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="three-bg.js"></script>
 <script src="cookie-consent.js"></script>

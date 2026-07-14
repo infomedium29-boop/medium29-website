@@ -23,6 +23,20 @@
   backdrop-filter: blur(18px);
 }
 .cookie-banner.show { display: flex; }
+.cookie-banner-close {
+  position: absolute;
+  top: .65rem;
+  right: .75rem;
+  width: 32px;
+  height: 32px;
+  border: 0;
+  background: transparent;
+  color: var(--muted, #a7a7a7);
+  font-size: 1.45rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.cookie-banner-close:hover { color: var(--text, #fff); }
 .cookie-banner-content { flex: 1; min-width: 0; }
 .cookie-banner h3 { margin: 0 0 .4rem; font-family: 'Syne', sans-serif; font-size: 1.05rem; }
 .cookie-banner p { margin: 0; color: var(--muted, #a7a7a7); font-size: .88rem; line-height: 1.55; }

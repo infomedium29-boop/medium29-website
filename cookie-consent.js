@@ -1,11 +1,19 @@
 (function () {
   var STORAGE_KEY = 'medium29_cookie_consent_v1';
   var DEFAULT_CONSENT = { necessary: true, analytics: false, marketing: false, preferences: false };
+  var CONSENT_MAX_AGE_MS = 180 * 24 * 60 * 60 * 1000;
 
   function getConsent() {
     try {
       var saved = localStorage.getItem(STORAGE_KEY);
-      return saved ? Object.assign({}, DEFAULT_CONSENT, JSON.parse(saved)) : null;
+      if (!saved) return null;
+      var parsed = JSON.parse(saved);
+      var savedAt = parsed.date ? new Date(parsed.date).getTime() : 0;
+      if (!savedAt || Date.now() - savedAt > CONSENT_MAX_AGE_MS) {
+        localStorage.removeItem(STORAGE_KEY);
+        return null;
+      }
+      return Object.assign({}, DEFAULT_CONSENT, parsed);
     } catch (e) { return null; }
   }
 
@@ -62,9 +70,10 @@
     var wrapper = document.createElement('div');
     wrapper.innerHTML = `
       <div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Obavijest o kolačićima">
+        <button class="cookie-banner-close" type="button" data-cookie-close-banner aria-label="Zatvori obavijest i nastavi samo s nužnim tehnologijama">×</button>
         <div class="cookie-banner-content">
           <h3>Koristimo kolačiće</h3>
-          <p>Koristimo nužne kolačiće za rad stranice, a analitičke i marketinške samo uz Vašu privolu. Postavke možete promijeniti u bilo kojem trenutku. <a href="politika-kolacica.html">Saznajte više</a>.</p>
+          <p>Koristimo nužne kolačiće za rad stranice, a analitičke i marketinške samo uz Vašu privolu. Postavke možete promijeniti u bilo kojem trenutku. <a href="/politika-kolacica">Saznajte više</a>.</p>
         </div>
         <div class="cookie-banner-actions">
           <button class="cookie-btn ghost" type="button" data-cookie-settings>Postavke</button>
@@ -107,7 +116,7 @@
       if (event.target.matches('[data-cookie-accept]')) {
         saveConsent({ necessary: true, analytics: true, marketing: true, preferences: true });
       }
-      if (event.target.matches('[data-cookie-reject]')) {
+      if (event.target.matches('[data-cookie-reject], [data-cookie-close-banner]')) {
         saveConsent({ necessary: true, analytics: false, marketing: false, preferences: false });
       }
       if (event.target.matches('[data-cookie-settings], .cookie-settings-link')) {

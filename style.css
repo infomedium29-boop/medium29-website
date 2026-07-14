@@ -350,6 +350,10 @@ footer {
   align-items: center;
 }
 .footer-bottom p { font-size: 0.82rem; color: var(--muted); }
+.footer-legal { display:flex; align-items:center; justify-content:flex-end; gap:.55rem; flex-wrap:wrap; }
+.footer-legal a { color:var(--muted); text-decoration:none; font-size:.8rem; transition:color .2s; }
+.footer-legal a:hover { color:var(--accent); }
+.footer-legal span { color:var(--border); }
 .footer-socials { display: flex; gap: 1rem; }
 .footer-socials a {
   width: 34px; height: 34px;
