@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750" role="img" aria-label="Grafički prikaz projekta Kod Kuma">
+ <defs><linearGradient id="back" x2="1" y2="1"><stop stop-color="#27110c"/><stop offset="1" stop-color="#84462a"/></linearGradient><linearGradient id="glow" x2="1" y2="1"><stop stop-color="#ffe2a7" stop-opacity=".23"/><stop offset="1" stop-color="#ffe2a7" stop-opacity="0"/></linearGradient><clipPath id="screen"><rect x="98" y="92" width="1004" height="575" rx="8"/></clipPath></defs>
+ <rect width="1200" height="750" fill="#08090c"/><circle cx="960" cy="95" r="450" fill="url(#glow)" opacity=".5"/>
+ <rect x="80" y="48" width="1040" height="640" rx="18" fill="#13151a" stroke="#fff" stroke-opacity=".16" stroke-width="2"/>
+ <rect x="82" y="50" width="1036" height="44" rx="16" fill="#1c1e24"/><path d="M82 82H1118" stroke="#ffffff" stroke-opacity=".10"/>
+ <circle cx="109" cy="71" r="6" fill="#fd6862"/><circle cx="130" cy="71" r="6" fill="#f5bc4f"/><circle cx="151" cy="71" r="6" fill="#5fc987"/>
+ <rect x="432" y="59" width="340" height="24" rx="8" fill="#121318"/><text x="602" y="75" fill="#a7a9b3" font-family="Arial,sans-serif" font-size="12" text-anchor="middle">kod-kuma.hr/</text>
+ <g clip-path="url(#screen)"><rect x="98" y="92" width="1004" height="575" fill="url(#back)"/><rect x="98" y="92" width="1004" height="575" fill="url(#glow)"/><g opacity=".32" stroke="#ffe2a7" stroke-opacity=".2"><path d="M98 92V667"/><path d="M146 92V667"/><path d="M194 92V667"/><path d="M242 92V667"/><path d="M290 92V667"/><path d="M338 92V667"/><path d="M386 92V667"/><path d="M434 92V667"/><path d="M482 92V667"/><path d="M530 92V667"/><path d="M578 92V667"/><path d="M626 92V667"/><path d="M674 92V667"/><path d="M722 92V667"/><path d="M770 92V667"/><path d="M818 92V667"/><path d="M866 92V667"/><path d="M914 92V667"/><path d="M962 92V667"/><path d="M1010 92V667"/><path d="M1058 92V667"/><path d="M98 92H1102"/><path d="M98 140H1102"/><path d="M98 188H1102"/><path d="M98 236H1102"/><path d="M98 284H1102"/><path d="M98 332H1102"/><path d="M98 380H1102"/><path d="M98 428H1102"/><path d="M98 476H1102"/><path d="M98 524H1102"/><path d="M98 572H1102"/><path d="M98 620H1102"/></g>
+ <rect x="135" y="121" width="930" height="65" rx="2" fill="#000" fill-opacity=".12"/>
+ <text x="159" y="160" font-family="Arial,sans-serif" font-weight="bold" font-size="24" fill="#ffffff">Kod Kuma</text>
+ <g font-family="Arial,sans-serif" font-size="15" fill="white" fill-opacity=".73"><text x="778" y="159">Početna</text><text x="864" y="159">Usluge</text><text x="947" y="159">Kontakt</text></g>
+ <g transform="translate(668 322)"><circle cx="260" cy="30" r="116" fill="#fff5da" fill-opacity=".17" stroke="#ffe5a5" stroke-opacity=".42" stroke-width="14"/><circle cx="210" cy="0" r="13" fill="#e6aa7a"/><circle cx="310" cy="40" r="16" fill="#e6aa7a"/><circle cx="243" cy="94" r="13" fill="#e6aa7a"/></g>
+ <rect x="154" y="294" width="163" height="33" rx="16" fill="#ffe2a7" fill-opacity=".18" stroke="#ffe2a7" stroke-opacity=".44"/>
+ <text x="235" y="316" fill="#ffe2a7" font-family="Arial,sans-serif" font-weight="bold" font-size="13" text-anchor="middle" letter-spacing="1">GASTRONOMIJA · VUKOVAR</text>
+ <text x="154" y="397" fill="#ffffff" font-family="Arial,sans-serif" font-size="49" font-weight="bold">Okusi Kod Kuma</text>
+ <text x="157" y="444" fill="#ffffff" fill-opacity=".76" font-family="Arial,sans-serif" font-size="22">Dostava i osobno preuzimanje</text>
+ <rect x="154" y="497" width="194" height="51" rx="25" fill="#ffe2a7"/><text x="251" y="530" text-anchor="middle" fill="#27110c" font-family="Arial,sans-serif" font-size="17" font-weight="bold">Saznajte više  →</text>
+ <path d="M154 627H1051" stroke="#ffffff" stroke-opacity=".2"/><text x="159" y="651" font-family="Arial,sans-serif" font-size="14" fill="white" fill-opacity=".45">Kod Kuma  ·  Izvorni projekt</text>
+ </g></svg>

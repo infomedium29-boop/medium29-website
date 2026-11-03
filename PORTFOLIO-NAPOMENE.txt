@@ -1,0 +1,23 @@
+MEDIUM29 — PORTFOLIO PRAVIH PROJEKATA (03.11.2026)
+
+UKLJUČENO
+- Uklonjeno svih 9 izmišljenih demo projekata i sve tri izmišljene izjave klijenata s portfolio.html.
+- Dodano 9 stvarnih web projekata s pravim poveznicama.
+- Dodana Android aplikacija Taxi - Auto153 s poveznicom na Google Play.
+- Dodana sekcija 3 izdvojena web projekta i Android aplikacije na naslovnicu.
+- Prilagođeni vizualni prikazi za 8 projekata su originalni SVG coveri, a NE doslovni screenshotovi stranica; DealTravel koristi pravu fotografiju iz dostavljenog ZIP-a.
+- Android aplikacija prikazuje stvarne screenshotove hostane na Google Playu, uz lokalni SVG fallback u slučaju problema s mrežom.
+- Filtar web/aplikacije, mobilni izgled, osnovni SEO i pristupačnost.
+
+BITNO ZA NAKNADNU NADOGRADNJU
+- Ako želite doslovne screenshotove početnih stranica, zamijenite SVG cover datoteke u assets/portfolio/ fotografijama i ažurirajte img src u index.html/portfolio.html; preporučen format AVIF/WebP 1200 × 750.
+- Ovaj projekt nije automatski objavljen na GitHub/Cloudflare; ZIP je spreman za ručni upload na vaš postojeći repo.
+- Prije objave provjerite prava predstavljanja svakog projekta, podatke/recenzije/preostali tekst i tvrdnje na drugim podstranicama i ispravnost kontakta.
+
+DATOTEKE
+- index.html, portfolio.html, portfolio-showcase.css, portfolio-filter.js, main.js
+- assets/portfolio/*
+
+ZIP sadrži samo web datoteke, bez .git povijesti.
+
+- Izmišljene brojke na naslovnici i O nama zamijenjene stvarnim brojkama: 9 web projekata, 1 aplikacija, 10 radova i 5 jezika u jednom projektu.

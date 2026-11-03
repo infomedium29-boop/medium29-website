@@ -25,9 +25,9 @@ window.addEventListener('scroll', () => {
 
 // ACTIVE NAV LINK
 (function() {
-  const path = window.location.pathname.split('/').pop() || 'index.html';
+  const path = (window.location.pathname.replace(/\/$/, '').replace(/\.html$/, '') || '/');
   document.querySelectorAll('.nav-links a, .mobile-menu-links a').forEach(a => {
-    if (a.getAttribute('href') === path) a.classList.add('active');
+    if ((new URL(a.getAttribute('href'), window.location.href).pathname.replace(/\/$/, '') || '/') === path) a.classList.add('active');
   });
 })();
 
