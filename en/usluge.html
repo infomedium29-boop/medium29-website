@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<script>try{if(sessionStorage.getItem('medium29_intro_seen')==='1')document.documentElement.classList.add('intro-seen')}catch(e){}</script>
+<meta charset="utf-8"/>
+<link href="/favicon.png" rel="icon" type="image/png"/>
+<link href="/favicon.png" rel="apple-touch-icon"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Services | Web Design, SEO &amp; Marketing — Medium29</title>
+<meta content="Explore web design and development, SEO, digital marketing and digital signage services from Medium29." name="description"/>
+<meta content="index, follow, max-image-preview:large" name="robots"/>
+<link href="https://medium29.com/en/usluge" rel="canonical"/>
+<meta content="https://medium29.com/en/usluge" property="og:url"/>
+<link href="/sitemap.xml" rel="sitemap" type="application/xml"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="/style.css" rel="stylesheet"/>
+<link href="/site-enhancements.css" rel="stylesheet"/>
+<link href="/cookie-consent.css" rel="stylesheet"/>
+<style>
+  /* SERVICE BLOCKS */
+  .service-block {
+    padding: 6rem 4rem;
+    border-bottom: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: start;
+  }
+  .service-block:nth-child(even) { background: var(--bg2); }
+  .service-block:nth-child(odd) { background: var(--bg); }
+  .service-block.reverse { direction: rtl; }
+  .service-block.reverse > * { direction: ltr; }
+
+  .service-block-meta {}
+  .service-block-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 5rem;
+    font-weight: 800;
+    color: rgba(200,255,0,0.08);
+    letter-spacing: -0.05em;
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+  .service-block h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(1.8rem, 3.5vw, 3rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 1.2rem;
+  }
+  .service-block h2 span { color: var(--accent); }
+  .service-block-desc { color: var(--muted); font-size: 1rem; line-height: 1.75; margin-bottom: 2rem; }
+
+  .service-features-list { list-style: none; display: flex; flex-direction: column; gap: 0; margin-bottom: 2.5rem; }
+  .service-features-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.92rem;
+  }
+  .service-features-list li:last-child { border-bottom: none; }
+  .feature-check {
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    background: rgba(200,255,0,0.1);
+    border: 1px solid rgba(200,255,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 0.65rem;
+    color: var(--accent);
+    margin-top: 1px;
+  }
+  .feature-text { color: var(--muted); line-height: 1.5; }
+  .feature-text strong { color: var(--text); display: block; font-weight: 500; margin-bottom: 0.1rem; }
+
+  .service-block-right {}
+  .service-visual {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .service-visual::before {
+    content: '';
+    position: absolute;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(200,255,0,0.06) 0%, transparent 70%);
+    top: -100px; right: -100px;
+    pointer-events: none;
+  }
+  .service-visual-icon {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    display: block;
+  }
+  .service-visual h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+  .service-visual p { font-size: 0.88rem; color: var(--muted); margin-bottom: 2rem; line-height: 1.65; }
+  .service-stat-row { display: flex; gap: 2rem; }
+  .service-stat { flex: 1; }
+  .service-stat-val { font-family:'Syne',sans-serif; font-size:2rem; font-weight:800; color:var(--accent); letter-spacing:-0.03em; line-height:1; }
+  .service-stat-lbl { font-size:0.78rem; color:var(--muted); margin-top:0.3rem; }
+
+  /* PRICING SECTION */
+  .pricing-section { background: var(--bg2); padding: 7rem 4rem; border-top: 1px solid var(--border); }
+  .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); margin-top: 3rem; }
+  .pricing-card { background: var(--bg2); padding: 2.5rem; position: relative; transition: background 0.3s; cursor: auto; }
+  .pricing-card:hover { background: var(--bg3); }
+  .pricing-card.featured { background: var(--bg3); border: 1px solid rgba(200,255,0,0.2); margin: -1px; z-index:1; }
+  .pricing-badge { display:inline-block; background:var(--accent); color:#000; font-size:0.68rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:0.22rem 0.7rem; border-radius:100px; margin-bottom:1.2rem; }
+  .pricing-tier { font-size:0.78rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); margin-bottom:0.8rem; }
+  .pricing-price { font-family:'Syne',sans-serif; font-size:2.5rem; font-weight:800; color:var(--text); letter-spacing:-0.03em; margin-bottom:0.3rem; line-height:1; }
+  .pricing-note { font-size:0.78rem; color:var(--muted); margin-bottom:1.8rem; }
+  .pricing-divider { height:1px; background:var(--border); margin-bottom:1.8rem; }
+  .pricing-features { list-style:none; display:flex; flex-direction:column; gap:0.7rem; margin-bottom:2rem; }
+  .pricing-features li { font-size:0.88rem; color:var(--muted); display:flex; align-items:flex-start; gap:0.55rem; line-height:1.4; }
+  .pricing-features li::before { content:'✓'; color:var(--accent); font-weight:700; flex-shrink:0; }
+  .pricing-cta { display:block; text-align:center; padding:0.8rem; border-radius:8px; font-size:0.88rem; font-weight:500; text-decoration:none; cursor: auto; transition:all 0.25s; }
+  .pricing-cta.primary { background:var(--accent); color:#000; }
+  .pricing-cta.primary:hover { box-shadow:0 8px 30px rgba(200,255,0,0.25); transform:translateY(-1px); }
+  .pricing-cta.outline { border:1px solid var(--border); color:var(--muted); }
+  .pricing-cta.outline:hover { border-color:rgba(200,255,0,0.3); color:var(--text); }
+
+  @media (max-width:900px) {
+    .service-block { grid-template-columns:1fr; gap:3rem; padding:5rem 1.5rem; }
+    .service-block.reverse { direction:ltr; }
+    .pricing-grid { grid-template-columns:1fr; }
+    .pricing-card.featured { margin:0; }
+    .pricing-section { padding:5rem 1.5rem; }
+    .service-stat-row { flex-wrap:wrap; }
+  }
+
+  @media (max-width: 900px) {
+    * { max-width: 100%; }
+    .hero { padding: 0 1.5rem; min-height: 100svh; }
+    .hero h1 { font-size: clamp(2.4rem, 11vw, 4rem); }
+    .hero-actions { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
+    .btn-primary, .btn-ghost { width: 100%; justify-content: center; box-sizing: border-box; }
+    .page-hero { padding: 6rem 1.5rem 3rem; }
+    .page-hero h1 { font-size: clamp(2rem, 10vw, 3.2rem); }
+    .page-hero-tag { font-size: 0.68rem; }
+    .section-title { font-size: clamp(1.7rem, 8vw, 2.5rem); }
+  }
+
+  /* THREE.JS BACKGROUND */
+  #three-bg {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+  }
+  body > *:not(#three-bg):not(.cursor):not(.cursor-follower):not(.mobile-menu):not(#site-intro) {
+    position: relative;
+    z-index: 1;
+  }
+  .mobile-menu { z-index: 999; }
+
+</style>
+<!-- SEO & Open Graph -->
+<meta content="Medium29" name="author"/>
+<meta content="HR-16" name="geo.region"/>
+<meta content="Vukovar" name="geo.placename"/>
+<!-- Open Graph (Facebook, LinkedIn) -->
+<meta content="website" property="og:type"/>
+<meta content="Services | Web Design, SEO &amp; Marketing — Medium29" property="og:title"/>
+<meta content="Explore web design and development, SEO, digital marketing and digital signage services from Medium29." property="og:description"/>
+<meta content="Medium29" property="og:site_name"/>
+<meta content="en_US" property="og:locale"/>
+<!-- Twitter Card -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Services | Web Design, SEO &amp; Marketing — Medium29" name="twitter:title"/>
+<meta content="Explore web design and development, SEO, digital marketing and digital signage services from Medium29." name="twitter:description"/>
+<!-- Schema.org structured data -->
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Medium29",
+    "description": "Digitalna agencija specijalizirana za web dizajn, digitalni marketing i digital signage rješenja.",
+    "url": "https://medium29.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Vukovar",
+      "addressCountry": "HR"
+    },
+    "email": "info.medium29@gmail.com",
+    "sameAs": [
+      "https://medium29.com"
+    ]
+  }
+  </script>
+<meta content="https://medium29.com/og-medium29.jpg" property="og:image"/><meta content="1200" property="og:image:width"/><meta content="630" property="og:image:height"/><meta content="Medium29 — Web Design &amp; Digital Marketing" property="og:image:alt"/><meta content="https://medium29.com/og-medium29.jpg" name="twitter:image"/><link href="https://medium29.com/usluge" hreflang="hr" rel="alternate"/><link href="https://medium29.com/en/usluge" hreflang="en" rel="alternate"/><link href="https://medium29.com/de/usluge" hreflang="de" rel="alternate"/><link href="https://medium29.com/usluge" hreflang="x-default" rel="alternate"/><noscript><style>body > #site-intro{display:none!important}</style></noscript></head>
+<body>
+<div id="site-intro" aria-hidden="true"><div><div class="intro-brand"><div class="logo-writing">Medium<span>29</span></div><i class="intro-caret"></i></div><div class="intro-line"></div></div></div>
+
+<canvas id="three-bg"></canvas>
+<nav id="navbar">
+<a class="logo" href="/en/">Medium<span>29</span></a>
+<ul class="nav-links">
+<li><a href="/en/">Home</a></li>
+<li><a href="/en/o-nama">About us</a></li>
+<li><a href="/en/usluge">Services</a></li>
+<li><a href="/en/portfolio">Portfolio</a></li>
+<li><a class="nav-cta" href="/en/kontakt">Contact</a></li>
+</ul>
+<div class="nav-right"><div aria-label="Choose language" class="lang-switch"><a href="/usluge" hreflang="hr" lang="hr" title="Hrvatski">HR</a><a aria-current="page" href="/en/usluge" hreflang="en" lang="en" title="English">EN</a><a href="/de/usluge" hreflang="de" lang="de" title="Deutsch">DE</a></div><button aria-controls="mobileMenu" aria-expanded="false" aria-label="Open menu" class="hamburger" id="hamburger" type="button">
+<span></span><span></span><span></span>
+</button></div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+<ul class="mobile-menu-links">
+<li><a href="/en/">Home</a></li>
+<li><a href="/en/o-nama">About us</a></li>
+<li><a href="/en/usluge">Services</a></li>
+<li><a href="/en/portfolio">Portfolio</a></li>
+</ul>
+<div class="mobile-lang-switch"><div aria-label="Choose language" class="lang-switch"><a href="/usluge" hreflang="hr" lang="hr" title="Hrvatski">HR</a><a aria-current="page" href="/en/usluge" hreflang="en" lang="en" title="English">EN</a><a href="/de/usluge" hreflang="de" lang="de" title="Deutsch">DE</a></div></div>
+<div class="mobile-menu-cta">
+<a href="/en/kontakt">Request a quote</a>
+</div>
+</div>
+<!-- PAGE HERO -->
+<div class="page-hero">
+<div class="page-hero-grid"></div>
+<div class="page-hero-glow"></div>
+<div class="page-hero-tag">Our services</div>
+<h1>What can we<br/>do for <span class="accent">you</span></h1>
+<p class="page-hero-sub">Three core disciplines. One partner. Everything your business needs to grow online.</p>
+</div>
+<!-- SERVICE 1 - WEB -->
+<div class="service-block">
+<div class="service-block-meta">
+<div class="service-block-num reveal">01</div>
+<div class="section-tag reveal">Web design &amp; development</div>
+<h2 class="reveal reveal-delay-1">Websites that<br/><span>convert</span></h2>
+<p class="service-block-desc reveal reveal-delay-2">We build modern, fast and responsive websites. Every page is designed to turn visitors into enquiries.</p>
+<ul class="service-features-list reveal reveal-delay-3">
+<li>
+<div class="feature-check">✓</div>
+<div class="feature-text"><strong>Responsive design</strong>Optimised for every screen — smartphone, tablet and desktop.</div>
+</li>
+<li>
+<div class="feature-check">✓</div>
+<div class="feature-text"><strong>SEO optimisation</strong>Built with search visibility in mind from the ground up.</div>
+</li>
+<li>
+<div class="feature-check">✓</div>
+<div class="feature-text"><strong>Fast loading</strong>Optimised performance for a smoother user experience.</div>
+</li>
+<li>
+<div class="feature-check">✓</div>
+<div class="feature-text"><strong>CMS integration</strong>Manage your content without technical knowledge.</div>
+</li>
+</ul>
+<a class="btn-primary reveal reveal-delay-4" href="/en/kontakt">Request a quote →</a>
+</div>
+<div class="service-block-right reveal reveal-delay-2">
+<div class="service-visual">
+<span class="service-visual-icon">🌐</span>
+<h3>What you get</h3>
+<p>A fully functional website that works for your business around the clock.</p>
+<div class="service-stat-row">
+<div class="service-stat"><div class="service-stat-val">24/7</div><div class="service-stat-lbl">Web presence</div></div>
+<div class="service-stat"><div class="service-stat-val">100%</div><div class="service-stat-lbl">Mobile-friendly design</div></div>
+</div>
+</div>
+</div>
+</div>
+<!-- SERVICE 2 - MARKETING -->
+<div class="service-block reverse">
+<div class="service-block-meta">
+<div class="service-block-num reveal">02</div>
+<div class="section-tag reveal">Digital marketing</div>
+<h2 class="reveal reveal-delay-1">Marketing that<br/><span>gets results</span></h2>
+<p class="service-block-desc reveal reveal-delay-2">Strategy, content and paid campaigns that build awareness, attract customers and scale with your business.</p>
+<ul class="service-features-list reveal reveal-delay-3">
+<li>
+<div class="feature-check">✓</div>
+<div class="feature-text"><strong>Social media management</strong>Content creation and publishing for Facebook, Instagram and TikTok.</div>
+</li>
+<li>
+<div class="feature-check">✓</div>
+<div class="feature-text"><strong>Meta &amp; Google Ads</strong>Target the right audience and make your advertising budget work harder.</div>
+</li>
+<li>
+<div class="feature-check">✓</div>
+<div class="feature-text"><strong>Analytics &amp; reports</strong>Monthly reports with clear recommendations for growth.</div>
+</li>
+<li>
+<div class="feature-check">✓</div>
+<div class="feature-text"><strong>Creative design</strong>Custom social media visuals and advertising creatives.</div>
+</li>
+</ul>
+<a class="btn-primary reveal reveal-delay-4" href="/en/kontakt">Request a quote →</a>
+</div>
+<div class="service-block-right reveal reveal-delay-2">
+<div class="service-visual">
+<span class="service-visual-icon">📣</span>
+<h3>What you get</h3>
+<p>Sustainable growth in reach and enquiries through measurable advertising.</p>
+<div class="service-stat-row">
+<div class="service-stat"><div class="service-stat-val">Meta</div><div class="service-stat-lbl">Campaign management</div></div>
+<div class="service-stat"><div class="service-stat-val">ROI</div><div class="service-stat-lbl">Measurable return on investment</div></div>
+</div>
+</div>
+</div>
+</div>
+<!-- SERVICE 3 - SIGNAGE -->
+<div class="service-block">
+<div class="service-block-meta">
+<div class="service-block-num reveal">03</div>
+<div class="section-tag reveal">Digital Signage</div>
+<h2 class="reveal reveal-delay-1">Smart displays<br/>for your <span>space</span></h2>
+<p class="service-block-desc reveal reveal-delay-2">Complete digital signage solutions, from hardware selection and installation to content design and remote control.</p>
+<ul class="service-features-list reveal reveal-delay-3">
+<li>
+<div class="feature-check">✓</div>
+<div class="feature-text"><strong>Professional digital displays</strong>Wall-mounted and freestanding displays for retail, hospitality and offices.</div>
+</li>
+<li>
+<div class="feature-check">✓</div>
+<div class="feature-text"><strong>Installation &amp; setup</strong>Complete setup, configuration and commissioning.</div>
+</li>
+<li>
+<div class="feature-check">✓</div>
+<div class="feature-text"><strong>CMS platform</strong>Easily manage display content remotely.</div>
+</li>
+<li>
+<div class="feature-check">✓</div>
+<div class="feature-text"><strong>Technical support</strong>Ongoing technical assistance and content updates.</div>
+</li>
+</ul>
+<a class="btn-primary reveal reveal-delay-4" href="/en/kontakt">Request a quote →</a>
+</div>
+<div class="service-block-right reveal reveal-delay-2">
+<div class="service-visual">
+<span class="service-visual-icon">📺</span>
+<h3>What you get</h3>
+<p>Modern, dynamic content that draws customers' attention in your space.</p>
+<div class="service-stat-row">
+<div class="service-stat"><div class="service-stat-val">CMS</div><div class="service-stat-lbl">Content management</div></div>
+<div class="service-stat"><div class="service-stat-val">24/7</div><div class="service-stat-lbl">Remote management</div></div>
+</div>
+</div>
+</div>
+</div>
+<!-- PRICING -->
+<section class="pricing-section">
+<div class="section-tag reveal">Website pricing</div>
+<h2 class="section-title reveal reveal-delay-1">Transparent<br/>website pricing</h2>
+<div class="pricing-grid">
+<div class="pricing-card reveal">
+<div class="pricing-tier">Starter</div>
+<div class="pricing-price">On request</div>
+<div class="pricing-note">Landing page · A great starting point</div>
+<div class="pricing-divider"></div>
+<ul class="pricing-features">
+<li>1 page (landing page)</li>
+<li>Mobile-friendly design</li>
+<li>Basic SEO</li>
+<li>Contact form</li>
+<li>Delivery: 7 days</li>
+</ul>
+<a class="pricing-cta outline" href="/en/kontakt">Send an enquiry</a>
+</div>
+<div class="pricing-card featured reveal reveal-delay-2">
+<div class="pricing-badge">Most popular</div>
+<div class="pricing-tier">Standard</div>
+<div class="pricing-price">On request</div>
+<div class="pricing-note">5 pages · For established businesses</div>
+<div class="pricing-divider"></div>
+<ul class="pricing-features">
+<li>5 pages</li>
+<li>SEO optimisation</li>
+<li>Contact form</li>
+<li>Portfolio section</li>
+<li>Google Analytics</li>
+<li>Delivery: 14 days</li>
+</ul>
+<a class="pricing-cta primary" href="/en/kontakt">Send an enquiry</a>
+</div>
+<div class="pricing-card reveal reveal-delay-3">
+<div class="pricing-tier">Premium</div>
+<div class="pricing-price">On request</div>
+<div class="pricing-note">5+ pages · A complete solution</div>
+<div class="pricing-divider"></div>
+<ul class="pricing-features">
+<li>5+ pages</li>
+<li>Advanced SEO</li>
+<li>Blog integration</li>
+<li>6 months of support</li>
+<li>Custom animations</li>
+<li>Delivery: 21 days</li>
+</ul>
+<a class="pricing-cta outline" href="/en/kontakt">Send an enquiry</a>
+</div>
+</div>
+</section>
+<!-- FOOTER -->
+<footer>
+<div class="footer-top">
+<div class="footer-brand">
+<a class="logo" href="/en/">Medium<span>29</span></a>
+<p>Complete digital support for brands aiming for tangible results.</p>
+</div>
+<div class="footer-col">
+<h4>Pages</h4>
+<ul>
+<li><a href="/en/">Home</a></li>
+<li><a href="/en/o-nama">About us</a></li>
+<li><a href="/en/usluge">Services</a></li>
+<li><a href="/en/portfolio">Portfolio</a></li>
+<li><a href="/en/kontakt">Contact</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Services</h4>
+<ul>
+<li><a href="/en/usluge">Web design</a></li>
+<li><a href="/en/usluge">SEO optimisation</a></li>
+<li><a href="/en/usluge">Digital marketing</a></li>
+<li><a href="/en/usluge">Digital signage</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Contact</h4>
+<ul>
+<li><a href="mailto:info.medium29@gmail.com">info.medium29@gmail.com</a></li>
+<li><a href="https://medium29.com">medium29.com</a></li>
+<li><a href="#">Vukovar, Croatia</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2026 Medium29. All rights reserved.</p>
+<div class="footer-legal">
+<a href="/en/politika-privatnosti">Privacy Policy</a>
+<span aria-hidden="true">·</span>
+<a href="/en/politika-kolacica">Cookie Policy</a>
+<span aria-hidden="true">·</span>
+<a class="cookie-settings-link" href="#">Cookie settings</a>
+</div>
+</div>
+</footer>
+<script src="/main.js"></script>
+<!-- Subpage motion is handled by main.js, without a GSAP dependency -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="/three-bg.js"></script>
+<script src="/cookie-consent.js"></script>
+</body>
+</html>

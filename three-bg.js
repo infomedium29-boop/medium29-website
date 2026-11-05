@@ -1,6 +1,6 @@
 (function(){
   var canvas = document.getElementById('three-bg');
-  if(!canvas) return;
+  if(!canvas || !window.THREE || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   var wrap = document.body;
   var W = window.innerWidth, H = window.innerHeight;
 

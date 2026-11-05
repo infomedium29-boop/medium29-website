@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<script>try{if(sessionStorage.getItem('medium29_intro_seen')==='1')document.documentElement.classList.add('intro-seen')}catch(e){}</script>
+<meta charset="utf-8"/>
+<link href="/favicon.png" rel="icon" type="image/png"/>
+<link href="/favicon.png" rel="apple-touch-icon"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Medium29 | Webdesign &amp; Digitalmarketing — Vukovar</title>
+<meta content="Webdesign, SEO, Digitalmarketing und Digital Signage aus Vukovar, Kroatien. Schnelle Websites, Android-Apps und digitale Lösungen für Unternehmen." name="description"/>
+<meta content="index, follow, max-image-preview:large" name="robots"/>
+<link href="https://medium29.com/de/" rel="canonical"/>
+<meta content="https://medium29.com/de/" property="og:url"/>
+<link href="/sitemap.xml" rel="sitemap" type="application/xml"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="/style.css" rel="stylesheet"/>
+<link href="/site-enhancements.css" rel="stylesheet"/>
+<link href="/cookie-consent.css" rel="stylesheet"/>
+<link href="/portfolio-showcase.css" rel="stylesheet"/>
+<style>
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-bg-grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 80px 80px;
+    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
+  }
+  .hero-glow {
+    position: absolute;
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(200,255,0,0.07) 0%, transparent 70%);
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    animation: glowPulse 5s ease-in-out infinite;
+    pointer-events: none;
+  }
+  .hero-glow-2 {
+    position: absolute;
+    width: 450px; height: 450px;
+    background: radial-gradient(circle, rgba(123,94,167,0.08) 0%, transparent 70%);
+    top: 15%; right: 8%;
+    animation: glowPulse2 7s ease-in-out infinite;
+    pointer-events: none;
+  }
+  @keyframes glowPulse {
+    0%,100%{opacity:0.6;transform:translate(-50%,-50%) scale(1)}
+    50%{opacity:1;transform:translate(-50%,-50%) scale(1.1)}
+  }
+  @keyframes glowPulse2 {
+    0%,100%{opacity:0.5;transform:scale(1)}
+    50%{opacity:1;transform:scale(1.12)}
+  }
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(200,255,0,0.08);
+    border: 1px solid rgba(200,255,0,0.2);
+    color: var(--accent);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.4rem 1rem;
+    border-radius: 100px;
+    margin-bottom: 2.5rem;
+    width: fit-content;
+    animation: fadeUp 0.8s 0.2s both;
+  }
+  .hero-tag::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: blink 1.5s infinite;
+  }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
+  .hero h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(3.5rem, 8vw, 7.5rem);
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    margin-bottom: 2rem;
+    max-width: 950px;
+    animation: fadeUp 0.8s 0.4s both;
+  }
+  .hero h1 .accent-word { color: var(--accent); font-style: italic; }
+  .hero h1 .outline-word {
+    -webkit-text-stroke: 1px rgba(240,240,240,0.35);
+    color: transparent;
+  }
+  .hero-sub {
+    font-size: 1.1rem;
+    color: var(--muted);
+    max-width: 520px;
+    line-height: 1.7;
+    margin-bottom: 3rem;
+    animation: fadeUp 0.8s 0.6s both;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+    animation: fadeUp 0.8s 0.8s both;
+  }
+  .hero-stats {
+    position: absolute;
+    right: 4rem; bottom: 8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    animation: fadeIn 1s 1.2s both;
+  }
+  .stat-item { text-align: right; }
+  .stat-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--text);
+    line-height: 1;
+  }
+  .stat-num span { color: var(--accent); }
+  .stat-label { font-size: 0.78rem; color: var(--muted); letter-spacing: 0.04em; }
+  .hero-scroll {
+    position: absolute;
+    bottom: 2.5rem; left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--muted);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    animation: fadeIn 1s 1.4s both;
+  }
+  .scroll-line {
+    width: 1px; height: 48px;
+    background: linear-gradient(to bottom, var(--muted), transparent);
+    animation: scrollDrop 2s ease-in-out infinite;
+  }
+  @keyframes scrollDrop {
+    0%{transform:scaleY(0);transform-origin:top}
+    50%{transform:scaleY(1);transform-origin:top}
+    51%{transform:scaleY(1);transform-origin:bottom}
+    100%{transform:scaleY(0);transform-origin:bottom}
+  }
+  @keyframes fadeUp { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
+  @keyframes fadeIn { from{opacity:0} to{opacity:1} }
+
+  .services-preview { background: var(--bg2); }
+  .services-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3.5rem; gap: 2rem; flex-wrap: wrap; }
+  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); }
+  .service-card { background: var(--bg2); padding: 2.8rem; position: relative; overflow: hidden; transition: background 0.3s; cursor: auto; }
+  .service-card::before { content:''; position:absolute; inset:0; background:linear-gradient(135deg,rgba(200,255,0,0.05) 0%,transparent 60%); opacity:0; transition:opacity 0.4s; }
+  .service-card:hover { background: var(--bg3); }
+  .service-card:hover::before { opacity: 1; }
+  .service-num { font-family:'Syne',sans-serif; font-size:0.72rem; font-weight:700; color:var(--accent); letter-spacing:0.1em; margin-bottom:1.8rem; }
+  .service-icon { width:52px; height:52px; border-radius:14px; background:rgba(200,255,0,0.07); border:1px solid rgba(200,255,0,0.15); display:flex; align-items:center; justify-content:center; margin-bottom:1.5rem; font-size:1.5rem; transition:transform 0.3s,box-shadow 0.3s; }
+  .service-card:hover .service-icon { transform:scale(1.1) rotate(-5deg); box-shadow:0 8px 30px rgba(200,255,0,0.15); }
+  .service-card h3 { font-family:'Syne',sans-serif; font-size:1.3rem; font-weight:700; margin-bottom:0.8rem; letter-spacing:-0.02em; }
+  .service-card p { color:var(--muted); font-size:0.9rem; line-height:1.65; margin-bottom:2rem; }
+  .service-link { display:inline-flex; align-items:center; gap:0.4rem; font-size:0.82rem; color:var(--accent); text-decoration:none; font-weight:500; cursor: auto; transition:gap 0.2s; }
+  .service-link:hover { gap: 0.7rem; }
+
+  .why { background: var(--bg); }
+  .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); margin-top: 4rem; }
+  .why-item { padding: 2.5rem; background: var(--bg); position: relative; transition: background 0.3s; }
+  .why-item:hover { background: var(--bg2); }
+  .why-item-num { font-family:'Syne',sans-serif; font-size:3rem; font-weight:800; color:rgba(200,255,0,0.12); letter-spacing:-0.04em; margin-bottom:0.5rem; line-height:1; }
+  .why-item h3 { font-family:'Syne',sans-serif; font-size:1.15rem; font-weight:700; margin-bottom:0.6rem; letter-spacing:-0.01em; }
+  .why-item p { font-size:0.9rem; color:var(--muted); line-height:1.65; }
+
+  .cta-band {
+    background: var(--bg2);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 5rem 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    flex-wrap: wrap;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-band::before {
+    content: '';
+    position: absolute;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(200,255,0,0.06) 0%, transparent 70%);
+    right: -100px; top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+  .cta-band h2 { font-family:'Syne',sans-serif; font-size:clamp(2rem,4vw,3.2rem); font-weight:800; letter-spacing:-0.03em; max-width:600px; line-height:1.1; }
+  .cta-band h2 span { color: var(--accent); }
+
+  @media (max-width:900px) {
+    .hero { padding: 0 1.5rem; min-height: 100svh; }
+    .hero h1 { font-size: clamp(2.4rem, 11vw, 4rem); }
+    .hero-stats { display: none; }
+    .services-header { flex-direction: column; align-items: flex-start; }
+    .services-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr; }
+    .cta-band { padding: 4rem 1.5rem; flex-direction: column; }
+    .btn-primary, .btn-ghost { width: 100%; justify-content: center; }
+  }
+
+  /* THREE.JS BACKGROUND */
+  #three-bg {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+  }
+  body > *:not(#three-bg):not(.cursor):not(.cursor-follower):not(.mobile-menu):not(#site-intro) {
+    position: relative;
+    z-index: 1;
+  }
+  .mobile-menu { z-index: 999; }
+
+</style>
+<!-- SEO & Open Graph -->
+<meta content="Medium29" name="author"/>
+<meta content="HR-16" name="geo.region"/>
+<meta content="Vukovar" name="geo.placename"/>
+<meta content="website" property="og:type"/>
+<meta content="Medium29 | Webdesign &amp; Digitalmarketing — Vukovar" property="og:title"/>
+<meta content="Webdesign, SEO, Digitalmarketing und Digital Signage aus Vukovar, Kroatien. Schnelle Websites, Android-Apps und digitale Lösungen für Unternehmen." property="og:description"/>
+<meta content="Medium29" property="og:site_name"/>
+<meta content="de_DE" property="og:locale"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Medium29 | Webdesign &amp; Digitalmarketing — Vukovar" name="twitter:title"/>
+<meta content="Webdesign, SEO, Digitalmarketing und Digital Signage aus Vukovar, Kroatien. Schnelle Websites, Android-Apps und digitale Lösungen für Unternehmen." name="twitter:description"/>
+<meta content="https://medium29.com/og-medium29.jpg" property="og:image"/><meta content="1200" property="og:image:width"/><meta content="630" property="og:image:height"/><meta content="Medium29 — Web Design &amp; Digital Marketing" property="og:image:alt"/><meta content="https://medium29.com/og-medium29.jpg" name="twitter:image"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "Medium29", "url": "https://medium29.com/", "image": "https://medium29.com/og-medium29.jpg", "email": "info.medium29@gmail.com", "description": "Web dizajn, SEO, digitalni marketing i digital signage iz Vukovara. Medium29 razvija brze web stranice i aplikacije za klijente diljem Hrvatske.", "address": {"@type": "PostalAddress", "addressLocality": "Vukovar", "addressRegion": "Vukovarsko-srijemska", "addressCountry": "HR"}, "areaServed": {"@type": "Country", "name": "Croatia"}, "availableLanguage": ["Croatian", "English", "German"]}</script><link href="https://medium29.com/" hreflang="hr" rel="alternate"/><link href="https://medium29.com/en/" hreflang="en" rel="alternate"/><link href="https://medium29.com/de/" hreflang="de" rel="alternate"/><link href="https://medium29.com/" hreflang="x-default" rel="alternate"/><noscript><style>body > #site-intro{display:none!important}</style></noscript></head>
+<body>
+<div aria-hidden="true" id="site-intro"><div><div class="intro-brand"><div class="logo-writing">Medium<span>29</span></div><i class="intro-caret"></i></div><div class="intro-line"></div></div></div>
+<canvas id="three-bg"></canvas>
+<nav id="navbar">
+<a class="logo" href="/de/">Medium<span>29</span></a>
+<ul class="nav-links">
+<li><a href="/de/">Startseite</a></li>
+<li><a href="/de/o-nama">Über uns</a></li>
+<li><a href="/de/usluge">Leistungen</a></li>
+<li><a href="/de/portfolio">Portfolio</a></li>
+<li><a class="nav-cta" href="/de/kontakt">Kontakt</a></li>
+</ul>
+<div class="nav-right"><div aria-label="Sprache wählen" class="lang-switch"><a href="/" hreflang="hr" lang="hr" title="Hrvatski">HR</a><a href="/en/" hreflang="en" lang="en" title="English">EN</a><a aria-current="page" href="/de/" hreflang="de" lang="de" title="Deutsch">DE</a></div><button aria-controls="mobileMenu" aria-expanded="false" aria-label="Menü öffnen" class="hamburger" id="hamburger" type="button">
+<span></span><span></span><span></span>
+</button></div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+<ul class="mobile-menu-links">
+<li><a href="/de/">Startseite</a></li>
+<li><a href="/de/o-nama">Über uns</a></li>
+<li><a href="/de/usluge">Leistungen</a></li>
+<li><a href="/de/portfolio">Portfolio</a></li>
+</ul>
+<div class="mobile-lang-switch"><div aria-label="Sprache wählen" class="lang-switch"><a href="/" hreflang="hr" lang="hr" title="Hrvatski">HR</a><a href="/en/" hreflang="en" lang="en" title="English">EN</a><a aria-current="page" href="/de/" hreflang="de" lang="de" title="Deutsch">DE</a></div></div>
+<div class="mobile-menu-cta">
+<a href="/de/kontakt">Angebot anfordern</a>
+</div>
+</div>
+<!-- HERO -->
+<section class="hero" id="pocetak">
+<div class="hero-bg-grid"></div>
+<div class="hero-glow"></div>
+<div class="hero-glow-2"></div>
+<h1>
+<span class="scramble" data-text="Alle digitalen">Alle digitalen</span><br/>
+<span class="accent-word scramble" data-text="Leistungen">Leistungen</span><span class="scramble" data-text=" an"> an</span><br/>
+<span class="outline-word scramble" data-text="einem">einem</span><span class="scramble" data-text=" Ort"> Ort</span>
+</h1>
+<p class="hero-sub">Webdesign, Marketing und Digital Signage, die Besucher zu Kunden machen. Schnelle Umsetzung und langfristige Betreuung.</p>
+<div class="hero-actions">
+<a class="btn-primary" href="/de/kontakt">
+      Angebot anfordern
+      <svg fill="none" height="16" viewbox="0 0 16 16" width="16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
+</a>
+<a class="btn-ghost" href="/de/usluge">Leistungen entdecken</a>
+</div>
+<div class="hero-stats">
+<div class="stat-item"><div class="stat-num">9</div><div class="stat-label">Webprojekte im Portfolio</div></div>
+<div class="stat-item"><div class="stat-num">1</div><div class="stat-label">Veröffentlichte Android-App</div></div>
+<div class="stat-item"><div class="stat-num">10</div><div class="stat-label">Abgeschlossene digitale Projekte</div></div>
+</div>
+<div class="hero-scroll">
+<div class="scroll-line"></div>
+    Scrollen
+  </div>
+</section>
+<!-- SERVICES PREVIEW -->
+<section class="services-preview">
+<div class="services-header">
+<div>
+<div class="section-tag reveal">Unsere Leistungen</div>
+<h2 class="section-title reveal reveal-delay-1">Was wir machen</h2>
+</div>
+<a class="btn-ghost reveal reveal-delay-2" href="/de/usluge">Alle Leistungen →</a>
+</div>
+<div class="services-grid">
+<div class="service-card reveal">
+<div class="service-num">01</div>
+<div class="service-icon">🌐</div>
+<h3>Webdesign &amp; Entwicklung</h3>
+<p>Moderne, schnelle und responsive Websites, die Besucher zu Kunden machen.</p>
+</div>
+<div class="service-card reveal reveal-delay-2">
+<div class="service-num">02</div>
+<div class="service-icon">📣</div>
+<h3>Digitalmarketing</h3>
+<p>Strategie, Inhalte und Werbung, die Sichtbarkeit und Umsatz steigern.</p>
+</div>
+<div class="service-card reveal reveal-delay-3">
+<div class="service-num">03</div>
+<div class="service-icon">📺</div>
+<h3>Digital Signage</h3>
+<p>Komplettlösungen für digitale Displays – von der Hardware über Inhalte bis zum Support.</p>
+</div>
+</div>
+</section>
+<!-- SELECTED REAL PROJECTS -->
+<section aria-labelledby="home-projects-heading" class="works-section works-home">
+<div class="works-heading">
+<div><div class="section-tag reveal">Ausgewählte Projekte</div><h2 class="section-title reveal" id="home-projects-heading">Unsere Arbeit. <span style="color:var(--accent)">In der Praxis.</span></h2><p class="section-sub reveal">Eine Auswahl umgesetzter Projekte, mit denen unsere Kunden ihre Leistungen präsentieren und neue Anfragen gewinnen.</p></div>
+<a class="btn-ghost reveal" href="/de/portfolio">Alle Projekte <span aria-hidden="true">↗</span></a>
+</div>
+<div class="work-grid">
+<article class="work-card reveal" data-cat="web" data-project="auto153-web">
+<a aria-label="Website öffnen: AUTO 153" class="work-media" href="https://auto153.hr/" rel="noopener noreferrer" target="_blank">
+<img alt="Projektgrafik für AUTO 153" decoding="async" height="750" loading="lazy" src="/assets/portfolio/auto153-web.svg" width="1200"/>
+<span class="work-media-shade"></span><span class="work-media-label">WEBPROJEKT <span aria-hidden="true">↗</span></span>
+</a>
+<div class="work-card-body"><div class="work-kicker">Taxi · Transport</div><div class="work-card-title-row"><h3>AUTO 153</h3><a aria-label="Besuchen: AUTO 153" class="work-arrow" href="https://auto153.hr/" rel="noopener noreferrer" target="_blank">↗</a></div><p>Mehrsprachige Website mit Online-Buchung für nationale und internationale Transfers.</p><div class="work-tags"><span>Mehrsprachige Website</span><span>Buchungen</span></div></div>
+</article><article class="work-card reveal" data-cat="web" data-project="taxi-transfers-krk">
+<a aria-label="Website öffnen: Taxi &amp; Transfers Krk" class="work-media" href="https://taxitransferskrk.com/" rel="noopener noreferrer" target="_blank">
+<img alt="Projektgrafik für Taxi &amp; Transfers Krk" decoding="async" height="750" loading="lazy" src="/assets/portfolio/taxi-transfers-krk.svg" width="1200"/>
+<span class="work-media-shade"></span><span class="work-media-label">WEBPROJEKT <span aria-hidden="true">↗</span></span>
+</a>
+<div class="work-card-body"><div class="work-kicker">Taxi · Tourismus</div><div class="work-card-title-row"><h3>Taxi &amp; Transfers Krk</h3><a aria-label="Besuchen: Taxi &amp; Transfers Krk" class="work-arrow" href="https://taxitransferskrk.com/" rel="noopener noreferrer" target="_blank">↗</a></div><p>Website für Taxi- und Privattransfers auf Krk mit Buchungsformular und mehrsprachigen Inhalten.</p><div class="work-tags"><span>5 Sprachen</span><span>Buchungen</span></div></div>
+</article><article class="work-card reveal" data-cat="web" data-project="duh-slatine">
+<a aria-label="Website öffnen: Duh Slatine" class="work-media" href="https://duh-slatine.hr/" rel="noopener noreferrer" target="_blank">
+<img alt="Projektgrafik für Duh Slatine" decoding="async" height="750" loading="lazy" src="/assets/portfolio/duh-slatine.svg" width="1200"/>
+<span class="work-media-shade"></span><span class="work-media-label">WEBPROJEKT <span aria-hidden="true">↗</span></span>
+</a>
+<div class="work-card-body"><div class="work-kicker">Buchhaltung · Unternehmen</div><div class="work-card-title-row"><h3>Duh Slatine</h3><a aria-label="Besuchen: Duh Slatine" class="work-arrow" href="https://duh-slatine.hr/" rel="noopener noreferrer" target="_blank">↗</a></div><p>Unternehmenswebsite für ein Buchhaltungsbüro mit Leistungen, Preisen und Online-Anfragen.</p><div class="work-tags"><span>Unternehmenswebsite</span><span>HR / EN</span></div></div>
+</article>
+</div>
+<div class="home-app-teaser reveal">
+<div aria-hidden="true" class="home-app-mark">A<span>153</span></div>
+<div class="home-app-text"><span>MOBILE APP · ANDROID</span><h3>Taxi - Auto153</h3><p>Android-App zur Buchung von Taxi- und Privattransfers, verfügbar bei Google Play.</p></div>
+<a class="home-app-cta" href="https://play.google.com/store/apps/details?id=com.auto153.transfer" rel="noopener noreferrer" target="_blank">Bei Google Play ansehen <span aria-hidden="true">↗</span></a>
+</div>
+<div class="works-home-footer"><a class="btn-ghost" href="/de/portfolio">Alle 10 Projekte ansehen →</a></div>
+</section>
+<!-- WHY US -->
+<section class="why">
+<div class="section-tag reveal">Warum Medium29</div>
+<h2 class="section-title reveal reveal-delay-1">Warum sich Kunden<br/>für uns entscheiden</h2>
+<div class="why-grid">
+<div class="why-item reveal">
+<div class="why-item-num">01</div>
+<h3>Schnelle Umsetzung</h3>
+<p>Wir halten Termine ein, ohne Abstriche bei der Qualität. Zeitpläne stimmen wir im Voraus ab und informieren Sie während des gesamten Projekts.</p>
+</div>
+<div class="why-item reveal reveal-delay-1">
+<div class="why-item-num">02</div>
+<h3>Individuelle Lösungen</h3>
+<p>Keine Standardvorlagen: Jedes Projekt entsteht passend zu den individuellen Anforderungen unserer Kunden.</p>
+</div>
+<div class="why-item reveal reveal-delay-2">
+<div class="why-item-num">03</div>
+<h3>Betreuung nach dem Launch</h3>
+<p>Unsere Zusammenarbeit endet nicht mit dem Launch. Wir bieten technischen Support und langfristige Optimierung.</p>
+</div>
+<div class="why-item reveal reveal-delay-3">
+<div class="why-item-num">04</div>
+<h3>Transparente Kommunikation</h3>
+<p>Sie wissen jederzeit, wo Ihr Projekt steht. Regelmäßige Updates und gute Erreichbarkeit gehören zu unserer Arbeitsweise.</p>
+</div>
+</div>
+</section>
+<!-- CTA BAND -->
+<div class="cta-band">
+<h2>Starten wir Ihr<br/><span>Ihr Projekt noch heute</span></h2>
+<a class="btn-primary" href="/de/kontakt" style="font-size:1rem; padding:1rem 2.5rem;">
+    Kostenlose Beratung anfragen
+    <svg fill="none" height="16" viewbox="0 0 16 16" width="16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
+</a>
+</div>
+<!-- FOOTER -->
+<footer>
+<div class="footer-top">
+<div class="footer-brand">
+<a class="logo" href="/de/">Medium<span>29</span></a>
+<p>Umfassende digitale Unterstützung für Marken, die echte Ergebnisse erzielen möchten.</p>
+</div>
+<div class="footer-col">
+<h4>Seiten</h4>
+<ul>
+<li><a href="/de/">Startseite</a></li>
+<li><a href="/de/o-nama">Über uns</a></li>
+<li><a href="/de/usluge">Leistungen</a></li>
+<li><a href="/de/portfolio">Portfolio</a></li>
+<li><a href="/de/kontakt">Kontakt</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Leistungen</h4>
+<ul>
+<li><a href="/de/usluge">Webdesign</a></li>
+<li><a href="/de/usluge">SEO-Optimierung</a></li>
+<li><a href="/de/usluge">Digitalmarketing</a></li>
+<li><a href="/de/usluge">Digital Signage</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Kontakt</h4>
+<ul>
+<li><a href="mailto:info.medium29@gmail.com">info.medium29@gmail.com</a></li>
+<li><a href="https://medium29.com">medium29.com</a></li>
+<li><a href="#">Vukovar, Kroatien</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2026 Medium29. Alle Rechte vorbehalten.</p>
+<div class="footer-legal">
+<a href="/de/politika-privatnosti">Datenschutzerklärung</a>
+<span aria-hidden="true">·</span>
+<a href="/de/politika-kolacica">Cookie-Richtlinie</a>
+<span aria-hidden="true">·</span>
+<a class="cookie-settings-link" href="#">Cookie-Einstellungen</a>
+</div>
+</div>
+</footer>
+<script src="/main.js"></script>
+<script>
+  document.addEventListener("mousemove", function(e) {
+    var xPct = (e.clientX / window.innerWidth - 0.5) * 40;
+    var yPct = (e.clientY / window.innerHeight - 0.5) * 40;
+    var glow = document.querySelector(".hero-glow");
+    if (glow) glow.style.transform = "translate(calc(-50% + " + xPct + "px), calc(-50% + " + yPct + "px))";
+  });
+</script>
+<script>
+// TEXT SCRAMBLE ANIMATION
+(function() {
+  var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%&';
+
+  function scramble(el) {
+    var finalText = el.getAttribute('data-text');
+    var duration = 800;
+    var start = null;
+    var frameRate = 40;
+    var lastFrame = 0;
+
+    function randomChar() {
+      return chars[Math.floor(Math.random() * chars.length)];
+    }
+
+    function update(timestamp) {
+      if (!start) start = timestamp;
+      var elapsed = timestamp - start;
+      var progress = Math.min(elapsed / duration, 1);
+
+      // How many characters are "settled"
+      var settled = Math.floor(progress * finalText.length);
+
+      if (timestamp - lastFrame > frameRate) {
+        var result = '';
+        for (var i = 0; i < finalText.length; i++) {
+          if (finalText[i] === ' ') {
+            result += ' ';
+          } else if (i < settled) {
+            result += finalText[i];
+          } else {
+            result += randomChar();
+          }
+        }
+        el.textContent = result;
+
+        // Restore any child classes (accent-word, outline-word)
+        lastFrame = timestamp;
+      }
+
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      } else {
+        el.textContent = finalText;
+      }
+    }
+
+    requestAnimationFrame(update);
+  }
+
+  // Start on page load with staggered delay per element
+  window.addEventListener('load', function() {
+    var elements = document.querySelectorAll('.scramble');
+    elements.forEach(function(el, i) {
+      setTimeout(function() {
+        scramble(el);
+      }, i * 120);
+    });
+  });
+})();
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="/three-bg.js"></script>
+<script src="/cookie-consent.js"></script>
+</body>
+</html>

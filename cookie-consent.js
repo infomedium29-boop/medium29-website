@@ -65,6 +65,64 @@
     if (modal) modal.classList.remove('show');
   }
 
+
+  // Cookie UI translations, keeping the existing consent storage and categories unchanged.
+  function translateCookieContent(wrapper) {
+    var lang = document.documentElement.lang || 'hr';
+    if (lang === 'hr') return;
+    var dictionary = {
+      en: {
+        'Koristimo kolačiće':'We use cookies',
+        'Koristimo nužne kolačiće za rad stranice, a analitičke i marketinške samo uz Vašu privolu. Postavke možete promijeniti u bilo kojem trenutku.':'We use essential cookies for website operation and optional analytics and marketing cookies only with your consent. You can change your settings at any time. ',
+        'Saznajte više':'Learn more',
+        'Postavke':'Settings', 'Odbij':'Reject', 'Prihvati sve':'Accept all',
+        'Postavke privatnosti':'Privacy settings',
+        'Odaberite koje kategorije kolačića dopuštate. Nužni kolačići uvijek su aktivni jer omogućuju osnovni rad web stranice.':'Choose which cookie categories to allow. Essential cookies are always active because they enable the website to function.',
+        'Nužni kolačići':'Essential cookies',
+        'Potrebni su za sigurnost, prikaz stranice i spremanje Vaših postavki privole.':'Required for security, website display and remembering your consent preferences.',
+        'Analitički kolačići':'Analytics cookies',
+        'Pomažu razumjeti kako se stranica koristi, npr. Google Analytics, ako ga dodate.':'Help us understand website usage, such as through Google Analytics if added in the future.',
+        'Marketinški kolačići':'Marketing cookies',
+        'Koriste se za oglase i remarketing, npr. Meta Pixel, ako ga dodate.':'Used for advertising and remarketing, such as Meta Pixel if added in the future.',
+        'Preferencije':'Preferences',
+        'Pamte dodatne postavke korisnika ako ih stranica kasnije bude koristila.':'Remember additional settings if the website uses them in the future.',
+        'Zatvori':'Close','Spremi odabir':'Save selection'
+      },
+      de: {
+        'Koristimo kolačiće':'Wir verwenden Cookies',
+        'Koristimo nužne kolačiće za rad stranice, a analitičke i marketinške samo uz Vašu privolu. Postavke možete promijeniti u bilo kojem trenutku.':'Wir verwenden notwendige Cookies für den Betrieb sowie optionale Analyse- und Marketing-Cookies nur mit Ihrer Einwilligung. Sie können Ihre Einstellungen jederzeit ändern. ',
+        'Saznajte više':'Mehr erfahren',
+        'Postavke':'Einstellungen','Odbij':'Ablehnen','Prihvati sve':'Alle akzeptieren',
+        'Postavke privatnosti':'Datenschutzeinstellungen',
+        'Odaberite koje kategorije kolačića dopuštate. Nužni kolačići uvijek su aktivni jer omogućuju osnovni rad web stranice.':'Wählen Sie aus, welche Cookie-Kategorien Sie erlauben. Notwendige Cookies sind immer aktiv, da sie grundlegende Website-Funktionen ermöglichen.',
+        'Nužni kolačići':'Notwendige Cookies',
+        'Potrebni su za sigurnost, prikaz stranice i spremanje Vaših postavki privole.':'Erforderlich für Sicherheit, Darstellung und Speicherung Ihrer Einwilligung.',
+        'Analitički kolačići':'Analyse-Cookies',
+        'Pomažu razumjeti kako se stranica koristi, npr. Google Analytics, ako ga dodate.':'Helfen uns zu verstehen, wie die Website genutzt wird, etwa durch Google Analytics, falls später aktiviert.',
+        'Marketinški kolačići':'Marketing-Cookies',
+        'Koriste se za oglase i remarketing, npr. Meta Pixel, ako ga dodate.':'Werden für Werbung und Remarketing eingesetzt, etwa durch Meta Pixel, falls später aktiviert.',
+        'Preferencije':'Präferenzen',
+        'Pamte dodatne postavke korisnika ako ih stranica kasnije bude koristila.':'Merken zusätzliche Einstellungen, falls die Website sie künftig verwendet.',
+        'Zatvori':'Schließen','Spremi odabir':'Auswahl speichern'
+      }
+    }[lang];
+    if (!dictionary) return;
+    var walker = document.createTreeWalker(wrapper, NodeFilter.SHOW_TEXT);
+    var current;
+    while ((current = walker.nextNode())) {
+      var key = current.nodeValue.trim();
+      if (dictionary[key]) current.nodeValue = current.nodeValue.replace(key,dictionary[key]);
+    }
+    wrapper.querySelectorAll('a[href="/politika-kolacica"]').forEach(function(a){ a.href = '/'+lang+'/politika-kolacica'; });
+    var labels = {
+      en:['Cookie notice','Close notice and continue with essential cookies only','Cookie settings'],
+      de:['Cookie-Hinweis','Hinweis schließen und nur notwendige Cookies verwenden','Cookie-Einstellungen']
+    }[lang];
+    wrapper.querySelector('#cookieBanner')?.setAttribute('aria-label',labels[0]);
+    wrapper.querySelector('.cookie-banner-close')?.setAttribute('aria-label',labels[1]);
+    wrapper.querySelector('#cookiePreferences')?.setAttribute('aria-label',labels[2]);
+  }
+
   function injectMarkup() {
     if (document.getElementById('cookieBanner')) return;
     var wrapper = document.createElement('div');
@@ -109,6 +167,7 @@
         </div>
       </div>`;
     document.body.appendChild(wrapper);
+    translateCookieContent(wrapper);
   }
 
   function bindEvents() {

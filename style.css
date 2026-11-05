@@ -20,7 +20,7 @@ body {
   font-size: 16px;
   line-height: 1.6;
   overflow-x: hidden;
-  cursor: none;
+  cursor: auto;
 }
 
 /* NOISE */
@@ -106,7 +106,7 @@ body:has(button:hover) .cursor-follower { width: 60px; height: 60px; border-colo
   padding: 0.4rem 1.1rem;
   white-space: nowrap;
   transition: color 0.2s;
-  cursor: none;
+  cursor: auto;
   position: relative;
 }
 .nav-links a::after {
@@ -181,7 +181,7 @@ section { padding: 7rem 4rem; position: relative; }
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  cursor: none;
+  cursor: auto;
   transition: transform 0.2s, box-shadow 0.2s;
 }
 .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 15px 40px rgba(200,255,0,0.3); }
@@ -192,7 +192,7 @@ section { padding: 7rem 4rem; position: relative; }
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  cursor: none;
+  cursor: auto;
   transition: color 0.2s;
   padding: 0.9rem 1rem;
   border: 1px solid var(--border);
@@ -339,7 +339,7 @@ footer {
   text-decoration: none;
   font-size: 0.88rem;
   transition: color 0.2s;
-  cursor: none;
+  cursor: auto;
 }
 .footer-col ul a:hover { color: var(--text); }
 .footer-bottom {
@@ -366,7 +366,7 @@ footer {
   text-decoration: none;
   font-size: 0.8rem;
   transition: all 0.2s;
-  cursor: none;
+  cursor: auto;
 }
 .footer-socials a:hover { border-color: rgba(200,255,0,0.3); color: var(--accent); }
 
@@ -379,7 +379,7 @@ footer {
   position: relative;
   overflow: hidden;
   transition: background 0.3s, border-color 0.3s;
-  cursor: none;
+  cursor: auto;
 }
 .card::before {
   content: '';
@@ -407,7 +407,7 @@ footer {
   border-radius: 10px;
   outline: none;
   transition: border-color 0.2s;
-  cursor: none;
+  cursor: auto;
   width: 100%;
 }
 .form-group input:focus,
@@ -543,3 +543,9 @@ footer {
 }
 
 /* SHARED JS CURSOR + SCROLL */
+
+/* Standard native mouse cursor throughout the site */
+html,body { cursor: auto !important; }
+a,button,summary,[role="button"],select,input[type="checkbox"],input[type="radio"] { cursor: pointer !important; }
+input[type="text"],input[type="email"],input[type="tel"],textarea { cursor: text !important; }
+.cursor,.cursor-follower { display: none !important; }

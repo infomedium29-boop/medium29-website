@@ -1,19 +1,24 @@
 <!DOCTYPE html>
+
 <html lang="hr">
 <head>
-<meta charset="UTF-8">
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="apple-touch-icon" href="favicon.png">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Medium29 — Web dizajn, Marketing & Digital Signage</title>
-<meta name="description" content="Kompletna digitalna podrška — web dizajn, digitalni marketing i digital signage rješenja za vaše poslovanje. Brza isporuka, podrška nakon projekta.">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://medium29.com/">
-<meta property="og:url" content="https://medium29.com/">
-<link rel="sitemap" type="application/xml" href="/sitemap.xml">
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="cookie-consent.css">
-<link rel="stylesheet" href="portfolio-showcase.css">
+<script>try{if(sessionStorage.getItem('medium29_intro_seen')==='1')document.documentElement.classList.add('intro-seen')}catch(e){}</script>
+<meta charset="utf-8"/>
+<link href="/favicon.png" rel="icon" type="image/png"/>
+<link href="/favicon.png" rel="apple-touch-icon"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Medium29 | Web dizajn, razvoj i digitalni marketing — Vukovar</title>
+<meta content="Web dizajn, SEO, digitalni marketing i digital signage iz Vukovara. Medium29 razvija brze web stranice i aplikacije za klijente diljem Hrvatske." name="description"/>
+<meta content="index, follow, max-image-preview:large" name="robots"/>
+<link href="https://medium29.com/" rel="canonical"/>
+<meta content="https://medium29.com/" property="og:url"/>
+<link href="/sitemap.xml" rel="sitemap" type="application/xml"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="/style.css" rel="stylesheet"/>
+<link href="/site-enhancements.css" rel="stylesheet"/>
+<link href="/cookie-consent.css" rel="stylesheet"/>
+<link href="/portfolio-showcase.css" rel="stylesheet"/>
 <style>
   .hero {
     min-height: 100vh;
@@ -161,7 +166,7 @@
   .services-preview { background: var(--bg2); }
   .services-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3.5rem; gap: 2rem; flex-wrap: wrap; }
   .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); }
-  .service-card { background: var(--bg2); padding: 2.8rem; position: relative; overflow: hidden; transition: background 0.3s; cursor: none; }
+  .service-card { background: var(--bg2); padding: 2.8rem; position: relative; overflow: hidden; transition: background 0.3s; cursor: auto; }
   .service-card::before { content:''; position:absolute; inset:0; background:linear-gradient(135deg,rgba(200,255,0,0.05) 0%,transparent 60%); opacity:0; transition:opacity 0.4s; }
   .service-card:hover { background: var(--bg3); }
   .service-card:hover::before { opacity: 1; }
@@ -170,7 +175,7 @@
   .service-card:hover .service-icon { transform:scale(1.1) rotate(-5deg); box-shadow:0 8px 30px rgba(200,255,0,0.15); }
   .service-card h3 { font-family:'Syne',sans-serif; font-size:1.3rem; font-weight:700; margin-bottom:0.8rem; letter-spacing:-0.02em; }
   .service-card p { color:var(--muted); font-size:0.9rem; line-height:1.65; margin-bottom:2rem; }
-  .service-link { display:inline-flex; align-items:center; gap:0.4rem; font-size:0.82rem; color:var(--accent); text-decoration:none; font-weight:500; cursor:none; transition:gap 0.2s; }
+  .service-link { display:inline-flex; align-items:center; gap:0.4rem; font-size:0.82rem; color:var(--accent); text-decoration:none; font-weight:500; cursor: auto; transition:gap 0.2s; }
   .service-link:hover { gap: 0.7rem; }
 
   .why { background: var(--bg); }
@@ -225,266 +230,229 @@
     z-index: 0;
     pointer-events: none;
   }
-  body > *:not(#three-bg):not(.cursor):not(.cursor-follower):not(.mobile-menu) {
+  body > *:not(#three-bg):not(.cursor):not(.cursor-follower):not(.mobile-menu):not(#site-intro) {
     position: relative;
     z-index: 1;
   }
   .mobile-menu { z-index: 999; }
 
 </style>
-
-  <!-- SEO & Open Graph -->
-  <meta name="author" content="Medium29">
-  <meta name="geo.region" content="HR-14">
-  <meta name="geo.placename" content="Osijek">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Medium29 — Web dizajn, Marketing & Digital Signage">
-  <meta property="og:description" content="Kompletna digitalna podrška — web dizajn, digitalni marketing i digital signage rješenja za vaše poslovanje.">
-  <meta property="og:site_name" content="Medium29">
-  <meta property="og:locale" content="hr_HR">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Medium29 — Web dizajn, Marketing & Digital Signage">
-  <meta name="twitter:description" content="Kompletna digitalna podrška za vaše poslovanje.">
-</head>
+<!-- SEO & Open Graph -->
+<meta content="Medium29" name="author"/>
+<meta content="HR-16" name="geo.region"/>
+<meta content="Vukovar" name="geo.placename"/>
+<meta content="website" property="og:type"/>
+<meta content="Medium29 | Web dizajn, razvoj i digitalni marketing — Vukovar" property="og:title"/>
+<meta content="Web dizajn, SEO, digitalni marketing i digital signage iz Vukovara. Medium29 razvija brze web stranice i aplikacije za klijente diljem Hrvatske." property="og:description"/>
+<meta content="Medium29" property="og:site_name"/>
+<meta content="hr_HR" property="og:locale"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Medium29 | Web dizajn, razvoj i digitalni marketing — Vukovar" name="twitter:title"/>
+<meta content="Web dizajn, SEO, digitalni marketing i digital signage iz Vukovara. Medium29 razvija brze web stranice i aplikacije za klijente diljem Hrvatske." name="twitter:description"/>
+<meta content="https://medium29.com/og-medium29.jpg" property="og:image"/><meta content="1200" property="og:image:width"/><meta content="630" property="og:image:height"/><meta content="Medium29 — Web Design &amp; Digital Marketing" property="og:image:alt"/><meta content="https://medium29.com/og-medium29.jpg" name="twitter:image"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "Medium29", "url": "https://medium29.com/", "image": "https://medium29.com/og-medium29.jpg", "email": "info.medium29@gmail.com", "description": "Web dizajn, SEO, digitalni marketing i digital signage iz Vukovara. Medium29 razvija brze web stranice i aplikacije za klijente diljem Hrvatske.", "address": {"@type": "PostalAddress", "addressLocality": "Vukovar", "addressRegion": "Vukovarsko-srijemska", "addressCountry": "HR"}, "areaServed": {"@type": "Country", "name": "Croatia"}, "availableLanguage": ["Croatian", "English", "German"]}</script><link href="https://medium29.com/" hreflang="hr" rel="alternate"/><link href="https://medium29.com/en/" hreflang="en" rel="alternate"/><link href="https://medium29.com/de/" hreflang="de" rel="alternate"/><link href="https://medium29.com/" hreflang="x-default" rel="alternate"/><noscript><style>body > #site-intro{display:none!important}</style></noscript></head>
 <body>
+<div id="site-intro" aria-hidden="true"><div><div class="intro-brand"><div class="logo-writing">Medium<span>29</span></div><i class="intro-caret"></i></div><div class="intro-line"></div></div></div>
 
 <canvas id="three-bg"></canvas>
-<div class="cursor" id="cursor"></div>
-<div class="cursor-follower" id="cursorFollower"></div>
-
 <nav id="navbar">
-  <a href="/" class="logo">Medium<span>29</span></a>
-  <ul class="nav-links">
-    <li><a href="/">Početna</a></li>
-    <li><a href="/o-nama">O nama</a></li>
-    <li><a href="/usluge">Usluge</a></li>
-    <li><a href="/portfolio">Portfolio</a></li>
-    <li><a href="/kontakt" class="nav-cta">Kontakt</a></li>
-  </ul>
-  <button class="hamburger" id="hamburger" aria-label="Otvori meni">
-    <span></span><span></span><span></span>
-  </button>
+<a class="logo" href="/">Medium<span>29</span></a>
+<ul class="nav-links">
+<li><a href="/">Početna</a></li>
+<li><a href="/o-nama">O nama</a></li>
+<li><a href="/usluge">Usluge</a></li>
+<li><a href="/portfolio">Portfolio</a></li>
+<li><a class="nav-cta" href="/kontakt">Kontakt</a></li>
+</ul>
+<div class="nav-right"><div aria-label="Odabir jezika" class="lang-switch"><a aria-current="page" href="/" hreflang="hr" lang="hr" title="Hrvatski">HR</a><a href="/en/" hreflang="en" lang="en" title="English">EN</a><a href="/de/" hreflang="de" lang="de" title="Deutsch">DE</a></div><button aria-controls="mobileMenu" aria-expanded="false" aria-label="Otvori meni" class="hamburger" id="hamburger" type="button">
+<span></span><span></span><span></span>
+</button></div>
 </nav>
-
 <div class="mobile-menu" id="mobileMenu">
-  <ul class="mobile-menu-links">
-    <li><a href="/">Početna</a></li>
-    <li><a href="/o-nama">O nama</a></li>
-    <li><a href="/usluge">Usluge</a></li>
-    <li><a href="/portfolio">Portfolio</a></li>
-  </ul>
-  <div class="mobile-menu-cta">
-    <a href="/kontakt">Zatraži ponudu</a>
-  </div>
+<ul class="mobile-menu-links">
+<li><a href="/">Početna</a></li>
+<li><a href="/o-nama">O nama</a></li>
+<li><a href="/usluge">Usluge</a></li>
+<li><a href="/portfolio">Portfolio</a></li>
+</ul>
+<div class="mobile-lang-switch"><div aria-label="Odabir jezika" class="lang-switch"><a aria-current="page" href="/" hreflang="hr" lang="hr" title="Hrvatski">HR</a><a href="/en/" hreflang="en" lang="en" title="English">EN</a><a href="/de/" hreflang="de" lang="de" title="Deutsch">DE</a></div></div>
+<div class="mobile-menu-cta">
+<a href="/kontakt">Zatraži ponudu</a>
 </div>
-
+</div>
 <!-- HERO -->
 <section class="hero" id="pocetak">
-  <div class="hero-bg-grid"></div>
-  <div class="hero-glow"></div>
-  <div class="hero-glow-2"></div>
-
-  <h1>
-    <span class="scramble" data-text="Sve digitalne">Sve digitalne</span><br>
-    <span class="accent-word scramble" data-text="usluge">usluge</span><span class="scramble" data-text=" na"> na</span><br>
-    <span class="outline-word scramble" data-text="jednom">jednom</span><span class="scramble" data-text=" mjestu"> mjestu</span>
-  </h1>
-
-  <p class="hero-sub">Web dizajn, marketing i digital signage rješenja koja pretvaraju posjetitelje u klijente. Brza isporuka, podrška nakon projekta.</p>
-
-  <div class="hero-actions">
-    <a href="/kontakt" class="btn-primary">
+<div class="hero-bg-grid"></div>
+<div class="hero-glow"></div>
+<div class="hero-glow-2"></div>
+<h1>
+<span class="scramble" data-text="Sve digitalne">Sve digitalne</span><br/>
+<span class="accent-word scramble" data-text="usluge">usluge</span><span class="scramble" data-text=" na"> na</span><br/>
+<span class="outline-word scramble" data-text="jednom">jednom</span><span class="scramble" data-text=" mjestu"> mjestu</span>
+</h1>
+<p class="hero-sub">Web dizajn, marketing i digital signage rješenja koja pretvaraju posjetitelje u klijente. Brza isporuka, podrška nakon projekta.</p>
+<div class="hero-actions">
+<a class="btn-primary" href="/kontakt">
       Zatraži ponudu
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </a>
-    <a href="/usluge" class="btn-ghost">Pogledaj usluge</a>
-  </div>
-
-  <div class="hero-stats">
-    <div class="stat-item"><div class="stat-num">9</div><div class="stat-label">Web projekata u portfoliju</div></div>
-    <div class="stat-item"><div class="stat-num">1</div><div class="stat-label">Objavljena Android aplikacija</div></div>
-    <div class="stat-item"><div class="stat-num">10</div><div class="stat-label">Realiziranih radova na webu</div></div>
-  </div>
-
-  <div class="hero-scroll">
-    <div class="scroll-line"></div>
+      <svg fill="none" height="16" viewbox="0 0 16 16" width="16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
+</a>
+<a class="btn-ghost" href="/usluge">Pogledaj usluge</a>
+</div>
+<div class="hero-stats">
+<div class="stat-item"><div class="stat-num">9</div><div class="stat-label">Web projekata u portfoliju</div></div>
+<div class="stat-item"><div class="stat-num">1</div><div class="stat-label">Objavljena Android aplikacija</div></div>
+<div class="stat-item"><div class="stat-num">10</div><div class="stat-label">Realiziranih radova na webu</div></div>
+</div>
+<div class="hero-scroll">
+<div class="scroll-line"></div>
     Scroll
   </div>
 </section>
-
-<!-- MARQUEE -->
-<div class="marquee-section">
-  <div class="marquee-track">
-    <span class="marquee-item"><span class="marquee-dot"></span>Web Dizajn</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>SEO Optimizacija</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>Digital Marketing</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>Meta Oglasi</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>Google Ads</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>Digital Signage</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>Branding</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>Analitika</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>Web Dizajn</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>SEO Optimizacija</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>Digital Marketing</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>Meta Oglasi</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>Google Ads</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>Digital Signage</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>Branding</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>Analitika</span>
-  </div>
-</div>
-
 <!-- SERVICES PREVIEW -->
 <section class="services-preview">
-  <div class="services-header">
-    <div>
-      <div class="section-tag reveal">Naše usluge</div>
-      <h2 class="section-title reveal reveal-delay-1">Što radimo</h2>
-    </div>
-    <a href="/usluge" class="btn-ghost reveal reveal-delay-2">Sve usluge →</a>
-  </div>
-  <div class="services-grid">
-    <div class="service-card reveal">
-      <div class="service-num">01</div>
-      <div class="service-icon">🌐</div>
-      <h3>Web Dizajn & Razvoj</h3>
-      <p>Moderne, brze i prilagođene web stranice koje pretvaraju posjetitelje u klijente.</p>
-    </div>
-    <div class="service-card reveal reveal-delay-2">
-      <div class="service-num">02</div>
-      <div class="service-icon">📣</div>
-      <h3>Digitalni Marketing</h3>
-      <p>Strategija, sadržaj i oglašavanje koji povećavaju vidljivost i prodaju.</p>
-    </div>
-    <div class="service-card reveal reveal-delay-3">
-      <div class="service-num">03</div>
-      <div class="service-icon">📺</div>
-      <h3>Digital Signage</h3>
-      <p>Kompletna rješenja pametnih ekrana — od hardvera do sadržaja i podrške.</p>
-    </div>
-  </div>
+<div class="services-header">
+<div>
+<div class="section-tag reveal">Naše usluge</div>
+<h2 class="section-title reveal reveal-delay-1">Što radimo</h2>
+</div>
+<a class="btn-ghost reveal reveal-delay-2" href="/usluge">Sve usluge →</a>
+</div>
+<div class="services-grid">
+<div class="service-card reveal">
+<div class="service-num">01</div>
+<div class="service-icon">🌐</div>
+<h3>Web Dizajn &amp; Razvoj</h3>
+<p>Moderne, brze i prilagođene web stranice koje pretvaraju posjetitelje u klijente.</p>
+</div>
+<div class="service-card reveal reveal-delay-2">
+<div class="service-num">02</div>
+<div class="service-icon">📣</div>
+<h3>Digitalni Marketing</h3>
+<p>Strategija, sadržaj i oglašavanje koji povećavaju vidljivost i prodaju.</p>
+</div>
+<div class="service-card reveal reveal-delay-3">
+<div class="service-num">03</div>
+<div class="service-icon">📺</div>
+<h3>Digital Signage</h3>
+<p>Kompletna rješenja pametnih ekrana — od hardvera do sadržaja i podrške.</p>
+</div>
+</div>
 </section>
-
 <!-- SELECTED REAL PROJECTS -->
-<section class="works-section works-home" aria-labelledby="home-projects-heading">
-  <div class="works-heading">
-    <div><div class="section-tag reveal">Izdvojeni projekti</div><h2 id="home-projects-heading" class="section-title reveal">Naš rad. <span style="color:var(--accent)">U praksi.</span></h2><p class="section-sub reveal">Nekoliko realiziranih projekata kojima smo pomogli klijentima predstaviti svoje usluge i olakšati put do novih upita.</p></div>
-    <a class="btn-ghost reveal" href="/portfolio">Svi projekti <span aria-hidden="true">↗</span></a>
-  </div>
-  <div class="work-grid">
+<section aria-labelledby="home-projects-heading" class="works-section works-home">
+<div class="works-heading">
+<div><div class="section-tag reveal">Izdvojeni projekti</div><h2 class="section-title reveal" id="home-projects-heading">Naš rad. <span style="color:var(--accent)">U praksi.</span></h2><p class="section-sub reveal">Nekoliko realiziranih projekata kojima smo pomogli klijentima predstaviti svoje usluge i olakšati put do novih upita.</p></div>
+<a class="btn-ghost reveal" href="/portfolio">Svi projekti <span aria-hidden="true">↗</span></a>
+</div>
+<div class="work-grid">
 <article class="work-card reveal" data-cat="web" data-project="auto153-web">
-   <a class="work-media" href="https://auto153.hr/" target="_blank" rel="noopener noreferrer" aria-label="Otvori web stranicu AUTO 153 u novoj kartici">
-     <img src="assets/portfolio/auto153-web.svg" loading="lazy" decoding="async" width="1200" height="750" alt="Grafička naslovnica projekta AUTO 153">
-     <span class="work-media-shade"></span><span class="work-media-label">WEB PROJEKT <span aria-hidden="true">↗</span></span>
-   </a>
-   <div class="work-card-body"><div class="work-kicker">Taxi · transport</div><div class="work-card-title-row"><h3>AUTO 153</h3><a class="work-arrow" href="https://auto153.hr/" target="_blank" rel="noopener noreferrer" aria-label="Posjeti AUTO 153">↗</a></div><p>Višejezična stranica s online rezervacijama i informacijama o međugradskim i međunarodnim transferima.</p><div class="work-tags"><span>Višejezični web</span><span>Rezervacije</span></div></div>
- </article><article class="work-card reveal" data-cat="web" data-project="taxi-transfers-krk">
-   <a class="work-media" href="https://taxitransferskrk.com/" target="_blank" rel="noopener noreferrer" aria-label="Otvori web stranicu Taxi &amp; Transfers Krk u novoj kartici">
-     <img src="assets/portfolio/taxi-transfers-krk.svg" loading="lazy" decoding="async" width="1200" height="750" alt="Grafička naslovnica projekta Taxi &amp; Transfers Krk">
-     <span class="work-media-shade"></span><span class="work-media-label">WEB PROJEKT <span aria-hidden="true">↗</span></span>
-   </a>
-   <div class="work-card-body"><div class="work-kicker">Taxi · turizam</div><div class="work-card-title-row"><h3>Taxi &amp; Transfers Krk</h3><a class="work-arrow" href="https://taxitransferskrk.com/" target="_blank" rel="noopener noreferrer" aria-label="Posjeti Taxi &amp; Transfers Krk">↗</a></div><p>Web za taxi i privatne transfere na Krku s rezervacijskim obrascem i višejezičnim sadržajem.</p><div class="work-tags"><span>5 jezika</span><span>Rezervacije</span></div></div>
- </article><article class="work-card reveal" data-cat="web" data-project="duh-slatine">
-   <a class="work-media" href="https://duh-slatine.hr/" target="_blank" rel="noopener noreferrer" aria-label="Otvori web stranicu Duh Slatine u novoj kartici">
-     <img src="assets/portfolio/duh-slatine.svg" loading="lazy" decoding="async" width="1200" height="750" alt="Grafička naslovnica projekta Duh Slatine">
-     <span class="work-media-shade"></span><span class="work-media-label">WEB PROJEKT <span aria-hidden="true">↗</span></span>
-   </a>
-   <div class="work-card-body"><div class="work-kicker">Knjigovodstvo · poslovanje</div><div class="work-card-title-row"><h3>Duh Slatine</h3><a class="work-arrow" href="https://duh-slatine.hr/" target="_blank" rel="noopener noreferrer" aria-label="Posjeti Duh Slatine">↗</a></div><p>Poslovna web stranica knjigovodstvenog obrta s uslugama, cjenikom i digitalnim upitima.</p><div class="work-tags"><span>Poslovni web</span><span>HR / EN</span></div></div>
- </article>
-  </div>
-  <div class="home-app-teaser reveal">
-    <div class="home-app-mark" aria-hidden="true">A<span>153</span></div>
-    <div class="home-app-text"><span>MOBILNA APLIKACIJA · ANDROID</span><h3>Taxi - Auto153</h3><p>Objavljena Android aplikacija za rezervaciju taxi i privatnih transfera.</p></div>
-    <a class="home-app-cta" href="https://play.google.com/store/apps/details?id=com.auto153.transfer" target="_blank" rel="noopener noreferrer">Pogledaj na Google Playu <span aria-hidden="true">↗</span></a>
-  </div>
-  <div class="works-home-footer"><a class="btn-ghost" href="/portfolio">Pogledaj svih 10 projekata →</a></div>
+<a aria-label="Otvori web stranicu AUTO 153 u novoj kartici" class="work-media" href="https://auto153.hr/" rel="noopener noreferrer" target="_blank">
+<img alt="Grafička naslovnica projekta AUTO 153" decoding="async" height="750" loading="lazy" src="/assets/portfolio/auto153-web.svg" width="1200"/>
+<span class="work-media-shade"></span><span class="work-media-label">WEB PROJEKT <span aria-hidden="true">↗</span></span>
+</a>
+<div class="work-card-body"><div class="work-kicker">Taxi · transport</div><div class="work-card-title-row"><h3>AUTO 153</h3><a aria-label="Posjeti AUTO 153" class="work-arrow" href="https://auto153.hr/" rel="noopener noreferrer" target="_blank">↗</a></div><p>Višejezična stranica s online rezervacijama i informacijama o međugradskim i međunarodnim transferima.</p><div class="work-tags"><span>Višejezični web</span><span>Rezervacije</span></div></div>
+</article><article class="work-card reveal" data-cat="web" data-project="taxi-transfers-krk">
+<a aria-label="Otvori web stranicu Taxi &amp; Transfers Krk u novoj kartici" class="work-media" href="https://taxitransferskrk.com/" rel="noopener noreferrer" target="_blank">
+<img alt="Grafička naslovnica projekta Taxi &amp; Transfers Krk" decoding="async" height="750" loading="lazy" src="/assets/portfolio/taxi-transfers-krk.svg" width="1200"/>
+<span class="work-media-shade"></span><span class="work-media-label">WEB PROJEKT <span aria-hidden="true">↗</span></span>
+</a>
+<div class="work-card-body"><div class="work-kicker">Taxi · turizam</div><div class="work-card-title-row"><h3>Taxi &amp; Transfers Krk</h3><a aria-label="Posjeti Taxi &amp; Transfers Krk" class="work-arrow" href="https://taxitransferskrk.com/" rel="noopener noreferrer" target="_blank">↗</a></div><p>Web za taxi i privatne transfere na Krku s rezervacijskim obrascem i višejezičnim sadržajem.</p><div class="work-tags"><span>5 jezika</span><span>Rezervacije</span></div></div>
+</article><article class="work-card reveal" data-cat="web" data-project="duh-slatine">
+<a aria-label="Otvori web stranicu Duh Slatine u novoj kartici" class="work-media" href="https://duh-slatine.hr/" rel="noopener noreferrer" target="_blank">
+<img alt="Grafička naslovnica projekta Duh Slatine" decoding="async" height="750" loading="lazy" src="/assets/portfolio/duh-slatine.svg" width="1200"/>
+<span class="work-media-shade"></span><span class="work-media-label">WEB PROJEKT <span aria-hidden="true">↗</span></span>
+</a>
+<div class="work-card-body"><div class="work-kicker">Knjigovodstvo · poslovanje</div><div class="work-card-title-row"><h3>Duh Slatine</h3><a aria-label="Posjeti Duh Slatine" class="work-arrow" href="https://duh-slatine.hr/" rel="noopener noreferrer" target="_blank">↗</a></div><p>Poslovna web stranica knjigovodstvenog obrta s uslugama, cjenikom i digitalnim upitima.</p><div class="work-tags"><span>Poslovni web</span><span>HR / EN</span></div></div>
+</article>
+</div>
+<div class="home-app-teaser reveal">
+<div aria-hidden="true" class="home-app-mark">A<span>153</span></div>
+<div class="home-app-text"><span>MOBILNA APLIKACIJA · ANDROID</span><h3>Taxi - Auto153</h3><p>Objavljena Android aplikacija za rezervaciju taxi i privatnih transfera.</p></div>
+<a class="home-app-cta" href="https://play.google.com/store/apps/details?id=com.auto153.transfer" rel="noopener noreferrer" target="_blank">Pogledaj na Google Playu <span aria-hidden="true">↗</span></a>
+</div>
+<div class="works-home-footer"><a class="btn-ghost" href="/portfolio">Pogledaj svih 10 projekata →</a></div>
 </section>
-
 <!-- WHY US -->
 <section class="why">
-  <div class="section-tag reveal">Zašto Medium29</div>
-  <h2 class="section-title reveal reveal-delay-1">Razlozi zbog kojih<br>klijenti biraju nas</h2>
-  <div class="why-grid">
-    <div class="why-item reveal">
-      <div class="why-item-num">01</div>
-      <h3>Brza isporuka</h3>
-      <p>Poštujemo rokove bez kompromisa na kvaliteti. Rokove dogovaramo unaprijed, a napredak i sljedeće korake komuniciramo tijekom cijelog projekta.</p>
-    </div>
-    <div class="why-item reveal reveal-delay-1">
-      <div class="why-item-num">02</div>
-      <h3>Rješenja po mjeri</h3>
-      <p>Ne koristimo generičke predloške. Svaki projekt gradimo od nule prema specifičnim potrebama klijenta.</p>
-    </div>
-    <div class="why-item reveal reveal-delay-2">
-      <div class="why-item-num">03</div>
-      <h3>Podrška nakon isporuke</h3>
-      <p>Naš odnos ne završava lansiranjem. Pružamo tehničku podršku i pratimo rezultate dugoročno.</p>
-    </div>
-    <div class="why-item reveal reveal-delay-3">
-      <div class="why-item-num">04</div>
-      <h3>Transparentna komunikacija</h3>
-      <p>Uvijek znate gdje je vaš projekt. Redovni izvještaji i dostupnost su dio naše kulture rada.</p>
-    </div>
-  </div>
+<div class="section-tag reveal">Zašto Medium29</div>
+<h2 class="section-title reveal reveal-delay-1">Razlozi zbog kojih<br/>klijenti biraju nas</h2>
+<div class="why-grid">
+<div class="why-item reveal">
+<div class="why-item-num">01</div>
+<h3>Brza isporuka</h3>
+<p>Poštujemo rokove bez kompromisa na kvaliteti. Rokove dogovaramo unaprijed, a napredak i sljedeće korake komuniciramo tijekom cijelog projekta.</p>
+</div>
+<div class="why-item reveal reveal-delay-1">
+<div class="why-item-num">02</div>
+<h3>Rješenja po mjeri</h3>
+<p>Ne koristimo generičke predloške. Svaki projekt gradimo od nule prema specifičnim potrebama klijenta.</p>
+</div>
+<div class="why-item reveal reveal-delay-2">
+<div class="why-item-num">03</div>
+<h3>Podrška nakon isporuke</h3>
+<p>Naš odnos ne završava lansiranjem. Pružamo tehničku podršku i pratimo rezultate dugoročno.</p>
+</div>
+<div class="why-item reveal reveal-delay-3">
+<div class="why-item-num">04</div>
+<h3>Transparentna komunikacija</h3>
+<p>Uvijek znate gdje je vaš projekt. Redovni izvještaji i dostupnost su dio naše kulture rada.</p>
+</div>
+</div>
 </section>
-
 <!-- CTA BAND -->
 <div class="cta-band">
-  <h2>Pokrenimo vaš<br><span>projekt danas</span></h2>
-  <a href="/kontakt" class="btn-primary" style="font-size:1rem; padding:1rem 2.5rem;">
+<h2>Pokrenimo vaš<br/><span>projekt danas</span></h2>
+<a class="btn-primary" href="/kontakt" style="font-size:1rem; padding:1rem 2.5rem;">
     Zatraži besplatnu konzultaciju
-    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-  </a>
+    <svg fill="none" height="16" viewbox="0 0 16 16" width="16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
+</a>
 </div>
-
 <!-- FOOTER -->
 <footer>
-  <div class="footer-top">
-    <div class="footer-brand">
-      <a href="/" class="logo">Medium<span>29</span></a>
-      <p>Kompletna digitalna podrška za brendove koji žele ozbiljne rezultate.</p>
-    </div>
-    <div class="footer-col">
-      <h4>Stranice</h4>
-      <ul>
-        <li><a href="/">Početna</a></li>
-        <li><a href="/o-nama">O nama</a></li>
-        <li><a href="/usluge">Usluge</a></li>
-        <li><a href="/portfolio">Portfolio</a></li>
-        <li><a href="/kontakt">Kontakt</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Usluge</h4>
-      <ul>
-        <li><a href="/usluge">Web dizajn</a></li>
-        <li><a href="/usluge">SEO optimizacija</a></li>
-        <li><a href="/usluge">Digital marketing</a></li>
-        <li><a href="/usluge">Digital signage</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Kontakt</h4>
-      <ul>
-        <li><a href="mailto:info.medium29@gmail.com">info.medium29@gmail.com</a></li>
-        <li><a href="https://medium29.com">medium29.com</a></li>
-        <li><a href="#">Osijek, Hrvatska</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>© 2026 Medium29. Sva prava pridržana.</p>
-    <div class="footer-legal">
-      <a href="/politika-privatnosti">Politika privatnosti</a>
-      <span aria-hidden="true">·</span>
-      <a href="/politika-kolacica">Politika kolačića</a>
-      <span aria-hidden="true">·</span>
-      <a href="#" class="cookie-settings-link">Postavke kolačića</a>
-    </div>
-  </div>
+<div class="footer-top">
+<div class="footer-brand">
+<a class="logo" href="/">Medium<span>29</span></a>
+<p>Kompletna digitalna podrška za brendove koji žele ozbiljne rezultate.</p>
+</div>
+<div class="footer-col">
+<h4>Stranice</h4>
+<ul>
+<li><a href="/">Početna</a></li>
+<li><a href="/o-nama">O nama</a></li>
+<li><a href="/usluge">Usluge</a></li>
+<li><a href="/portfolio">Portfolio</a></li>
+<li><a href="/kontakt">Kontakt</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Usluge</h4>
+<ul>
+<li><a href="/usluge">Web dizajn</a></li>
+<li><a href="/usluge">SEO optimizacija</a></li>
+<li><a href="/usluge">Digital marketing</a></li>
+<li><a href="/usluge">Digital signage</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Kontakt</h4>
+<ul>
+<li><a href="mailto:info.medium29@gmail.com">info.medium29@gmail.com</a></li>
+<li><a href="https://medium29.com">medium29.com</a></li>
+<li><a href="#">Vukovar, Hrvatska</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2026 Medium29. Sva prava pridržana.</p>
+<div class="footer-legal">
+<a href="/politika-privatnosti">Politika privatnosti</a>
+<span aria-hidden="true">·</span>
+<a href="/politika-kolacica">Politika kolačića</a>
+<span aria-hidden="true">·</span>
+<a class="cookie-settings-link" href="#">Postavke kolačića</a>
+</div>
+</div>
 </footer>
-
-<script src="main.js"></script>
+<script src="/main.js"></script>
 <script>
   document.addEventListener("mousemove", function(e) {
     var xPct = (e.clientX / window.innerWidth - 0.5) * 40;
@@ -493,7 +461,6 @@
     if (glow) glow.style.transform = "translate(calc(-50% + " + xPct + "px), calc(-50% + " + yPct + "px))";
   });
 </script>
-
 <script>
 // TEXT SCRAMBLE ANIMATION
 (function() {
@@ -556,9 +523,8 @@
   });
 })();
 </script>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="three-bg.js"></script>
-<script src="cookie-consent.js"></script>
+<script src="/three-bg.js"></script>
+<script src="/cookie-consent.js"></script>
 </body>
 </html>

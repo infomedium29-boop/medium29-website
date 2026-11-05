@@ -1,4 +1,4 @@
-# SEO redirects - preferred clean URLs for medium29.com
+# Canonical clean URL redirects for Cloudflare Pages
 /index.html / 301
 /o-nama.html /o-nama 301
 /usluge.html /usluge 301
@@ -6,3 +6,17 @@
 /kontakt.html /kontakt 301
 /politika-privatnosti.html /politika-privatnosti 301
 /politika-kolacica.html /politika-kolacica 301
+/en/index.html /en/ 301
+/en/o-nama.html /en/o-nama 301
+/en/usluge.html /en/usluge 301
+/en/portfolio.html /en/portfolio 301
+/en/kontakt.html /en/kontakt 301
+/en/politika-privatnosti.html /en/politika-privatnosti 301
+/en/politika-kolacica.html /en/politika-kolacica 301
+/de/index.html /de/ 301
+/de/o-nama.html /de/o-nama 301
+/de/usluge.html /de/usluge 301
+/de/portfolio.html /de/portfolio 301
+/de/kontakt.html /de/kontakt 301
+/de/politika-privatnosti.html /de/politika-privatnosti 301
+/de/politika-kolacica.html /de/politika-kolacica 301

@@ -6,7 +6,7 @@ UKLJUČENO
 - Dodana Android aplikacija Taxi - Auto153 s poveznicom na Google Play.
 - Dodana sekcija 3 izdvojena web projekta i Android aplikacije na naslovnicu.
 - Prilagođeni vizualni prikazi za 8 projekata su originalni SVG coveri, a NE doslovni screenshotovi stranica; DealTravel koristi pravu fotografiju iz dostavljenog ZIP-a.
-- Android aplikacija prikazuje stvarne screenshotove hostane na Google Playu, uz lokalni SVG fallback u slučaju problema s mrežom.
+- Android aplikacija prikazuje tri nova lokalno optimizirana AVIF screenshota iz slikeapp.zip, uz lokalni SVG fallback.
 - Filtar web/aplikacije, mobilni izgled, osnovni SEO i pristupačnost.
 
 BITNO ZA NAKNADNU NADOGRADNJU

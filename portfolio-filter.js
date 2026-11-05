@@ -11,7 +11,12 @@ document.addEventListener('DOMContentLoaded', function () {
     if (grid) grid.hidden = !showWeb;
     if (app) app.hidden = category === 'web';
     const total = (showWeb ? webCards.length : 0) + ((category !== 'web' && app) ? 1 : 0);
-    if (counter) counter.textContent = 'Prikazano ' + total + (total === 1 ? ' projekt' : (total>=2 && total<=4 ? ' projekta' : ' projekata'));
+    if (counter) {
+      const lang=document.documentElement.lang || 'hr';
+      counter.textContent = lang==='en' ? ('Showing '+total+' '+(total===1?'project':'projects')) :
+          lang==='de' ? (total+' '+(total===1?'Projekt':'Projekte')+' angezeigt') :
+          'Prikazano ' + total + (total === 1 ? ' projekt' : (total>=2 && total<=4 ? ' projekta' : ' projekata'));
+    }
   }
   controls.forEach(btn => btn.addEventListener('click', () => show(btn.dataset.filter)));
   show('sve');

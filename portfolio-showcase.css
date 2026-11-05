@@ -45,7 +45,7 @@
 
 /* Site-wide decorative canvas follows the original page layering. */
 #three-bg{position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:0;pointer-events:none}
-body > *:not(#three-bg):not(.cursor):not(.cursor-follower):not(.mobile-menu){position:relative;z-index:1}
+body > *:not(#three-bg):not(.cursor):not(.cursor-follower):not(.mobile-menu):not(#site-intro){position:relative;z-index:1}
 #navbar{position:fixed!important;z-index:1000!important}.mobile-menu{z-index:999!important}
 .phone-screen img{object-fit:contain}
 

@@ -1,0 +1,34 @@
+
+/* --- Premium logo reveal (once per browser session) --- */
+body > #site-intro { position:fixed !important;inset:0 !important;z-index:20000 !important;background:#060608;display:grid;place-items:center;opacity:1;visibility:visible;transition:opacity .48s ease,visibility .48s ease; }
+.intro-seen #site-intro {display:none;}
+#site-intro.is-done { opacity:0;visibility:hidden;pointer-events:none; }
+.intro-brand { display:flex;align-items:baseline;font-family:'Syne',Arial,sans-serif;font-size:clamp(2.35rem,8vw,5.1rem);font-weight:800;letter-spacing:-.055em;line-height:1;white-space:nowrap; }
+.intro-brand .logo-writing { display:block;width:0;overflow:hidden;white-space:nowrap;animation:brand-write 1.55s steps(8,end) .2s forwards; }
+.intro-brand .logo-writing span { color:#c8ff00; }
+.intro-caret {width:3px;height:.9em;background:#c8ff00;display:inline-block;margin-left:3px;animation:intro-caret .46s steps(1) infinite,intro-caret-hide .2s 1.75s forwards;}
+.intro-line {margin:18px auto 0;width:0;height:1px;background:#c8ff00;animation:intro-line 1.2s ease .45s forwards;}
+@keyframes brand-write {to{width:11ch;}}
+@keyframes intro-caret {50%{opacity:0;}}
+@keyframes intro-caret-hide {to{opacity:0;}}
+@keyframes intro-line {to{width:100%;}}
+/* Language selector on desktop and inside mobile nav */
+.lang-switch {display:flex;align-items:center;gap:.3rem;white-space:nowrap;border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:.24rem;margin-left:.7rem;flex-shrink:0;}
+.lang-switch a {font-size:.7rem;font-weight:700;letter-spacing:.03em;padding:.33rem .42rem;color:#a4a4b0;text-decoration:none;border-radius:999px;line-height:1;display:inline-flex;justify-content:center;min-width:26px;transition:color .2s,background .2s;}
+.lang-switch a:hover {color:white;}
+.lang-switch a[aria-current="page"] {background:#c8ff00;color:#090b05;}
+.mobile-lang-switch {display:flex;justify-content:center;margin:1.1rem auto .2rem;}
+.mobile-lang-switch .lang-switch {margin:0;padding:.35rem;gap:.5rem;}
+.mobile-lang-switch .lang-switch a {font-size:1rem;padding:.6rem .9rem;}
+.nav-right {display:flex;align-items:center;gap:0.3rem;flex-shrink:0;}
+/* Visible entry animations with built-in IntersectionObserver, no external dependency. */
+body.motion-ready .page-hero-tag,body.motion-ready .page-hero h1,body.motion-ready .page-hero-sub {animation:page-rise .78s cubic-bezier(.22,1,.36,1) both;}
+body.motion-ready .page-hero h1 {animation-delay:.13s;}
+body.motion-ready .page-hero-sub {animation-delay:.26s;}
+@keyframes page-rise {from{opacity:0;transform:translateY(26px);}to{opacity:1;transform:translateY(0);}}
+.motion-item {transition:opacity .72s ease,transform .72s cubic-bezier(.18,.8,.22,1);}
+.motion-ready .motion-item:not(.motion-visible) {opacity:0;transform:translateY(24px);}
+.motion-item.motion-visible {opacity:1;transform:translateY(0);}
+@media(max-width:1100px){#navbar{padding:0 1.35rem}.nav-links a{padding:.4rem .6rem}.lang-switch{margin-left:.2rem;}}
+@media(max-width:850px){#navbar .nav-links,#navbar > .nav-right .lang-switch {display:none;}}
+@media(prefers-reduced-motion:reduce){#site-intro{display:none!important}.intro-brand .logo-writing{width:auto!important;animation:none!important}.motion-item,.motion-ready .motion-item:not(.motion-visible){opacity:1!important;transform:none!important;transition:none!important}body.motion-ready .page-hero-tag,body.motion-ready .page-hero h1,body.motion-ready .page-hero-sub{animation:none!important}}

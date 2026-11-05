@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<script>try{if(sessionStorage.getItem('medium29_intro_seen')==='1')document.documentElement.classList.add('intro-seen')}catch(e){}</script>
+<meta charset="utf-8"/>
+<link href="/favicon.png" rel="icon" type="image/png"/>
+<link href="/favicon.png" rel="apple-touch-icon"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About us | Medium29 Digital Agency in Vukovar</title>
+<meta content="Meet Medium29, a digital agency based in Vukovar, Croatia. Custom websites, digital marketing and reliable ongoing support." name="description"/>
+<meta content="index, follow, max-image-preview:large" name="robots"/>
+<link href="https://medium29.com/en/o-nama" rel="canonical"/>
+<meta content="https://medium29.com/en/o-nama" property="og:url"/>
+<link href="/sitemap.xml" rel="sitemap" type="application/xml"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="/style.css" rel="stylesheet"/>
+<link href="/site-enhancements.css" rel="stylesheet"/>
+<link href="/cookie-consent.css" rel="stylesheet"/>
+<style>
+  /* MISSION */
+  .mission { background: var(--bg); padding-top: 3rem; }
+  .mission-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+  .mission-left {}
+  .mission-right {}
+  .mission-right p { color: var(--muted); font-size: 1rem; line-height: 1.8; margin-bottom: 1.5rem; }
+  .mission-right p:last-child { margin-bottom: 0; }
+  .mission-right strong { color: var(--text); font-weight: 500; }
+
+  /* BIG QUOTE */
+  .big-quote {
+    background: var(--bg2);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 6rem 4rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .big-quote::before {
+    content: '"';
+    position: absolute;
+    font-family: 'Syne', sans-serif;
+    font-size: 30rem;
+    font-weight: 800;
+    color: rgba(200,255,0,0.03);
+    top: -8rem; left: 50%;
+    transform: translateX(-50%);
+    line-height: 1;
+    pointer-events: none;
+  }
+  .big-quote blockquote {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(1.5rem, 3.5vw, 2.8rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    color: var(--text);
+  }
+  .big-quote blockquote span { color: var(--accent); font-style: italic; }
+  .big-quote cite { font-size: 0.85rem; color: var(--muted); font-style: normal; letter-spacing: 0.08em; }
+
+  /* VALUES */
+  .values { background: var(--bg); }
+  .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px; background: var(--border); border: 1px solid var(--border); margin-top: 3.5rem; }
+  .value-card { background: var(--bg); padding: 2.5rem; transition: background 0.3s; cursor: auto; }
+  .value-card:hover { background: var(--bg2); }
+  .value-icon { font-size: 1.8rem; margin-bottom: 1.2rem; display: block; }
+  .value-card h3 { font-family:'Syne',sans-serif; font-size:1.1rem; font-weight:700; margin-bottom:0.6rem; letter-spacing:-0.01em; }
+  .value-card p { font-size:0.88rem; color:var(--muted); line-height:1.65; }
+
+  /* TEAM */
+  .team { background: var(--bg2); }
+  .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); margin-top: 3.5rem; }
+  .team-card { background: var(--bg2); padding: 2.5rem; position: relative; overflow: hidden; transition: background 0.3s; cursor: auto; }
+  .team-card:hover { background: var(--bg3); }
+  .team-avatar {
+    width: 72px; height: 72px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(200,255,0,0.15), rgba(123,94,167,0.15));
+    border: 1px solid rgba(200,255,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Syne', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+  }
+  .team-card h3 { font-family:'Syne',sans-serif; font-size:1.1rem; font-weight:700; margin-bottom:0.25rem; }
+  .team-card .role { font-size:0.8rem; color:var(--accent); letter-spacing:0.06em; text-transform:uppercase; margin-bottom:1rem; }
+  .team-card p { font-size:0.88rem; color:var(--muted); line-height:1.65; }
+
+  /* NUMBERS */
+  .numbers { background: var(--bg); border-top: 1px solid var(--border); }
+  .numbers-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); }
+  .number-item { padding: 3rem 2.5rem; background: var(--bg); text-align: center; transition: background 0.3s; }
+  .number-item:hover { background: var(--bg2); }
+  .number-big { font-family:'Syne',sans-serif; font-size:3.5rem; font-weight:800; color:var(--text); letter-spacing:-0.04em; line-height:1; }
+  .number-big span { color: var(--accent); }
+  .number-label { font-size:0.82rem; color:var(--muted); margin-top:0.6rem; letter-spacing:0.04em; }
+
+  @media (max-width:900px) {
+    .mission-grid { grid-template-columns:1fr; gap:3rem; }
+    .values-grid { grid-template-columns:1fr; }
+    .team-grid { grid-template-columns:1fr; }
+    .numbers-grid { grid-template-columns:1fr 1fr; overflow:hidden; }
+    .number-item { padding:2rem 1rem; }
+    .number-big { font-size:2.4rem; }
+    .big-quote { padding:4rem 1.5rem; }
+  }
+  @media (max-width:480px) {
+    .numbers-grid { grid-template-columns:1fr 1fr; }
+    .number-big { font-size:2rem; }
+    .number-item { padding:1.5rem 0.8rem; }
+  }
+
+  @media (max-width: 900px) {
+    * { max-width: 100%; }
+    .hero { padding: 0 1.5rem; min-height: 100svh; }
+    .hero h1 { font-size: clamp(2.4rem, 11vw, 4rem); }
+    .hero-actions { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
+    .btn-primary, .btn-ghost { width: 100%; justify-content: center; box-sizing: border-box; }
+    .page-hero { padding: 6rem 1.5rem 3rem; }
+    .page-hero h1 { font-size: clamp(2rem, 10vw, 3.2rem); }
+    .page-hero-tag { font-size: 0.68rem; }
+    .section-title { font-size: clamp(1.7rem, 8vw, 2.5rem); }
+  }
+
+  /* THREE.JS BACKGROUND */
+  #three-bg {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+  }
+  body > *:not(#three-bg):not(.cursor):not(.cursor-follower):not(.mobile-menu):not(#site-intro) {
+    position: relative;
+    z-index: 1;
+  }
+  .mobile-menu { z-index: 999; }
+
+</style>
+<!-- SEO & Open Graph -->
+<meta content="Medium29" name="author"/>
+<meta content="HR-16" name="geo.region"/>
+<meta content="Vukovar" name="geo.placename"/>
+<!-- Open Graph (Facebook, LinkedIn) -->
+<meta content="website" property="og:type"/>
+<meta content="About us | Medium29 Digital Agency in Vukovar" property="og:title"/>
+<meta content="Meet Medium29, a digital agency based in Vukovar, Croatia. Custom websites, digital marketing and reliable ongoing support." property="og:description"/>
+<meta content="Medium29" property="og:site_name"/>
+<meta content="en_US" property="og:locale"/>
+<!-- Twitter Card -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="About us | Medium29 Digital Agency in Vukovar" name="twitter:title"/>
+<meta content="Meet Medium29, a digital agency based in Vukovar, Croatia. Custom websites, digital marketing and reliable ongoing support." name="twitter:description"/>
+<!-- Schema.org structured data -->
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Medium29",
+    "description": "Digitalna agencija specijalizirana za web dizajn, digitalni marketing i digital signage rješenja.",
+    "url": "https://medium29.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Vukovar",
+      "addressCountry": "HR"
+    },
+    "email": "info.medium29@gmail.com",
+    "sameAs": [
+      "https://medium29.com"
+    ]
+  }
+  </script>
+<meta content="https://medium29.com/og-medium29.jpg" property="og:image"/><meta content="1200" property="og:image:width"/><meta content="630" property="og:image:height"/><meta content="Medium29 — Web Design &amp; Digital Marketing" property="og:image:alt"/><meta content="https://medium29.com/og-medium29.jpg" name="twitter:image"/><link href="https://medium29.com/o-nama" hreflang="hr" rel="alternate"/><link href="https://medium29.com/en/o-nama" hreflang="en" rel="alternate"/><link href="https://medium29.com/de/o-nama" hreflang="de" rel="alternate"/><link href="https://medium29.com/o-nama" hreflang="x-default" rel="alternate"/><noscript><style>body > #site-intro{display:none!important}</style></noscript></head>
+<body>
+<div id="site-intro" aria-hidden="true"><div><div class="intro-brand"><div class="logo-writing">Medium<span>29</span></div><i class="intro-caret"></i></div><div class="intro-line"></div></div></div>
+
+<canvas id="three-bg"></canvas>
+<nav id="navbar">
+<a class="logo" href="/en/">Medium<span>29</span></a>
+<ul class="nav-links">
+<li><a href="/en/">Home</a></li>
+<li><a href="/en/o-nama">About us</a></li>
+<li><a href="/en/usluge">Services</a></li>
+<li><a href="/en/portfolio">Portfolio</a></li>
+<li><a class="nav-cta" href="/en/kontakt">Contact</a></li>
+</ul>
+<div class="nav-right"><div aria-label="Choose language" class="lang-switch"><a href="/o-nama" hreflang="hr" lang="hr" title="Hrvatski">HR</a><a aria-current="page" href="/en/o-nama" hreflang="en" lang="en" title="English">EN</a><a href="/de/o-nama" hreflang="de" lang="de" title="Deutsch">DE</a></div><button aria-controls="mobileMenu" aria-expanded="false" aria-label="Open menu" class="hamburger" id="hamburger" type="button">
+<span></span><span></span><span></span>
+</button></div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+<ul class="mobile-menu-links">
+<li><a href="/en/">Home</a></li>
+<li><a href="/en/o-nama">About us</a></li>
+<li><a href="/en/usluge">Services</a></li>
+<li><a href="/en/portfolio">Portfolio</a></li>
+</ul>
+<div class="mobile-lang-switch"><div aria-label="Choose language" class="lang-switch"><a href="/o-nama" hreflang="hr" lang="hr" title="Hrvatski">HR</a><a aria-current="page" href="/en/o-nama" hreflang="en" lang="en" title="English">EN</a><a href="/de/o-nama" hreflang="de" lang="de" title="Deutsch">DE</a></div></div>
+<div class="mobile-menu-cta">
+<a href="/en/kontakt">Request a quote</a>
+</div>
+</div>
+<!-- PAGE HERO -->
+<div class="page-hero">
+<div class="page-hero-grid"></div>
+<div class="page-hero-glow"></div>
+<div class="page-hero-tag">About us</div>
+<h1>
+    An agency that<br/>
+<span class="accent">delivers</span><br/>
+<span class="outline">results</span>
+</h1>
+<p class="page-hero-sub">More than just another digital agency — we care about your success as much as our own.</p>
+</div>
+<!-- MISSION -->
+<section class="mission">
+<div class="mission-grid">
+<div class="mission-left">
+<div class="section-tag reveal">Our mission</div>
+<h2 class="section-title reveal reveal-delay-1">Why we exist</h2>
+<a class="btn-primary reveal reveal-delay-2" href="/en/kontakt" style="margin-top:1rem;">
+        Work with us →
+      </a>
+</div>
+<div class="mission-right reveal reveal-delay-2">
+<p>Medium29 was founded with a clear vision: <strong>to help small and medium-sized businesses compete online with larger companies.</strong> We believe every brand deserves a professional online presence, regardless of size.</p>
+<p>We combine creativity with analytical thinking. We don't design websites just to look good — we build them because <strong>every element should work for you</strong>, attract customers and generate enquiries.</p>
+<p>Based in Vukovar, we work with clients across the region. Our strengths? <strong>Speed, transparency and ongoing support.</strong></p>
+</div>
+</div>
+</section>
+<!-- NUMBERS -->
+<section class="numbers">
+<div class="numbers-grid">
+<div class="number-item reveal">
+<div class="number-big">9</div>
+<div class="number-label">Web projects in our portfolio</div>
+</div>
+<div class="number-item reveal reveal-delay-1">
+<div class="number-big">1</div>
+<div class="number-label">Published Android app</div>
+</div>
+<div class="number-item reveal reveal-delay-2">
+<div class="number-big">10</div>
+<div class="number-label">Projects showcased</div>
+</div>
+<div class="number-item reveal reveal-delay-3">
+<div class="number-big">5</div>
+<div class="number-label">Languages in one website</div>
+</div>
+</div>
+</section>
+<!-- BIG QUOTE -->
+<div class="big-quote">
+<blockquote class="reveal">
+    "An online presence is not <span>an option</span> — it's the foundation of every modern business."
+  </blockquote>
+<cite class="reveal reveal-delay-1">— The Medium29 team</cite>
+</div>
+<!-- VALUES -->
+<section class="values">
+<div class="section-tag reveal">Our values</div>
+<h2 class="section-title reveal reveal-delay-1">What drives us</h2>
+<div class="values-grid">
+<div class="value-card reveal">
+<span class="value-icon">⚡</span>
+<h3>Speed &amp; precision</h3>
+<p>We value deadlines and attention to detail. Every element is carefully considered and executed.</p>
+</div>
+<div class="value-card reveal reveal-delay-1">
+<span class="value-icon">🤝</span>
+<h3>Partnership</h3>
+<p>We treat clients as partners. Your success is our success — and we mean it.</p>
+</div>
+<div class="value-card reveal reveal-delay-2">
+<span class="value-icon">🎯</span>
+<h3>Results first</h3>
+<p>We measure success in traffic, conversions and business growth.</p>
+</div>
+<div class="value-card reveal reveal-delay-3">
+<span class="value-icon">🔍</span>
+<h3>Transparency</h3>
+<p>No hidden costs or confusing processes. You know what we're doing and why.</p>
+</div>
+<div class="value-card reveal reveal-delay-4">
+<span class="value-icon">🚀</span>
+<h3>Innovation</h3>
+<p>We follow trends and adopt useful new technologies to keep your project ahead.</p>
+</div>
+<div class="value-card reveal reveal-delay-5">
+<span class="value-icon">💡</span>
+<h3>Creativity</h3>
+<p>Every project tells a new story. We design solutions that stand out.</p>
+</div>
+</div>
+</section>
+<!-- TEAM -->
+<section class="team">
+<div class="section-tag reveal">Team</div>
+<h2 class="section-title reveal reveal-delay-1">The people<br/>behind Medium29</h2>
+<div class="team-grid">
+<div class="team-card reveal">
+<div class="team-avatar">M</div>
+<h3>Founder &amp; director</h3>
+<div class="role">Strategy &amp; leadership</div>
+<p>The driving force behind Medium29, with experience in digital marketing and web development.</p>
+</div>
+<div class="team-card reveal reveal-delay-2">
+<div class="team-avatar">D</div>
+<h3>Lead Developer</h3>
+<div class="role">Web development &amp; technology</div>
+<p>Focused on modern development, fast performance and secure, scalable web solutions.</p>
+</div>
+<div class="team-card reveal reveal-delay-3">
+<div class="team-avatar">A</div>
+<h3>Marketing Specialist</h3>
+<div class="role">Digital marketing</div>
+<p>Specialised in Meta and Google campaigns with a focus on measurable returns.</p>
+</div>
+</div>
+</section>
+<!-- FOOTER -->
+<footer>
+<div class="footer-top">
+<div class="footer-brand">
+<a class="logo" href="/en/">Medium<span>29</span></a>
+<p>Complete digital support for brands aiming for tangible results.</p>
+</div>
+<div class="footer-col">
+<h4>Pages</h4>
+<ul>
+<li><a href="/en/">Home</a></li>
+<li><a href="/en/o-nama">About us</a></li>
+<li><a href="/en/usluge">Services</a></li>
+<li><a href="/en/portfolio">Portfolio</a></li>
+<li><a href="/en/kontakt">Contact</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Services</h4>
+<ul>
+<li><a href="/en/usluge">Web design</a></li>
+<li><a href="/en/usluge">SEO optimisation</a></li>
+<li><a href="/en/usluge">Digital marketing</a></li>
+<li><a href="/en/usluge">Digital signage</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Contact</h4>
+<ul>
+<li><a href="mailto:info.medium29@gmail.com">info.medium29@gmail.com</a></li>
+<li><a href="https://medium29.com">medium29.com</a></li>
+<li><a href="#">Vukovar, Croatia</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2026 Medium29. All rights reserved.</p>
+<div class="footer-legal">
+<a href="/en/politika-privatnosti">Privacy Policy</a>
+<span aria-hidden="true">·</span>
+<a href="/en/politika-kolacica">Cookie Policy</a>
+<span aria-hidden="true">·</span>
+<a class="cookie-settings-link" href="#">Cookie settings</a>
+</div>
+</div>
+</footer>
+<script src="/main.js"></script>
+<!-- Subpage motion is handled by main.js, without a GSAP dependency -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="/three-bg.js"></script>
+<script src="/cookie-consent.js"></script>
+</body>
+</html>

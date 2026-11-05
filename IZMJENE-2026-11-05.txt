@@ -1,0 +1,21 @@
+MEDIUM29 | AŽURIRANJE 05.11.2026.
+
+- HR, EN i DE: 21 statička HTML stranica, uključujući politike privatnosti i kolačića.
+- Jezični prekidač u navigaciji i mobilnom meniju, poveznice na odgovarajuću podstranicu.
+- Lokacija svugdje na webu: Vukovar (pravni naziv obrta / Borovo u politici privatnosti ostaje netaknut).
+- Uklonjena pokretna traka s uslugama na naslovnici.
+- Uklonjen prilagođeni zeleni kursor i tragovi miša.
+- Ispravljen GSAP problem: uklonjen neispravan kod, animacije sada rade bez ovisnosti o GSAP-u.
+- Jednokratni intro logotipa (Medium29) po sesiji, s podrškom za prefers-reduced-motion.
+- SEO: naslovi/opisi, canonical, hreflang, XML sitemap, Open Graph/Twitter slika, 404 stranica.
+- Kontakt: prevedena korisnička sučelja i potvrde, postojeći Web3Forms access key i hCaptcha ostaju isti.
+- Cookie banner i postavke prevedeni.
+- Portfolio i novi AVIF screenshotovi aplikacije su sačuvani.
+- Usluge: uklonjene nepotvrđene tvrdnje o statističkim povećanjima.
+
+PRIJEDLOG PROVJERE PRIJE PRODUKCIJE
+1. Pregledati početnu i podstranice na HR / EN / DE, posebice mobilni prikaz.
+2. Testirati hCaptcha i slanje upita za sva tri jezika s vlasnikovim odobrenjem.
+3. Objaviti ZIP u GitHub repozitorij i deploy na Cloudflare Pages; nakon objave provjeriti /sitemap.xml, /404.html i preusmjeravanja.
+4. U Google Search Console poslati novi sitemap.xml i zatražiti indeksiranje ključnih /en/ i /de/ stranica.
+5. Dati pravne prijevode po potrebi na profesionalnu pravnu provjeru.

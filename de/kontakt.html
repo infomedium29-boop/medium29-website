@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<script>try{if(sessionStorage.getItem('medium29_intro_seen')==='1')document.documentElement.classList.add('intro-seen')}catch(e){}</script>
+<meta charset="utf-8"/>
+<link href="/favicon.png" rel="icon" type="image/png"/>
+<link href="/favicon.png" rel="apple-touch-icon"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kontakt | Webdesign &amp; Marketing — Medium29</title>
+<meta content="Kontaktieren Sie Medium29 aus Vukovar für Webdesign, Apps, SEO und Digitalmarketing. Jetzt unverbindlich anfragen." name="description"/>
+<meta content="index, follow, max-image-preview:large" name="robots"/>
+<link href="https://medium29.com/de/kontakt" rel="canonical"/>
+<meta content="https://medium29.com/de/kontakt" property="og:url"/>
+<link href="/sitemap.xml" rel="sitemap" type="application/xml"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="/style.css" rel="stylesheet"/>
+<link href="/site-enhancements.css" rel="stylesheet"/>
+<link href="/cookie-consent.css" rel="stylesheet"/>
+<style>
+  /* CONTACT LAYOUT */
+  .contact-section { background: var(--bg); }
+  .contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  /* LEFT */
+  .contact-left {}
+  .contact-methods { display: flex; flex-direction: column; gap: 0; margin-top: 3rem; }
+  .contact-method {
+    display: flex;
+    gap: 1.2rem;
+    align-items: flex-start;
+    padding: 1.8rem 0;
+    border-bottom: 1px solid var(--border);
+    cursor: auto;
+    transition: padding-left 0.3s;
+    position: relative;
+  }
+  .contact-method:first-child { border-top: 1px solid var(--border); }
+  .contact-method:hover { padding-left: 0.5rem; }
+  .contact-method-icon {
+    width: 44px; height: 44px;
+    background: rgba(200,255,0,0.07);
+    border: 1px solid rgba(200,255,0,0.15);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .contact-method:hover .contact-method-icon { transform: scale(1.1); box-shadow: 0 6px 20px rgba(200,255,0,0.15); }
+  .contact-method-body { flex: 1; }
+  .contact-method-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.3rem; }
+  .contact-method-value { font-size: 1rem; color: var(--text); font-weight: 500; }
+  .contact-method-note { font-size: 0.82rem; color: var(--muted); margin-top: 0.15rem; }
+
+  /* PROCESS MINI */
+  .process-mini { margin-top: 3.5rem; }
+  .process-mini h3 { font-family:'Syne',sans-serif; font-size:1rem; font-weight:700; margin-bottom:1.5rem; letter-spacing:-0.01em; }
+  .process-mini-list { display:flex; flex-direction:column; gap:1rem; }
+  .process-mini-item { display:flex; gap:1rem; align-items:flex-start; }
+  .process-mini-num {
+    width:28px; height:28px;
+    border-radius:50%;
+    background:rgba(200,255,0,0.08);
+    border:1px solid rgba(200,255,0,0.2);
+    display:flex; align-items:center; justify-content:center;
+    font-size:0.7rem; font-weight:700; color:var(--accent);
+    flex-shrink:0; margin-top:1px;
+  }
+  .process-mini-text { font-size:0.88rem; color:var(--muted); line-height:1.5; }
+  .process-mini-text strong { color:var(--text); font-weight:500; display:block; margin-bottom:0.1rem; }
+
+  /* FORM */
+  .contact-right {}
+  .contact-form-wrap {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .contact-form-wrap::before {
+    content:'';
+    position:absolute;
+    width:300px; height:300px;
+    background:radial-gradient(circle,rgba(200,255,0,0.05) 0%,transparent 70%);
+    top:-100px; right:-100px;
+    pointer-events:none;
+  }
+  .contact-form-wrap h3 {
+    font-family:'Syne',sans-serif;
+    font-size:1.5rem;
+    font-weight:800;
+    letter-spacing:-0.02em;
+    margin-bottom:0.5rem;
+  }
+  .contact-form-wrap > p { font-size:0.88rem; color:var(--muted); margin-bottom:2rem; }
+  .contact-form { display:flex; flex-direction:column; gap:1.1rem; }
+  .form-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+  .form-submit {
+    background:var(--accent);
+    color:#000;
+    font-family:'DM Sans',sans-serif;
+    font-weight:600;
+    font-size:0.95rem;
+    padding:1rem 2rem;
+    border:none;
+    border-radius:10px;
+    cursor: auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:0.5rem;
+    transition:transform 0.2s,box-shadow 0.2s;
+    margin-top:0.5rem;
+    width:100%;
+  }
+  .form-submit:hover { transform:translateY(-2px); box-shadow:0 15px 40px rgba(200,255,0,0.3); }
+  .form-note { font-size:0.78rem; color:var(--muted); text-align:center; margin-top:0.5rem; line-height:1.6; }
+.form-note a { color:var(--accent); text-decoration:none; }
+.form-note a:hover { text-decoration:underline; }
+.captcha-wrap { margin-top:0.1rem; display:flex; justify-content:center; min-height:78px; }
+.form-status { min-height:1.2rem; margin:0; color:var(--muted); font-size:0.82rem; text-align:center; }
+.form-status.error { color:#ff8a8a; }
+
+  /* SUCCESS STATE */
+  .form-success {
+    display:none;
+    text-align:center;
+    padding:3rem 1rem;
+  }
+  .form-success.show { display:block; }
+  .form-success .success-icon { font-size:3rem; margin-bottom:1rem; }
+  .form-success h3 { font-family:'Syne',sans-serif; font-size:1.5rem; font-weight:700; margin-bottom:0.5rem; }
+  .form-success p { color:var(--muted); font-size:0.9rem; }
+
+  /* FAQ */
+  .faq { background: var(--bg2); border-top: 1px solid var(--border); }
+  .faq-list { display:flex; flex-direction:column; gap:0; margin-top:3rem; }
+  .faq-item { border-bottom:1px solid var(--border); }
+  .faq-item:first-child { border-top:1px solid var(--border); }
+  .faq-question {
+    width:100%;
+    background:none;
+    border:none;
+    color:var(--text);
+    font-family:'DM Sans',sans-serif;
+    font-size:1rem;
+    font-weight:500;
+    text-align:left;
+    padding:1.5rem 0;
+    cursor: auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:1rem;
+    transition:color 0.2s;
+  }
+  .faq-question:hover { color:var(--accent); }
+  .faq-icon { font-size:1.2rem; color:var(--muted); transition:transform 0.3s,color 0.2s; flex-shrink:0; }
+  .faq-item.open .faq-icon { transform:rotate(45deg); color:var(--accent); }
+  .faq-answer {
+    max-height:0;
+    overflow:hidden;
+    transition:max-height 0.4s ease;
+    color:var(--muted);
+    font-size:0.92rem;
+    line-height:1.75;
+  }
+  .faq-answer-inner { padding-bottom:1.5rem; }
+  .faq-item.open .faq-answer { max-height:300px; }
+
+  @media (max-width:900px) {
+    .contact-layout { grid-template-columns:1fr; gap:3rem; }
+    .form-row { grid-template-columns:1fr; }
+    .contact-form-wrap { padding:2rem 1.5rem; }
+  }
+
+  @media (max-width: 900px) {
+    * { max-width: 100%; }
+    .hero { padding: 0 1.5rem; min-height: 100svh; }
+    .hero h1 { font-size: clamp(2.4rem, 11vw, 4rem); }
+    .hero-actions { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
+    .btn-primary, .btn-ghost { width: 100%; justify-content: center; box-sizing: border-box; }
+    .page-hero { padding: 6rem 1.5rem 3rem; }
+    .page-hero h1 { font-size: clamp(2rem, 10vw, 3.2rem); }
+    .page-hero-tag { font-size: 0.68rem; }
+    .section-title { font-size: clamp(1.7rem, 8vw, 2.5rem); }
+  }
+
+  /* THREE.JS BACKGROUND */
+  #three-bg {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+  }
+  body > *:not(#three-bg):not(.cursor):not(.cursor-follower):not(.mobile-menu):not(#site-intro) {
+    position: relative;
+    z-index: 1;
+  }
+  .mobile-menu { z-index: 999; }
+
+</style>
+<!-- SEO & Open Graph -->
+<meta content="Medium29" name="author"/>
+<meta content="HR-16" name="geo.region"/>
+<meta content="Vukovar" name="geo.placename"/>
+<!-- Open Graph (Facebook, LinkedIn) -->
+<meta content="website" property="og:type"/>
+<meta content="Kontakt | Webdesign &amp; Marketing — Medium29" property="og:title"/>
+<meta content="Kontaktieren Sie Medium29 aus Vukovar für Webdesign, Apps, SEO und Digitalmarketing. Jetzt unverbindlich anfragen." property="og:description"/>
+<meta content="Medium29" property="og:site_name"/>
+<meta content="de_DE" property="og:locale"/>
+<!-- Twitter Card -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Kontakt | Webdesign &amp; Marketing — Medium29" name="twitter:title"/>
+<meta content="Kontaktieren Sie Medium29 aus Vukovar für Webdesign, Apps, SEO und Digitalmarketing. Jetzt unverbindlich anfragen." name="twitter:description"/>
+<!-- Schema.org structured data -->
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Medium29",
+    "description": "Digitalna agencija specijalizirana za web dizajn, digitalni marketing i digital signage rješenja.",
+    "url": "https://medium29.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Vukovar",
+      "addressCountry": "HR"
+    },
+    "email": "info.medium29@gmail.com",
+    "sameAs": [
+      "https://medium29.com"
+    ]
+  }
+  </script>
+<meta content="https://medium29.com/og-medium29.jpg" property="og:image"/><meta content="1200" property="og:image:width"/><meta content="630" property="og:image:height"/><meta content="Medium29 — Web Design &amp; Digital Marketing" property="og:image:alt"/><meta content="https://medium29.com/og-medium29.jpg" name="twitter:image"/><link href="https://medium29.com/kontakt" hreflang="hr" rel="alternate"/><link href="https://medium29.com/en/kontakt" hreflang="en" rel="alternate"/><link href="https://medium29.com/de/kontakt" hreflang="de" rel="alternate"/><link href="https://medium29.com/kontakt" hreflang="x-default" rel="alternate"/><noscript><style>body > #site-intro{display:none!important}</style></noscript></head>
+<body>
+<div id="site-intro" aria-hidden="true"><div><div class="intro-brand"><div class="logo-writing">Medium<span>29</span></div><i class="intro-caret"></i></div><div class="intro-line"></div></div></div>
+
+<canvas id="three-bg"></canvas>
+<nav id="navbar">
+<a class="logo" href="/de/">Medium<span>29</span></a>
+<ul class="nav-links">
+<li><a href="/de/">Startseite</a></li>
+<li><a href="/de/o-nama">Über uns</a></li>
+<li><a href="/de/usluge">Leistungen</a></li>
+<li><a href="/de/portfolio">Portfolio</a></li>
+<li><a class="nav-cta" href="/de/kontakt">Kontakt</a></li>
+</ul>
+<div class="nav-right"><div aria-label="Sprache wählen" class="lang-switch"><a href="/kontakt" hreflang="hr" lang="hr" title="Hrvatski">HR</a><a href="/en/kontakt" hreflang="en" lang="en" title="English">EN</a><a aria-current="page" href="/de/kontakt" hreflang="de" lang="de" title="Deutsch">DE</a></div><button aria-controls="mobileMenu" aria-expanded="false" aria-label="Menü öffnen" class="hamburger" id="hamburger" type="button">
+<span></span><span></span><span></span>
+</button></div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+<ul class="mobile-menu-links">
+<li><a href="/de/">Startseite</a></li>
+<li><a href="/de/o-nama">Über uns</a></li>
+<li><a href="/de/usluge">Leistungen</a></li>
+<li><a href="/de/portfolio">Portfolio</a></li>
+</ul>
+<div class="mobile-lang-switch"><div aria-label="Sprache wählen" class="lang-switch"><a href="/kontakt" hreflang="hr" lang="hr" title="Hrvatski">HR</a><a href="/en/kontakt" hreflang="en" lang="en" title="English">EN</a><a aria-current="page" href="/de/kontakt" hreflang="de" lang="de" title="Deutsch">DE</a></div></div>
+<div class="mobile-menu-cta">
+<a href="/de/kontakt">Angebot anfordern</a>
+</div>
+</div>
+<!-- PAGE HERO -->
+<div class="page-hero">
+<div class="page-hero-grid"></div>
+<div class="page-hero-glow"></div>
+<div class="page-hero-tag">Kontakt</div>
+<h1>Starten wir Ihr<br/><span class="accent">Projekt</span> gemeinsam</h1>
+<p class="page-hero-sub">Füllen Sie das Formular aus oder kontaktieren Sie uns direkt. Wir antworten innerhalb von 24 Stunden und bieten eine kostenlose Erstberatung.</p>
+</div>
+<!-- CONTACT -->
+<section class="contact-section">
+<div class="contact-layout">
+<!-- LEFT -->
+<div class="contact-left">
+<div class="section-tag reveal">Kontaktieren Sie uns</div>
+<h2 class="section-title reveal reveal-delay-1" style="font-size:clamp(1.8rem,3vw,2.8rem);">Wir sind für Sie da,<br/>bei jeder Frage</h2>
+<div class="contact-methods reveal reveal-delay-2">
+<div class="contact-method">
+<div class="contact-method-icon">📧</div>
+<div class="contact-method-body">
+<div class="contact-method-label">Email</div>
+<div class="contact-method-value">info.medium29@gmail.com</div>
+<div class="contact-method-note">Antwort innerhalb von 24 Stunden</div>
+</div>
+</div>
+<div class="contact-method">
+<div class="contact-method-icon">🌐</div>
+<div class="contact-method-body">
+<div class="contact-method-label">Web</div>
+<div class="contact-method-value">www.medium29.com</div>
+<div class="contact-method-note">Unsere Projekte ansehen</div>
+</div>
+</div>
+<div class="contact-method">
+<div class="contact-method-icon">📍</div>
+<div class="contact-method-body">
+<div class="contact-method-label">Standort</div>
+<div class="contact-method-value">Vukovar, Kroatien</div>
+<div class="contact-method-note">Wir arbeiten auch mit Kunden in der Region</div>
+</div>
+</div>
+<div class="contact-method">
+<div class="contact-method-icon">🕐</div>
+<div class="contact-method-body">
+<div class="contact-method-label">Geschäftszeiten</div>
+<div class="contact-method-value">Mo – Fr, 9:00–17:00 Uhr</div>
+<div class="contact-method-note">Bei dringenden Anliegen erreichbar</div>
+</div>
+</div>
+</div>
+<div class="process-mini reveal reveal-delay-3">
+<h3>Was passiert nach Ihrer Anfrage?</h3>
+<div class="process-mini-list">
+<div class="process-mini-item">
+<div class="process-mini-num">1</div>
+<div class="process-mini-text"><strong>Wir melden uns innerhalb von 24 Std.</strong>Wir vereinbaren einen kurzen Austausch per E-Mail oder Telefon.</div>
+</div>
+<div class="process-mini-item">
+<div class="process-mini-num">2</div>
+<div class="process-mini-text"><strong>Kostenlose Beratung</strong>Wir analysieren Ihren Bedarf und empfehlen eine passende Lösung.</div>
+</div>
+<div class="process-mini-item">
+<div class="process-mini-num">3</div>
+<div class="process-mini-text"><strong>Unverbindliches Angebot</strong>Sie erhalten ein detailliertes Angebot mit Preis und Zeitplan.</div>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT - FORM -->
+<div class="contact-right reveal reveal-delay-2">
+<div class="contact-form-wrap">
+<h3>Anfrage senden</h3>
+<p>Füllen Sie das Formular aus – wir melden uns schnellstmöglich.</p>
+<form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
+<input name="access_key" type="hidden" value="7cf8476c-90f5-4c1b-891c-9fc60f09647f"/>
+<input name="subject" type="hidden" value="Novi upit — Medium29"/>
+<input name="from_name" type="hidden" value="Medium29 Kontakt Forma"/>
+<!-- Nevidljiva honeypot zaštita za automatizirane botove. -->
+<input aria-hidden="true" autocomplete="off" name="botcheck" style="display:none;" tabindex="-1" type="checkbox"/>
+<div class="form-row">
+<div class="form-group">
+<label>Vor- und Nachname *</label>
+<input autocomplete="name" maxlength="100" name="name" placeholder="Ihr Name" required="" type="text"/>
+</div>
+<div class="form-group">
+<label>E-Mail *</label>
+<input autocomplete="email" maxlength="254" name="email" placeholder="vas@email.com" required="" type="email"/>
+</div>
+</div>
+<div class="form-row">
+<div class="form-group">
+<label>Telefon</label>
+<input autocomplete="tel" maxlength="40" name="telefon" placeholder="+385 9X XXX XXXX" type="tel"/>
+</div>
+<div class="form-group">
+<label>Unternehmen / Marke</label>
+<input autocomplete="organization" maxlength="150" name="firma" placeholder="Firmenname" type="text"/>
+</div>
+</div>
+<div class="form-group">
+<label>Gewünschte Leistung *</label>
+<select name="usluga" required="">
+<option value="">Leistung auswählen</option>
+<option>Webdesign &amp; Entwicklung — Starter</option>
+<option>Webdesign &amp; Entwicklung — Standard</option>
+<option>Webdesign &amp; Entwicklung — Premium</option>
+<option>Digitalmarketing — Social Media</option>
+<option>Digitalmarketing — Meta-/Google-Anzeigen</option>
+<option>Digital Signage</option>
+<option>Kombinierte Lösung</option>
+<option>Noch unsicher – ich möchte Beratung</option>
+</select>
+</div>
+<div class="form-group">
+<label>Ungefähres Budget</label>
+<select name="budzet">
+<option value="">Budgetspanne auswählen</option>
+<option>Bis 500 €</option>
+<option>500 € – 1.500 €</option>
+<option>1.500 € – 5.000 €</option>
+<option>Über 5.000 €</option>
+<option>Noch offen</option>
+</select>
+</div>
+<div class="form-group">
+<label>Nachricht *</label>
+<textarea maxlength="3000" name="message" placeholder="Beschreiben Sie Ihr Projekt, Ihre Ziele und den Zeitplan..." required="" style="min-height:140px;"></textarea>
+</div>
+<div class="captcha-wrap">
+<div class="h-captcha" data-captcha="true" data-lang="de" data-theme="dark"></div>
+</div>
+<p aria-live="polite" class="form-status" id="formStatus" role="status"></p>
+<button class="form-submit" id="submitBtn" type="submit">
+            Anfrage senden
+            <svg fill="none" height="16" viewbox="0 0 16 16" width="16"><path d="M2 8h12M10 4l4 4-4 4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
+</button>
+<p class="form-note">* Pflichtfelder · Ihre Daten verwenden wir ausschließlich zur Bearbeitung Ihrer Anfrage und zur Kommunikation. Mit dem Absenden bestätigen Sie, dass Sie unsere <a href="/de/politika-privatnosti">Datenschutzerklärung</a>zur Kenntnis genommen haben. Bitte geben Sie keine sensiblen personenbezogenen Daten an, die für Ihre Anfrage nicht erforderlich sind.</p>
+</form>
+<div class="form-success" id="formSuccess">
+<div class="success-icon">✅</div>
+<h3>Nachricht erhalten!</h3>
+<p>Wir melden uns innerhalb von 24 Stunden.<br/>Vielen Dank für Ihre Nachricht an Medium29.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ -->
+<section class="faq">
+<div class="section-tag reveal">FAQ</div>
+<h2 class="section-title reveal reveal-delay-1">Häufig gestellte<br/>Fragen</h2>
+<div class="faq-list reveal reveal-delay-2">
+<div class="faq-item">
+<button class="faq-question" onclick="toggleFaq(this)">
+        Was kostet eine Website?
+        <span class="faq-icon">+</span>
+</button>
+<div class="faq-answer"><div class="faq-answer-inner">Der Preis hängt von Umfang, Seitenzahl und gewünschten Funktionen ab. Wir bieten transparente Pakete – von Landingpages bis zu umfangreichen Websites. Fragen Sie uns nach einem individuellen Angebot.</div></div>
+</div>
+<div class="faq-item">
+<button class="faq-question" onclick="toggleFaq(this)">
+        Wie lange dauert die Erstellung einer Website?
+        <span class="faq-icon">+</span>
+</button>
+<div class="faq-answer"><div class="faq-answer-inner">Eine Landingpage dauert in der Regel 7 Tage, das Standardpaket 14 Tage und ein Premium-Projekt bis zu 21 Tage. Termine werden im Voraus vereinbart. Eine schnellere Umsetzung ist gegen Aufpreis möglich.</div></div>
+</div>
+<div class="faq-item">
+<button class="faq-question" onclick="toggleFaq(this)">
+        Brauche ich technische Kenntnisse, um meine Website zu pflegen?
+        <span class="faq-icon">+</span>
+</button>
+<div class="faq-answer"><div class="faq-answer-inner">Nein. Wenn Ihr Projekt ein CMS enthält, können Sie Texte, Bilder und Inhalte ohne Programmierkenntnisse bearbeiten. Dazu erhalten Sie eine Einführung und Support.</div></div>
+</div>
+<div class="faq-item">
+<button class="faq-question" onclick="toggleFaq(this)">
+        Arbeiten Sie auch mit Kunden außerhalb von Vukovar?
+        <span class="faq-icon">+</span>
+</button>
+<div class="faq-answer"><div class="faq-answer-inner">Ja. Wir arbeiten mit Kunden in Kroatien, Bosnien und Herzegowina, Serbien und darüber hinaus. Die Zusammenarbeit kann vollständig online erfolgen – von der Beratung bis zum Launch.</div></div>
+</div>
+<div class="faq-item">
+<button class="faq-question" onclick="toggleFaq(this)">
+        Welche Betreuung ist nach dem Launch enthalten?
+        <span class="faq-icon">+</span>
+</button>
+<div class="faq-answer"><div class="faq-answer-inner">Je nach Paket dauert die Betreuung zwischen 30 Tagen (Starter) und 6 Monaten (Premium). Sie umfasst technischen Support, kleinere Inhaltsänderungen und Beratung. Danach sind laufende Betreuungspakete möglich.</div></div>
+</div>
+<div class="faq-item">
+<button class="faq-question" onclick="toggleFaq(this)">
+        Bieten Sie eine kostenlose Erstberatung an?
+        <span class="faq-icon">+</span>
+</button>
+<div class="faq-answer"><div class="faq-answer-inner">Ja. Das Erstgespräch ist kostenlos und unverbindlich. Wir besprechen Ihre Ziele, analysieren die Ausgangslage und schlagen eine passende Lösung vor. Erst dann entscheiden Sie, ob wir starten.</div></div>
+</div>
+</div>
+</section>
+<!-- FOOTER -->
+<footer>
+<div class="footer-top">
+<div class="footer-brand">
+<a class="logo" href="/de/">Medium<span>29</span></a>
+<p>Umfassende digitale Unterstützung für Marken, die echte Ergebnisse erzielen möchten.</p>
+</div>
+<div class="footer-col">
+<h4>Seiten</h4>
+<ul>
+<li><a href="/de/">Startseite</a></li>
+<li><a href="/de/o-nama">Über uns</a></li>
+<li><a href="/de/usluge">Leistungen</a></li>
+<li><a href="/de/portfolio">Portfolio</a></li>
+<li><a href="/de/kontakt">Kontakt</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Leistungen</h4>
+<ul>
+<li><a href="/de/usluge">Webdesign</a></li>
+<li><a href="/de/usluge">SEO-Optimierung</a></li>
+<li><a href="/de/usluge">Digitalmarketing</a></li>
+<li><a href="/de/usluge">Digital Signage</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Kontakt</h4>
+<ul>
+<li><a href="mailto:info.medium29@gmail.com">info.medium29@gmail.com</a></li>
+<li><a href="https://medium29.com">medium29.com</a></li>
+<li><a href="#">Vukovar, Kroatien</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2026 Medium29. Alle Rechte vorbehalten.</p>
+<div class="footer-legal">
+<a href="/de/politika-privatnosti">Datenschutzerklärung</a>
+<span aria-hidden="true">·</span>
+<a href="/de/politika-kolacica">Cookie-Richtlinie</a>
+<span aria-hidden="true">·</span>
+<a class="cookie-settings-link" href="#">Cookie-Einstellungen</a>
+</div>
+</div>
+</footer>
+<script src="/main.js"></script>
+<!-- Subpage motion is handled by main.js, without a GSAP dependency -->
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+
+  const form = document.getElementById('contactForm');
+  const btn = document.getElementById('submitBtn');
+  const status = document.getElementById('formStatus');
+  const captchaResponse = form.querySelector('textarea[name="h-captcha-response"]');
+
+  status.classList.remove('error');
+  status.textContent = '';
+
+  // Obavezna provjera hCaptcha polja prije slanja.
+  if (!captchaResponse || !captchaResponse.value) {
+    status.textContent = ({hr:'Molimo potvrdite da niste robot.',en:'Please complete the CAPTCHA.',de:'Bitte bestätigen Sie die CAPTCHA-Prüfung.'})[document.documentElement.lang] || 'Please complete the CAPTCHA.';
+    status.classList.add('error');
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = ({hr:'Šaljem...',en:'Sending...',de:'Wird gesendet...'})[document.documentElement.lang] || 'Sending...';
+  btn.style.opacity = '0.7';
+
+  const data = new FormData(form);
+
+  fetch('https://api.web3forms.com/submit', {
+    method: 'POST',
+    body: data
+  })
+  .then(res => res.json())
+  .then(result => {
+    if (result.success) {
+      form.style.display = 'none';
+      document.getElementById('formSuccess').classList.add('show');
+    } else {
+      throw new Error(result.message || 'Slanje nije uspjelo.');
+    }
+  })
+  .catch(() => {
+    status.textContent = ({hr:'Došlo je do greške. Pokušajte ponovno ili pošaljite e-mail na info.medium29@gmail.com.',en:'Something went wrong. Please try again or email info.medium29@gmail.com.',de:'Ein Fehler ist aufgetreten. Bitte erneut versuchen oder an info.medium29@gmail.com schreiben.'})[document.documentElement.lang];
+    status.classList.add('error');
+    btn.disabled = false;
+    btn.textContent = ({hr:'Pošalji upit',en:'Send enquiry',de:'Anfrage senden'})[document.documentElement.lang];
+    btn.style.opacity = '1';
+    if (window.hcaptcha) window.hcaptcha.reset();
+  });
+}
+
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+</script>
+<script async="" defer="" src="https://web3forms.com/client/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="/three-bg.js"></script>
+<script src="/cookie-consent.js"></script>
+</body>
+</html>
