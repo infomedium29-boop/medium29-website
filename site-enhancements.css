@@ -32,3 +32,12 @@ body.motion-ready .page-hero-sub {animation-delay:.26s;}
 @media(max-width:1100px){#navbar{padding:0 1.35rem}.nav-links a{padding:.4rem .6rem}.lang-switch{margin-left:.2rem;}}
 @media(max-width:850px){#navbar .nav-links,#navbar > .nav-right .lang-switch {display:none;}}
 @media(prefers-reduced-motion:reduce){#site-intro{display:none!important}.intro-brand .logo-writing{width:auto!important;animation:none!important}.motion-item,.motion-ready .motion-item:not(.motion-visible){opacity:1!important;transform:none!important;transition:none!important}body.motion-ready .page-hero-tag,body.motion-ready .page-hero h1,body.motion-ready .page-hero-sub{animation:none!important}}
+
+/* Scroll-linked text: each letter emerges from soft focus as the title enters view. */
+.scroll-blur-text { opacity: 1 !important; transform: none !important; transition: none !important; }
+.scroll-blur-word { display: inline-block; white-space: nowrap; }
+.scroll-blur-letter { display: inline-block; opacity: .16; filter: blur(6.5px); transform: translate3d(0,5px,0); }
+.scroll-blur-clear .scroll-blur-letter { opacity: 1 !important; filter: none !important; transform: none !important; }
+@media (prefers-reduced-motion: reduce) {
+  .scroll-blur-letter { opacity: 1 !important; filter: none !important; transform: none !important; }
+}
