@@ -1,0 +1,24 @@
+MEDIUM29 — EFEKT IZOŠTRAVANJA SVEG SADRŽAJA (20.11.2026.)
+
+- Novi blur-to-sharp scroll efekt za naslove, opise, tekstove unutar kartica,
+  istaknute informacije, CTA tekstove, podnožje i pravne stranice.
+- Naslovi i kratki odlomci otkrivaju se slovo po slovo; dugi tekstovi po riječima
+  radi fluidnijeg rada na mobilnim uređajima.
+- Fotografije i vizualni elementi nježno se izoštravaju pri ulasku u kadar.
+- Izvorne navigacije, kontrole, inputi, captcha, obavijesti i kolačići ostaju
+  odmah čitljivi i funkcionalni.
+- Već pročitani sadržaj ostaje izoštren i kada korisnik skrola prema gore.
+- Uvažena preferencija smanjenog kretanja (prefers-reduced-motion).
+- Primijenjeno na svih 21 glavnih HTML stranica kroz HR, EN i DE.
+- CSS pravila za inline span elemente prilagođena su novoj strukturi animacije
+  tako da kartice i njihove značke zadrže izvorni vizualni identitet.
+
+IMPLEMENTACIJA
+Glavna logika: /scroll-blur.js
+Stilovi: /site-enhancements.css
+Dodatne usklađenosti: /portfolio-showcase.css, /style.css i HTML stilovi.
+
+DEPLOY
+Sadržaj ZIP-a nalazi se u korijenu projekta; datoteke postaviti u root
+GitHub repozitorija ili u Cloudflare Pages build output folder prema sadašnjem
+načinu objave. Nije potrebna dodatna biblioteka.
