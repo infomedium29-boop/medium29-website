@@ -549,3 +549,23 @@ html,body { cursor: auto !important; }
 a,button,summary,[role="button"],select,input[type="checkbox"],input[type="radio"] { cursor: pointer !important; }
 input[type="text"],input[type="email"],input[type="tel"],textarea { cursor: text !important; }
 .cursor,.cursor-follower { display: none !important; }
+
+
+/* Medium29 UI icons: vector arrows instead of platform-dependent emoji glyphs. */
+.ui-arrow {
+  display: inline-block;
+  width: 1.05em;
+  height: 1.05em;
+  flex: 0 0 auto;
+  vertical-align: -0.15em;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.85;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.btn-primary .ui-arrow,
+.btn-ghost .ui-arrow {
+  width: 1.1em;
+  height: 1.1em;
+}

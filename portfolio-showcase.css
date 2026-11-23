@@ -54,3 +54,19 @@ body > *:not(#three-bg):not(.cursor):not(.cursor-follower):not(.mobile-menu):not
 .home-app-text{flex:1}.home-app-text>span{color:#a6c6ff;font-size:.66rem;font-weight:700;letter-spacing:.12em}.home-app-text h3{font-family:'Syne',sans-serif;font-size:1.27rem;margin:.15rem 0}.home-app-text p{color:#aeb9cb;font-size:.83rem;line-height:1.55}
 .home-app-cta{border:1px solid rgba(255,255,255,.23);border-radius:40px;padding:.7rem 1.1rem;color:#fff;text-decoration:none;font-size:.8rem;font-weight:600;white-space:nowrap;cursor:pointer;transition:border-color .2s,background .2s}.home-app-cta:hover{border-color:var(--accent);background:rgba(200,255,0,.1)}
 @media(max-width:720px){.home-app-teaser{flex-wrap:wrap;padding:1.2rem}.home-app-mark{width:58px;height:58px;border-radius:13px}.home-app-text{flex-basis:calc(100% - 95px)}.home-app-cta{width:100%;text-align:center}}
+
+
+/* Consistent arrows for portfolio cards, badges and external links (iOS / Android / desktop). */
+.work-media-label .ui-arrow { width: 16px; height: 16px; }
+.work-arrow .ui-arrow { width: 17px; height: 17px; transition: transform .2s ease; }
+.work-arrow:is(:hover,:focus-visible) .ui-arrow { transform: translate(1px, -1px); }
+.app-play-arrow .ui-arrow { width: 18px; height: 18px; }
+.portfolio-bottom-cta .ui-arrow { width: 15px; height: 15px; margin-left: .15em; }
+.home-app-cta { display: inline-flex; align-items: center; justify-content: center; gap: .55rem; }
+.home-app-cta .ui-arrow { width: 15px; height: 15px; }
+@media(max-width:720px){
+  .work-arrow { width: 38px; height: 38px; }
+}
+@media(prefers-reduced-motion:reduce){
+  .work-arrow .ui-arrow { transition: none; }
+}
