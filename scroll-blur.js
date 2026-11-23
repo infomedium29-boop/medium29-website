@@ -10,7 +10,7 @@
   // Site chrome, forms and cookie preferences are usable immediately, without motion.
   const skip = '#navbar, #mobileMenu, #site-intro, .logo, .cookie-banner, .cookie-modal, ' +
     '.cookie-overlay, [class*="cookie-consent"], .h-captcha, .captcha-wrap, ' +
-    '.form-status, #submitBtn, .scramble, .hero-scroll, .marquee-track, ' +
+    '.form-status, #submitBtn, .hero h1, .hero-scroll, .marquee-track, ' +
     '.service-icon, .value-icon, .team-avatar, .contact-method-icon, .home-app-mark, .work-arrow, ' +
     '[aria-live], [aria-hidden="true"], [contenteditable], script, style, svg, noscript, input, select, option, textarea';
   const zones = 'section, .page-hero, .cta-band, main.legal-page, .legal-footer, footer';

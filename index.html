@@ -251,7 +251,7 @@
 <meta content="Web dizajn, SEO, digitalni marketing i digital signage iz Vukovara. Medium29 razvija brze web stranice i aplikacije za klijente diljem Hrvatske." name="twitter:description"/>
 <meta content="https://medium29.com/og-medium29.jpg" property="og:image"/><meta content="1200" property="og:image:width"/><meta content="630" property="og:image:height"/><meta content="Medium29 — Web Design &amp; Digital Marketing" property="og:image:alt"/><meta content="https://medium29.com/og-medium29.jpg" name="twitter:image"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "Medium29", "url": "https://medium29.com/", "image": "https://medium29.com/og-medium29.jpg", "email": "info.medium29@gmail.com", "description": "Web dizajn, SEO, digitalni marketing i digital signage iz Vukovara. Medium29 razvija brze web stranice i aplikacije za klijente diljem Hrvatske.", "address": {"@type": "PostalAddress", "addressLocality": "Vukovar", "addressRegion": "Vukovarsko-srijemska", "addressCountry": "HR"}, "areaServed": {"@type": "Country", "name": "Croatia"}, "availableLanguage": ["Croatian", "English", "German"]}</script><link href="https://medium29.com/" hreflang="hr" rel="alternate"/><link href="https://medium29.com/en/" hreflang="en" rel="alternate"/><link href="https://medium29.com/de/" hreflang="de" rel="alternate"/><link href="https://medium29.com/" hreflang="x-default" rel="alternate"/><noscript><style>body > #site-intro{display:none!important}</style></noscript></head>
 <body>
-<div id="site-intro" aria-hidden="true"><div><div class="intro-brand"><div class="logo-writing">Medium<span>29</span></div><i class="intro-caret"></i></div><div class="intro-line"></div></div></div>
+<div id="site-intro" aria-hidden="true"><div class="intro-brand">Medium<span>29</span></div></div>
 
 <canvas id="three-bg"></canvas>
 <nav id="navbar">
@@ -285,9 +285,9 @@
 <div class="hero-glow"></div>
 <div class="hero-glow-2"></div>
 <h1>
-<span class="scramble" data-text="Sve digitalne">Sve digitalne</span><br/>
-<span class="accent-word scramble" data-text="usluge">usluge</span><span class="scramble" data-text=" na"> na</span><br/>
-<span class="outline-word scramble" data-text="jednom">jednom</span><span class="scramble" data-text=" mjestu"> mjestu</span>
+<span>Sve digitalne</span><br/>
+<span class="accent-word">usluge</span><span> na</span><br/>
+<span class="outline-word">jednom</span><span> mjestu</span>
 </h1>
 <p class="hero-sub">Web dizajn, marketing i digital signage rješenja koja pretvaraju posjetitelje u klijente. Brza isporuka, podrška nakon projekta.</p>
 <div class="hero-actions">
@@ -461,68 +461,6 @@
     var glow = document.querySelector(".hero-glow");
     if (glow) glow.style.transform = "translate(calc(-50% + " + xPct + "px), calc(-50% + " + yPct + "px))";
   });
-</script>
-<script>
-// TEXT SCRAMBLE ANIMATION
-(function() {
-  var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%&';
-
-  function scramble(el) {
-    var finalText = el.getAttribute('data-text');
-    var duration = 800;
-    var start = null;
-    var frameRate = 40;
-    var lastFrame = 0;
-
-    function randomChar() {
-      return chars[Math.floor(Math.random() * chars.length)];
-    }
-
-    function update(timestamp) {
-      if (!start) start = timestamp;
-      var elapsed = timestamp - start;
-      var progress = Math.min(elapsed / duration, 1);
-
-      // How many characters are "settled"
-      var settled = Math.floor(progress * finalText.length);
-
-      if (timestamp - lastFrame > frameRate) {
-        var result = '';
-        for (var i = 0; i < finalText.length; i++) {
-          if (finalText[i] === ' ') {
-            result += ' ';
-          } else if (i < settled) {
-            result += finalText[i];
-          } else {
-            result += randomChar();
-          }
-        }
-        el.textContent = result;
-
-        // Restore any child classes (accent-word, outline-word)
-        lastFrame = timestamp;
-      }
-
-      if (progress < 1) {
-        requestAnimationFrame(update);
-      } else {
-        el.textContent = finalText;
-      }
-    }
-
-    requestAnimationFrame(update);
-  }
-
-  // Start on page load with staggered delay per element
-  window.addEventListener('load', function() {
-    var elements = document.querySelectorAll('.scramble');
-    elements.forEach(function(el, i) {
-      setTimeout(function() {
-        scramble(el);
-      }, i * 120);
-    });
-  });
-})();
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="/three-bg.js"></script>

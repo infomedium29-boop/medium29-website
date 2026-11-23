@@ -1,0 +1,12 @@
+Medium29 | Minimal Premium intro (Opcija A) | 23.11.2026.
+
+Izmjene:
+- Kratki intro približno 0,8 s: naziv Medium29 iz blagog blura u oštar prikaz, zatim gladak fade prema stranici.
+- Uklonjeni stari typewriter efekt, trepereći kursor i linija ispod naziva.
+- Uklonjen neovisni scramble/random-letter efekt glavnog naslova na HR, EN i DE početnoj stranici.
+- Naslov početne stranice koristi jedan kratki blur-to-sharp prijelaz sinkroniziran s introum.
+- Scroll-blur za ostatak teksta, dizajn, navigacija, jezici i obrasci ostaju bez promjena.
+- Intro se prikazuje jednom po sesiji; reduced-motion ga preskače.
+- Sigurnosno uklanjanje intra u slučaju da preglednik ne pošalje transitionend.
+
+Datoteke: 21 HTML stranica, main.js, site-enhancements.css, scroll-blur.js.

@@ -46,14 +46,35 @@
     motion.forEach(el => { el.classList.add('motion-item'); observer.observe(el); });
     document.body.classList.add('motion-ready');
   }
-  // Brand writing animation, once per session; skips reduced-motion preference.
-  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  // Minimal Premium intro: approximately 0.8s, once per browser session.
+  // The logo is animated by CSS; the overlay alone is timed by this controller.
+  const splash = document.getElementById('site-intro');
+  if (splash) {
     let alreadySeen = false;
     try { alreadySeen = sessionStorage.getItem('medium29_intro_seen') === '1'; } catch (_) {}
-    const splash=document.getElementById('site-intro');
-    if (!alreadySeen && splash) {
-      setTimeout(() => { splash.classList.add('is-done'); try {sessionStorage.setItem('medium29_intro_seen','1');} catch (_) {} }, 2050);
-      splash.addEventListener('transitionend',()=>splash.remove(),{once:true});
-    } else { splash?.remove(); }
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reducedMotion || alreadySeen) {
+      splash.remove();
+      document.documentElement.classList.add('intro-seen');
+    } else {
+      let finished = false;
+      let backup;
+      const finish = () => {
+        if (finished) return;
+        finished = true;
+        clearTimeout(backup);
+        splash.remove();
+      };
+      // Logo sharpens by ~430ms; overlay fades for 320ms, with no empty tail.
+      setTimeout(() => {
+        splash.classList.add('is-done');
+        try { sessionStorage.setItem('medium29_intro_seen', '1'); } catch (_) {}
+      }, 440);
+      splash.addEventListener('transitionend', event => {
+        if (event.target === splash && event.propertyName === 'opacity') finish();
+      });
+      // Failsafe if transitionend is unavailable (e.g. tab is backgrounded).
+      backup = setTimeout(finish, 1100);
+    }
   }
 })();
