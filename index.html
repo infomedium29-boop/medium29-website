@@ -133,7 +133,7 @@
     color: var(--text);
     line-height: 1;
   }
-  .stat-num > span:not(.scroll-blur-run) { color: var(--accent); }
+  .stat-num span { color: var(--accent); }
   .stat-label { font-size: 0.78rem; color: var(--muted); letter-spacing: 0.04em; }
   .hero-scroll {
     position: absolute;
@@ -209,7 +209,7 @@
     pointer-events: none;
   }
   .cta-band h2 { font-family:'Syne',sans-serif; font-size:clamp(2rem,4vw,3.2rem); font-weight:800; letter-spacing:-0.03em; max-width:600px; line-height:1.1; }
-  .cta-band h2 > span:not(.scroll-blur-run) { color: var(--accent); }
+  .cta-band h2 span { color: var(--accent); }
 
   @media (max-width:900px) {
     .hero { padding: 0 1.5rem; min-height: 100svh; }
@@ -453,7 +453,7 @@
 </div>
 </footer>
 <script src="/main.js"></script>
-<script src="/scroll-blur.js"></script>
+
 <script>
   document.addEventListener("mousemove", function(e) {
     var xPct = (e.clientX / window.innerWidth - 0.5) * 40;

@@ -60,7 +60,7 @@
     margin: 0 auto 2rem;
     color: var(--text);
   }
-  .big-quote blockquote > span:not(.scroll-blur-run) { color: var(--accent); font-style: italic; }
+  .big-quote blockquote span { color: var(--accent); font-style: italic; }
   .big-quote cite { font-size: 0.85rem; color: var(--muted); font-style: normal; letter-spacing: 0.08em; }
 
   /* VALUES */
@@ -101,7 +101,7 @@
   .number-item { padding: 3rem 2.5rem; background: var(--bg); text-align: center; transition: background 0.3s; }
   .number-item:hover { background: var(--bg2); }
   .number-big { font-family:'Syne',sans-serif; font-size:3.5rem; font-weight:800; color:var(--text); letter-spacing:-0.04em; line-height:1; }
-  .number-big > span:not(.scroll-blur-run) { color: var(--accent); }
+  .number-big span { color: var(--accent); }
   .number-label { font-size:0.82rem; color:var(--muted); margin-top:0.6rem; letter-spacing:0.04em; }
 
   @media (max-width:900px) {
@@ -375,7 +375,7 @@
 </div>
 </footer>
 <script src="/main.js"></script>
-<script src="/scroll-blur.js"></script>
+
 <!-- Subpage motion is handled by main.js, without a GSAP dependency -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="/three-bg.js"></script>

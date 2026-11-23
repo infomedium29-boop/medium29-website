@@ -1,0 +1,18 @@
+Medium29 - optimizirana verzija bez scroll-blur animacija
+----------------------------------------------------
+Izvor: MEDIUM29-INTRO-MINIMAL-PREMIUM-OPCIJA-A.zip
+
+Uklonjeno:
+ - scroll-blur.js i pozivanje skripte sa sve 21 lokalizirane stranice
+ - CSS zamućivanje slova, blokova i fotografija tijekom skrolanja
+ - hero blur animacija dodana uz scroll-blur sustav
+ - selektori uvedeni radi umetnutih animiranih elemenata
+
+Zadržano:
+ - novi Minimal Premium intro (oko 0,8 s, jednom po sesiji)
+ - postojeće lagane fade/reveal animacije prije dodatnog blur sustava
+ - svi sadržaji, jezici, portfolio, obrazac, kolačići, navigacija, SEO
+ - Three.js pozadina kao u prethodnoj verziji
+
+Napomena: Otvorite stranicu uz osvježavanje cachea, jer preglednik može
+privremeno prikazivati stare CSS i JS datoteke.
