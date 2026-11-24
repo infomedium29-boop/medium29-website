@@ -8,6 +8,8 @@
   if (!page) return;
   const $ = selector => document.querySelector(selector);
   const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const lang=(document.documentElement.lang||'hr').slice(0,2);
+  const formCopy={hr:{captcha:'Molimo potvrdite hCaptcha provjeru prije slanja upita.',sending:'Slanje upita…',failed:'Upit nije poslan. Pokušajte ponovno ili pišite na info.medium29@gmail.com.'},en:{captcha:'Please complete the hCaptcha check before sending.',sending:'Sending enquiry…',failed:'The enquiry was not sent. Try again or email info.medium29@gmail.com.'},de:{captcha:'Bitte bestätigen Sie die hCaptcha-Prüfung vor dem Senden.',sending:'Anfrage wird gesendet…',failed:'Die Anfrage konnte nicht gesendet werden. Bitte erneut versuchen oder an info.medium29@gmail.com schreiben.'}}[lang]||{captcha:'Please complete the CAPTCHA.',sending:'Sending…',failed:'Could not send.'};
   const dialog = $('#industryModal');
   const industryData = window.Medium29IndustryConfig || { gallery:[], solutions:{}, solutionOrder:[] };
   const gallery = industryData.gallery;
@@ -25,7 +27,7 @@
     const points=$('#modalPoints');
     points.replaceChildren();
     item.points.forEach(point => {const li=document.createElement('li');li.textContent=point;points.appendChild(li);});
-    $('#modalEyebrow').textContent=mode==='gallery'?'Medium29 / Galerija':'Medium29 / Digitalna rješenja';
+    $('#modalEyebrow').textContent=mode==='gallery'?'Medium29 / '+({hr:'Galerija',en:'Gallery',de:'Galerie'}[lang]||'Gallery'):'Medium29 / '+({hr:'Web stranice',en:'Websites',de:'Webseiten'}[lang]||'Websites');
     $('#modalCounter').textContent=mode==='gallery'?`${currentIndex+1} / ${gallery.length}`:`${solutionOrder.indexOf(currentSolution)+1} / ${solutionOrder.length}`;
     if (!reduceMotion && window.gsap) {
       window.gsap.fromTo('.industry-modal .modal-figure img',{opacity:.65,x:9},{opacity:1,x:0,duration:.22,ease:'power2.out',overwrite:true});
@@ -127,12 +129,12 @@
     status.textContent='';status.classList.remove('is-error','is-success');
     const captcha=form.querySelector('textarea[name="h-captcha-response"]');
     if (!captcha?.value) {
-      status.textContent='Molimo potvrdite hCaptcha provjeru prije slanja upita.';
+      status.textContent=formCopy.captcha;
       status.classList.add('is-error');
       return;
     }
     submit.disabled=true;
-    submit.textContent='Slanje upita…';
+    submit.textContent=formCopy.sending;
     try {
       const response=await fetch('https://api.web3forms.com/submit',{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});
       if (!response.ok) throw new Error('Server je nedostupan.');
@@ -144,7 +146,7 @@
       success.focus({preventScroll:false});
     } catch(error) {
       status.classList.add('is-error');
-      status.textContent='Upit nije poslan. Pokušajte ponovno ili pišite na info.medium29@gmail.com.';
+      status.textContent=formCopy.failed;
       if (window.hcaptcha?.reset) window.hcaptcha.reset();
       submit.disabled=false;
       submit.innerHTML=originalButtonHTML;

@@ -12,3 +12,10 @@
 
 /assets/industry/*.avif
   Cache-Control: public, max-age=31536000, immutable
+
+/assets/industry-catalog/visuals/*.svg
+  Cache-Control: public, max-age=31536000, immutable
+/assets/industry-catalog/og/*.jpg
+  Cache-Control: public, max-age=31536000, immutable
+/assets/industry-catalog/config/*.js
+  Cache-Control: public, max-age=31536000, immutable

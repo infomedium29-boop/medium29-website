@@ -24,3 +24,11 @@
 /rjesenja/index.html /rjesenja/ 301
 /rjesenja/taxi-transferi/index.html /rjesenja/taxi-transferi/ 301
 /uvjeti-koristenja.html /uvjeti-koristenja 301
+
+# Website industry hub (replaces former mixed web+marketing "rjesenja")
+/rjesenja/ /web-stranice/ 301
+/rjesenja/taxi-transferi/ /web-stranice/taxi-firma/ 301
+/rjesenja/taxi-transferi/index.html /web-stranice/taxi-firma/ 301
+/web-stranice/index.html /web-stranice/ 301
+/en/websites/index.html /en/websites/ 301
+/de/webseiten/index.html /de/webseiten/ 301
