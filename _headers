@@ -9,3 +9,6 @@
 
 /og-medium29.jpg
   Cache-Control: public, max-age=604800
+
+/assets/industry/*.avif
+  Cache-Control: public, max-age=31536000, immutable

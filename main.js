@@ -29,6 +29,10 @@
   document.querySelectorAll('.nav-links a,.mobile-menu-links a').forEach(a => {
     try { if (clean(new URL(a.href).pathname) === clean(location.pathname)) a.classList.add('active'); } catch (_) {}
   });
+  // Keep the Rješenja item highlighted on all /rjesenja/ child pages.
+  if (location.pathname.startsWith('/rjesenja/')) {
+    document.querySelectorAll('.nav-links a[href="/rjesenja/"],.mobile-menu-links a[href="/rjesenja/"]').forEach(a => a.classList.add('active'));
+  }
   // No invisible content when JavaScript is unavailable; observer is a progressive enhancement.
   if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     const revObserver = new IntersectionObserver(entries => entries.forEach(entry => {
